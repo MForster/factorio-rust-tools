@@ -1,0 +1,11 @@
+[package]
+name = "factorio-exporter"
+version = "0.1.0"
+authors = ["Michael Forster <email@michael-forster.de>"]
+edition = "2021"
+description = "A library to export prototype definitions from Factorio (http://www.factorio.com)"
+homepage = "http://github.com/MForster/factorio-exporter"
+license = "MIT OR Apache-2.0"
+keywords = ["gaming", "factorio"]
+
+[dependencies]
