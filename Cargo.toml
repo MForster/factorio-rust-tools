@@ -8,4 +8,16 @@ homepage = "http://github.com/MForster/factorio-exporter"
 license = "MIT OR Apache-2.0"
 keywords = ["gaming", "factorio"]
 
+[[example]]
+name = "show"
+required-features = ["clap", "tracing-subscriber"]
+
 [dependencies]
+clap = { version = "4.0.18", optional = true, features = ["derive"] }
+itertools = "0.10.5"
+serde = "1.0.147"
+serde_derive = "1.0.147"
+serde_json = "1.0.87"
+thiserror = "1.0.37"
+tracing = "0.1.37"
+tracing-subscriber = { version = "0.3.16", optional = true }

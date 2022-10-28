@@ -13,6 +13,6 @@
       let pkgs = import nixpkgs { inherit system; };
       in with pkgs; {
         devShells.default =
-          mkShell { buildInputs = [ cargo cargo-watch rustfmt clippy ]; };
+          mkShell { buildInputs = [ cargo cargo-watch clang clippy rustfmt ]; };
       });
 }
