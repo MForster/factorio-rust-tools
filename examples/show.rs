@@ -1,4 +1,4 @@
-use std::{error::Error, path::PathBuf, process::exit};
+use std::{error::Error, path::PathBuf};
 
 use factorio_exporter::export_prototypes;
 
