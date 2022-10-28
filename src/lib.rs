@@ -1,11 +1,12 @@
+pub mod api;
 pub mod errors;
 
 use std::{fs::File, io::BufReader, path::Path};
 
 use errors::FactorioExporterError;
-use itertools::Itertools;
-use serde_json::Value;
 use tracing::debug;
+
+use crate::api::Api;
 
 const RUNTIME_API_DEFINITION: &str = "doc-html/runtime-api.json";
 
@@ -17,12 +18,11 @@ pub fn export_prototypes(factorio_dir: &Path) -> Result<String, FactorioExporter
         &api_file_path.display()
     );
 
-    let api_def: Value = serde_json::from_reader(BufReader::new(File::open(api_file_path)?))?;
-    let keys = api_def.as_object().unwrap().keys().collect_vec();
+    let api_def: Api = serde_json::from_reader(BufReader::new(File::open(api_file_path)?))?;
 
     Ok(format!(
-        "Found {} top-level keys in definition file: {:?}",
-        keys.len(),
-        &keys
+        "Imported {} classes and {} concepts",
+        &api_def.classes.len(),
+        &api_def.concepts.len()
     ))
 }
