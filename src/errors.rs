@@ -7,5 +7,11 @@ pub enum FactorioExporterError {
     #[error("I/O error")]
     IoError(#[from] std::io::Error),
     #[error("failed to parse JSON")]
-    JsonParsinError(#[from] serde_json::Error),
+    JsonParsingError(#[from] serde_json::Error),
+    #[error("failed to parse YAML")]
+    YamlParsingError(#[from] serde_yaml::Error),
+    #[error("error while executing Factorio")]
+    FactorioExecutionError { stdout: String, stderr: String },
 }
+
+pub type Result<T> = std::result::Result<T, FactorioExporterError>;
