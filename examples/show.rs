@@ -7,6 +7,7 @@ use factorio_exporter::{
 
 use clap::Parser;
 use indoc::printdoc;
+use itertools::Itertools;
 use tracing::debug;
 
 /// Example that shows how to call Factorio Exporter.
@@ -29,9 +30,11 @@ fn main() -> Result<()> {
 
     match result {
         Ok(prototypes) => {
-            for prototype in prototypes.item_prototypes.values() {
-                println!("{}", prototype.name);
-            }
+            println!(
+                "Found {} items, here are a few: {:?}",
+                prototypes.item_prototypes.len(),
+                prototypes.item_prototypes.values().take(5).format(", ")
+            );
         }
         Err(FactorioExecutionError { stdout, stderr }) => {
             printdoc! {r"
