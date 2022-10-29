@@ -1,19 +1,19 @@
 use std::{
-    fs::{self, File},
+    fs::File,
     io::Write,
     path::Path,
     process::{Command, Output},
 };
 
-use indoc::writedoc;
+use indoc::{indoc, writedoc};
 
 use regex::{Captures, Regex};
-use serde_json::json;
 use tempdir::TempDir;
 use tracing::{debug, error, info};
 
 use crate::{
     errors::{FactorioExporterError::FactorioExecutionError, Result},
+    mod_controller::{ModController, ModManifestBuilder},
     prototypes::PrototypeExport,
 };
 
@@ -22,7 +22,6 @@ const SAVE: &str = "save.zip";
 const MOD_NAME: &str = "factorio_exporter";
 const MOD_VERSION: &str = "0.0.1";
 const MODS_DIR: &str = "mods";
-const MOD_MANIFEST: &str = "info.json";
 
 pub fn export(factorio_dir: &Path, locale: &str) -> Result<PrototypeExport> {
     let temp_dir = TempDir::new(MOD_NAME)?;
@@ -64,50 +63,39 @@ fn create_exec_dir(exec_dir: &Path, locale: &str) -> Result<()> {
 }
 
 fn create_exporter_mod(temp_dir: &TempDir) -> Result<()> {
-    let mod_dir = temp_dir
-        .path()
-        .join(MODS_DIR)
-        .join(format!("{}_{}", MOD_NAME, MOD_VERSION));
+    ModController::new(temp_dir.path().join(MODS_DIR))
+        .create_mod(
+            ModManifestBuilder::default()
+                .name(MOD_NAME)
+                .version(MOD_VERSION)
+                .title("Factorio Exporter")
+                .author("Michael Forster <email@michael-forster.de")
+                .build()
+                .unwrap(),
+        )?
+        .add_file("export.lua", include_str!("../lua/export.lua"))?
+        .add_file(
+            "instrument-control.lua",
+            include_str!("../lua/instrument-control.lua"),
+        )?
+        .add_file(
+            "prototypes.lua",
+            indoc! {
+                r#"
+                prototypes = {{}}
+                export = require('export')
 
-    debug!("creating exporter mod: {:?}", &mod_dir);
-    fs::create_dir_all(&mod_dir)?;
+                function prototypes.export()
+                    export.ExportTable("item_prototypes", game.item_prototypes, function(prototype)
+                        export.ExportString("name", prototype.name)
+                    end)
+                end
 
-    fs::write(
-        &mod_dir.join(MOD_MANIFEST),
-        json!({
-            "name": MOD_NAME,
-            "title": "Factorio Exporter",
-            "version": MOD_VERSION,
-            "author": "Michael Forster <email@michael-forster.de>",
-            "factorio_version": "1.1",
-        })
-        .to_string(),
-    )?;
+                return prototypes
+            "#
+            },
+        )?;
 
-    writedoc!(
-        File::create(&mod_dir.join("prototypes.lua"))?,
-        r#"
-            prototypes = {{}}
-            export = require('export')
-
-            function prototypes.export()
-                export.ExportTable("item_prototypes", game.item_prototypes, function(prototype)
-                    export.ExportString("name", prototype.name)
-                end)
-            end
-
-            return prototypes
-        "#,
-    )?;
-
-    fs::write(
-        &mod_dir.join("export.lua"),
-        include_bytes!("../lua/export.lua"),
-    )?;
-    fs::write(
-        &mod_dir.join("instrument-control.lua"),
-        include_bytes!("../lua/instrument-control.lua"),
-    )?;
     Ok(())
 }
 
