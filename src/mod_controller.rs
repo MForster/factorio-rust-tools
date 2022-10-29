@@ -1,6 +1,5 @@
 use std::{
-    fs::{self, File},
-    io::BufWriter,
+    fs::{self},
     path::PathBuf,
 };
 
@@ -22,21 +21,13 @@ impl ModController {
     }
 
     pub fn create_mod(&self, manifest: ModManifest) -> Result<Mod> {
-        let dir = self
-            .mods_dir
-            .join(format!("{}_{}", manifest.name, manifest.version));
-
+        let dir = self.mods_dir.join(manifest.dir_name());
         debug!("creating mod: {:?}", &dir);
         fs::create_dir_all(&dir)?;
 
-        let json = serde_json::to_string(&manifest)?;
+        let json = serde_json::to_string_pretty(&manifest)?;
         debug!("Writing mod manifest: {}", &json);
         fs::write(dir.join(MOD_MANIFEST_NAME), &json)?;
-
-        serde_json::to_writer_pretty(
-            BufWriter::new(File::create(dir.join(MOD_MANIFEST_NAME))?),
-            &manifest,
-        )?;
 
         Ok(Mod { dir })
     }
@@ -81,4 +72,10 @@ pub struct ModManifest {
 
     #[builder(default)]
     pub dependencies: Vec<String>,
+}
+
+impl ModManifest {
+    pub fn dir_name(&self) -> String {
+        format!("{}_{}", self.name, self.version)
+    }
 }
