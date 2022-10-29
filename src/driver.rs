@@ -5,7 +5,7 @@ use std::{
     process::{Command, Output},
 };
 
-use indoc::{indoc, writedoc};
+use indoc::writedoc;
 
 use regex::{Captures, Regex};
 use tempdir::TempDir;
@@ -13,6 +13,7 @@ use tracing::{debug, error, info};
 
 use crate::{
     errors::{FactorioExporterError::FactorioExecutionError, Result},
+    exporter_script_builder::ExporterScriptBuilder,
     mod_controller::{ModController, ModManifestBuilder},
     prototypes::PrototypeExport,
 };
@@ -63,6 +64,11 @@ fn create_exec_dir(exec_dir: &Path, locale: &str) -> Result<()> {
 }
 
 fn create_exporter_mod(temp_dir: &TempDir) -> Result<()> {
+    let mut script = ExporterScriptBuilder::new();
+    let object = script.begin_table("game.item_prototypes", "item_prototypes");
+    script.export_string(&object, "name");
+    script.end_table();
+
     ModController::new(temp_dir.path().join(MODS_DIR))
         .create_mod(
             ModManifestBuilder::default()
@@ -78,23 +84,7 @@ fn create_exporter_mod(temp_dir: &TempDir) -> Result<()> {
             "instrument-control.lua",
             include_str!("../lua/instrument-control.lua"),
         )?
-        .add_file(
-            "prototypes.lua",
-            indoc! {
-                r#"
-                prototypes = {{}}
-                export = require('export')
-
-                function prototypes.export()
-                    export.ExportTable("item_prototypes", game.item_prototypes, function(prototype)
-                        export.ExportString("name", prototype.name)
-                    end)
-                end
-
-                return prototypes
-            "#
-            },
-        )?;
+        .add_file("prototypes.lua", &script.build())?;
 
     Ok(())
 }
