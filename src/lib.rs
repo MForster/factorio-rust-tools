@@ -1,6 +1,7 @@
 mod api;
 mod driver;
 pub mod errors;
+mod mod_controller;
 mod prototypes;
 
 use std::{fs::File, io::BufReader, path::Path};
