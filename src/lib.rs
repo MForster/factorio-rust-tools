@@ -1,6 +1,7 @@
 mod api;
 mod driver;
 pub mod errors;
+mod exporter_script_builder;
 mod mod_controller;
 mod prototypes;
 
