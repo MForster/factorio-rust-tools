@@ -1,4 +1,5 @@
 mod api;
+mod api_generator;
 mod driver;
 pub mod errors;
 mod exporter_script_builder;
@@ -26,13 +27,13 @@ pub fn export_prototypes(
         &api_file_path.display()
     );
 
-    let api_def: Api = serde_json::from_reader(BufReader::new(File::open(api_file_path)?))?;
+    let api: Api = serde_json::from_reader(BufReader::new(File::open(api_file_path)?))?;
 
     debug!(
         "parsed API, got {} classes and {} concepts",
-        &api_def.classes.len(),
-        &api_def.concepts.len()
+        &api.classes.len(),
+        &api.concepts.len()
     );
 
-    export(factorio_dir, locale)
+    export(factorio_dir, &api, locale)
 }
