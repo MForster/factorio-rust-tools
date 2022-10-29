@@ -24,7 +24,7 @@ pub fn generate_exporter_script(api: &Api) -> String {
         let object = script.begin_table(&format!("game.{attribute}"), attribute);
 
         for attr in api.classes[class].attributes.values() {
-            visit_attribute(attr, &mut script, &api, &object);
+            visit_attribute(attr, &mut script, api, &object);
         }
         script.end_table();
     }
@@ -35,9 +35,7 @@ pub fn generate_exporter_script(api: &Api) -> String {
 fn is_number(ty: &Type) -> bool {
     match ty {
         Type::String(s) if s == "double" || s == "uint" => true,
-        Type::Complex(ComplexType::Union { options }) if options.iter().all(|o| is_number(o)) => {
-            true
-        }
+        Type::Complex(ComplexType::Union { options }) if options.iter().all(is_number) => true,
         _ => false,
     }
 }
