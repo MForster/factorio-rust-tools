@@ -23,28 +23,56 @@ impl ExporterScriptBuilder {
         builder
     }
 
-    pub fn export_string(&mut self, object: &str, property: &str) {
+    pub fn export_primitive(&mut self, primitive_type: &str, object: &str, property: &str) {
         writeln!(
             self,
-            r#"export.ExportString("{property}", {object}.{property})"#,
+            r#"export.Export{primitive_type}("{property}", {object}.{property})"#,
         )
         .unwrap();
     }
 
-    pub fn begin_table(&mut self, table: &str, attribute: &str) -> String {
-        let object = "prototype";
+    pub fn export_string(&mut self, object: &str, property: &str) {
+        self.export_primitive("String", object, property);
+    }
+
+    pub fn export_number(&mut self, object: &str, property: &str) {
+        self.export_primitive("Number", object, property);
+    }
+
+    pub fn export_bool(&mut self, object: &str, property: &str) {
+        self.export_primitive("Bool", object, property);
+    }
+
+    pub fn begin_block(&mut self, block_type: &str, object: &str, attribute: &str) -> String {
+        let element = "prototype";
         writeln!(
             self,
-            r#"export.ExportTable("{attribute}", {table}, function({object})"#,
+            r#"export.Export{block_type}("{attribute}", {object}, function({element})"#,
         )
         .unwrap();
         self.indentation += 4;
-        object.into()
+        element.into()
+    }
+
+    pub fn end_block(&mut self) {
+        self.indentation -= 4;
+        writeln!(self, "end)").unwrap();
+    }
+
+    pub fn begin_table(&mut self, table: &str, attribute: &str) -> String {
+        self.begin_block("Table", table, attribute)
     }
 
     pub fn end_table(&mut self) {
-        self.indentation -= 4;
-        writeln!(self, "end)").unwrap();
+        self.end_block();
+    }
+
+    pub fn begin_array(&mut self, array: &str, attribute: &str) -> String {
+        self.begin_block("Array", array, &format!("{array}.{attribute}"))
+    }
+
+    pub fn end_array(&mut self) {
+        self.end_block();
     }
 
     pub fn build(mut self) -> String {

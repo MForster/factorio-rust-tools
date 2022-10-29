@@ -12,8 +12,9 @@ use tempdir::TempDir;
 use tracing::{debug, error, info};
 
 use crate::{
+    api::Api,
+    api_generator::generate_exporter_script,
     errors::{FactorioExporterError::FactorioExecutionError, Result},
-    exporter_script_builder::ExporterScriptBuilder,
     mod_controller::{ModController, ModManifestBuilder},
     prototypes::PrototypeExport,
 };
@@ -24,11 +25,11 @@ const MOD_NAME: &str = "factorio_exporter";
 const MOD_VERSION: &str = "0.0.1";
 const MODS_DIR: &str = "mods";
 
-pub fn export(factorio_dir: &Path, locale: &str) -> Result<PrototypeExport> {
+pub fn export(factorio_dir: &Path, api: &Api, locale: &str) -> Result<PrototypeExport> {
     let temp_dir = TempDir::new(MOD_NAME)?;
 
     create_exec_dir(temp_dir.path(), locale)?;
-    create_exporter_mod(&temp_dir)?;
+    create_exporter_mod(&temp_dir, api)?;
 
     info!("create an empty save file");
     run_factorio(factorio_dir, temp_dir.path(), &["--create", SAVE])?;
@@ -63,12 +64,7 @@ fn create_exec_dir(exec_dir: &Path, locale: &str) -> Result<()> {
     Ok(())
 }
 
-fn create_exporter_mod(temp_dir: &TempDir) -> Result<()> {
-    let mut script = ExporterScriptBuilder::new();
-    let object = script.begin_table("game.item_prototypes", "item_prototypes");
-    script.export_string(&object, "name");
-    script.end_table();
-
+fn create_exporter_mod(temp_dir: &TempDir, api: &Api) -> Result<()> {
     ModController::new(temp_dir.path().join(MODS_DIR))
         .create_mod(
             ModManifestBuilder::default()
@@ -84,7 +80,7 @@ fn create_exporter_mod(temp_dir: &TempDir) -> Result<()> {
             "instrument-control.lua",
             include_str!("../lua/instrument-control.lua"),
         )?
-        .add_file("prototypes.lua", &script.build())?;
+        .add_file("prototypes.lua", &generate_exporter_script(api))?;
 
     Ok(())
 }
