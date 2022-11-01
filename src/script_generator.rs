@@ -1,93 +1,79 @@
+use crate::api::{is_number, HasAttributes};
 use crate::{
-    api::{is_number, Api, Attribute, HasAttributes, Type},
+    api::{Api, Attribute, Type},
     script_builder::ScriptBuilder,
 };
 
-pub fn generate_exporter_script(api: &Api) -> String {
-    let mut script = ScriptBuilder::new();
-
-    for (class, attribute) in
-        api.classes["LuaGameScript"]
-            .attributes
-            .iter()
-            .filter_map(|(_, attr)| {
-                if let Type::LuaCustomTable { value, .. } = &attr.r#type {
-                    if let Type::NamedType { name } = &**value {
-                        if name.ends_with("Prototype") {
-                            return Some((name, &attr.name));
-                        }
-                    }
-                }
-                None
-            })
-    {
-        let object = script.begin_table(&format!("game.{attribute}"), attribute);
-
-        for attr in api.classes[class].attributes() {
-            visit_attribute(attr, &mut script, api, &object);
-        }
-        script.end_table();
-    }
-
-    script.build()
+pub struct ScriptGenerator<'a> {
+    api: &'a Api,
+    script: ScriptBuilder,
 }
 
-fn visit_attribute(attr: &Attribute, script: &mut ScriptBuilder, api: &Api, object: &str) {
-    match &attr.r#type {
-        Type::String => {
-            script.export_string(object, &attr.name);
-        }
+impl<'a> ScriptGenerator<'a> {
+    pub fn new(api: &'a Api) -> ScriptGenerator<'a> {
+        let script = ScriptBuilder::new();
+        ScriptGenerator { api, script }
+    }
 
-        ty if is_number(ty) => {
-            script.export_number(object, &attr.name);
-        }
+    pub fn generate(mut self, object: &str, attributes: Vec<&Attribute>) -> String {
+        self.export_attrs(object, attributes, 0);
+        self.script.build()
+    }
 
-        Type::Boolean => {
-            script.export_bool(object, &attr.name);
-        }
+    fn export_attrs(&mut self, object: &str, attrs: Vec<&Attribute>, depth: usize) {
+        for attr in attrs {
+            // TODO: Reading fails, but the documentation only says so in prose.
+            if attr.name == "order_in_recipe" || attr.name == "subgroups" {
+                continue;
+            }
 
-        Type::Array { value } => {
-            if let Type::NamedType { name } = &**value {
-                if let Some(concept) = api.concepts.get(name) {
-                    if let Type::Table {
-                        parameters,
-                        variant_parameter_groups,
-                    } = &concept.r#type
-                    {
-                        let element = script.begin_array(object, &attr.name);
-
-                        for parameter in parameters {
-                            visit_attribute(parameter, script, api, &element);
-                        }
-
-                        for group in variant_parameter_groups.iter().flatten() {
-                            for parameter in &group.parameters {
-                                visit_attribute(parameter, script, api, &element);
-                            }
-                        }
-
-                        script.end_array();
-                    }
+            use self::Type::*;
+            match &attr.r#type {
+                String => {
+                    self.script.export_string(object, &attr.name);
                 }
+
+                r#type if is_number(r#type) => {
+                    self.script.export_number(object, &attr.name);
+                }
+
+                Boolean => {
+                    self.script.export_bool(object, &attr.name);
+                }
+
+                Array { value } | Dictionary { value, .. } => {
+                    let element = self.script.begin_array(object, &attr.name);
+                    self.export_value(&element, value, depth);
+                    self.script.end_array();
+                }
+
+                LuaCustomTable { value, .. } => {
+                    let table = format!("{object}.{}", attr.name);
+                    let element = self.script.begin_table(&table, &attr.name);
+                    self.export_value(&element, value, depth);
+                    self.script.end_table();
+                }
+
+                _ => {}
             }
         }
+    }
 
-        Type::Dictionary { value, .. } => {
-            if let Type::NamedType { name } = &**value {
-                if let Some(class) = api.classes.get(name) {
-                    let element = script.begin_array(object, &attr.name);
-
-                    for attr in class.attributes.values() {
-                        // TODO: Cut infinite loop in a more principled way
-                        if attr.name == "name" {
-                            visit_attribute(attr, script, api, &element);
-                        }
-                    }
-
-                    script.end_array();
+    fn export_value(&mut self, object: &str, ty: &Type, depth: usize) {
+        let depth = depth + 1;
+        if let Type::NamedType { name } = ty {
+            if let Some(class) = self.api.classes.get(name) {
+                let mut attrs = class.attributes();
+                // TODO: Cut infinite recursion in a more principled way
+                if depth > 1 {
+                    attrs.retain(|a| a.name == "name")
                 }
+                self.export_attrs(object, attrs, depth);
             }
-        }
-        _ => {}
+
+            if let Some(concept) = self.api.concepts.get(name) {
+                self.export_attrs(object, concept.attributes(), depth);
+            }
+        };
     }
 }
