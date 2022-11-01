@@ -1,8 +1,32 @@
-use std::collections::HashMap;
+use std::{collections::HashMap, fs, path::Path};
 
 use itertools::Itertools;
 use semver::Version;
 use serde_derive::Deserialize;
+use tracing::debug;
+
+use crate::Result;
+
+const RUNTIME_API_DEFINITION: &str = "doc-html/runtime-api.json";
+
+pub fn load_api(factorio_dir: &Path) -> Result<Api> {
+    let api_file_path = factorio_dir.join(RUNTIME_API_DEFINITION);
+
+    debug!(
+        "Loading API definition file from {}",
+        &api_file_path.display()
+    );
+
+    let s = fs::read_to_string(api_file_path)?;
+    let api: Api = serde_json::from_str(&s)?;
+
+    debug!(
+        "parsed API, got {} classes and {} concepts",
+        &api.classes.len(),
+        &api.concepts.len()
+    );
+    Ok(api)
+}
 
 /// Meta description of the factorio API.
 ///

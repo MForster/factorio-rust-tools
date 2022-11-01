@@ -1,43 +1,25 @@
+use thiserror::Error;
+
+pub use api::load_api;
+pub use driver::export;
+
 mod api;
 mod driver;
-pub mod errors;
-mod mod_controller;
+mod internal;
 mod prototypes;
-mod script_builder;
-mod script_generator;
 
-use std::{
-    fs::{self},
-    path::Path,
-};
-
-use errors::FactorioExporterError;
-use prototypes::PrototypeExport;
-use tracing::debug;
-
-use crate::{api::Api, driver::export};
-
-const RUNTIME_API_DEFINITION: &str = "doc-html/runtime-api.json";
-
-pub fn export_prototypes(
-    factorio_dir: &Path,
-    locale: &str,
-) -> Result<PrototypeExport, FactorioExporterError> {
-    let api_file_path = factorio_dir.join(RUNTIME_API_DEFINITION);
-
-    debug!(
-        "Loading API definition file from {}",
-        &api_file_path.display()
-    );
-
-    let s = fs::read_to_string(api_file_path)?;
-    let api: Api = serde_json::from_str(&s)?;
-
-    debug!(
-        "parsed API, got {} classes and {} concepts",
-        &api.classes.len(),
-        &api.concepts.len()
-    );
-
-    export(factorio_dir, &api, locale)
+#[derive(Error, Debug)]
+pub enum FactorioExporterError {
+    #[error("API definition file (runtime-api.json) not found")]
+    ApiDefinitionNotFound(),
+    #[error("I/O error")]
+    IoError(#[from] std::io::Error),
+    #[error("failed to parse JSON")]
+    JsonParsingError(#[from] serde_json::Error),
+    #[error("failed to parse YAML")]
+    YamlParsingError(#[from] serde_yaml::Error),
+    #[error("error while executing Factorio")]
+    FactorioExecutionError { stdout: String, stderr: String },
 }
+
+pub type Result<T> = std::result::Result<T, FactorioExporterError>;

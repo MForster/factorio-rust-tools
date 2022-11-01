@@ -7,7 +7,7 @@ use derive_builder::Builder;
 use serde_derive::Serialize;
 use tracing::debug;
 
-use crate::errors::Result;
+use crate::Result;
 
 const MOD_MANIFEST_NAME: &str = "info.json";
 
