@@ -6,7 +6,10 @@ mod exporter_script_builder;
 mod mod_controller;
 mod prototypes;
 
-use std::{fs::File, io::BufReader, path::Path};
+use std::{
+    fs::{self},
+    path::Path,
+};
 
 use errors::FactorioExporterError;
 use prototypes::PrototypeExport;
@@ -27,7 +30,8 @@ pub fn export_prototypes(
         &api_file_path.display()
     );
 
-    let api: Api = serde_json::from_reader(BufReader::new(File::open(api_file_path)?))?;
+    let s = fs::read_to_string(api_file_path)?;
+    let api: Api = serde_json::from_str(&s)?;
 
     debug!(
         "parsed API, got {} classes and {} concepts",
