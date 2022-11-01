@@ -27,4 +27,4 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Added the full feature as a library that can be embedded into other apps.
 
 <!-- next-url -->
-[Unreleased]: https://github.com/assert-rs/predicates-rs/compare/v0.0.1...HEAD
+[Unreleased]: https://github.com/MForster/factorio-exporter/compare/v0.0.1...HEAD
