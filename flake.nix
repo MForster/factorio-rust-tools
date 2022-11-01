@@ -13,7 +13,8 @@
       let pkgs = import nixpkgs { inherit system; };
       in with pkgs; {
         devShells.default = mkShell {
-          buildInputs = [ cargo cargo-watch clang clippy rustfmt glib ];
+          buildInputs =
+            [ cargo cargo-release cargo-watch clang clippy rustfmt glib ];
         };
       });
 }
