@@ -25,7 +25,15 @@ function export.ExportString(name, value)
 end
 
 function export.ExportNumber(name, value)
+    -- Number values shouldn't be false, but it happens.
+    -- Let's map them to numbers in a sensible way.
     if value ~= nil then
+        if value == false then
+            value = 0
+        end
+        if value == true then
+            value = 1
+        end
         export.Export(name, ": ", value)
     end
 end
