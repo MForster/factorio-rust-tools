@@ -8,8 +8,8 @@ homepage = "http://github.com/MForster/factorio-exporter"
 license = "MIT OR Apache-2.0"
 keywords = ["gaming", "factorio"]
 
-[[example]]
-name = "show"
+[[bin]]
+name = "factorio_exporter"
 required-features = ["clap", "tracing-subscriber"]
 
 [dependencies]
