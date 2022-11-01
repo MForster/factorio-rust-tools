@@ -30,4 +30,4 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 <!-- next-url -->
 [Unreleased]: https://github.com/MForster/factorio-export/compare/v0.1.1...HEAD
-[0.1.1]: https://github.com/MForster/factorio-exporter/compare/v0.0.1...v0.1.1
+[0.1.1]: https://github.com/MForster/factorio-exporter/compare/v0.1.0...v0.1.1
