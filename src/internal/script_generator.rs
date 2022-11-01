@@ -1,8 +1,7 @@
 use crate::api::{is_number, HasAttributes};
-use crate::{
-    api::{Api, Attribute, Type},
-    script_builder::ScriptBuilder,
-};
+use crate::api::{Api, Attribute, Type};
+
+use super::script_builder::ScriptBuilder;
 
 pub struct ScriptGenerator<'a> {
     api: &'a Api,

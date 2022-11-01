@@ -1,11 +1,7 @@
 use std::path::PathBuf;
 
-use factorio_exporter::{
-    errors::{FactorioExporterError::FactorioExecutionError, Result},
-    export_prototypes,
-};
-
 use clap::Parser;
+use factorio_exporter::{export, load_api, FactorioExporterError::FactorioExecutionError, Result};
 use indoc::printdoc;
 use itertools::Itertools;
 use tracing::debug;
@@ -26,7 +22,8 @@ fn main() -> Result<()> {
     let args = Args::parse();
     debug!("Parsed arguments: {:?}", args);
 
-    let result = export_prototypes(&args.factorio_dir, "de");
+    let api = load_api(&args.factorio_dir)?;
+    let result = export(&args.factorio_dir, &api, "en");
 
     match result {
         Ok(prototypes) => {
