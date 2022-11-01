@@ -33,6 +33,7 @@ tracing-subscriber = { version = "0.3.16", optional = true }
 
 [package.metadata.release]
 allow-branch = ["main"]
+pre-release-commit-message = "Release {{crate_name}} version {{version}}"
 pre-release-replacements = [
   { file = "CHANGELOG.md", search = "Unreleased", replace = "{{version}}", min = 1 },
   { file = "CHANGELOG.md", search = "\\.\\.\\.HEAD", replace = "...{{tag_name}}", exactly = 1 },
