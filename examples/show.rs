@@ -1,9 +1,10 @@
 use std::path::PathBuf;
 
+use factorio_exporter::{load_api, FactorioExporter, FactorioExporterError, Result};
+
 use clap::Parser;
-use factorio_exporter::{export, load_api, FactorioExporterError::FactorioExecutionError, Result};
 use indoc::printdoc;
-use itertools::Itertools;
+use serde_json::Value;
 use tracing::debug;
 
 /// Example that shows how to call Factorio Exporter.
@@ -23,17 +24,23 @@ fn main() -> Result<()> {
     debug!("Parsed arguments: {:?}", args);
 
     let api = load_api(&args.factorio_dir)?;
-    let result = export(&args.factorio_dir, &api, "en");
+    let exporter = FactorioExporter::new(&args.factorio_dir, &api, "en")?;
 
-    match result {
+    match exporter.export() {
         Ok(prototypes) => {
+            let parsed: Value = serde_yaml::from_str(&prototypes)?;
+
             println!(
-                "Found {} items, here are a few: {:?}",
-                prototypes.item_prototypes.len(),
-                prototypes.item_prototypes.values().take(5).format(", ")
+                "Found {} items, {} recipes, and {} technologies, here are a few:",
+                parsed["item_prototypes"].as_object().unwrap().len(),
+                parsed["recipe_prototypes"].as_object().unwrap().len(),
+                parsed["technology_prototypes"].as_object().unwrap().len(),
             );
+            println!("{:#?}", parsed["item_prototypes"]["iron-plate"]);
+            println!("{:#?}", parsed["recipe_prototypes"]["iron-plate"]);
+            println!("{:#?}", parsed["technology_prototypes"]["logistics-2"]);
         }
-        Err(FactorioExecutionError { stdout, stderr }) => {
+        Err(FactorioExporterError::FactorioExecutionError { stdout, stderr }) => {
             printdoc! {r"
                 Failed to execute Factorio:
                 === STDOUT

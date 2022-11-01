@@ -1,12 +1,11 @@
 use thiserror::Error;
 
 pub use api::load_api;
-pub use exporter::export;
+pub use exporter::FactorioExporter;
 
 mod api;
 mod exporter;
 mod internal;
-mod prototypes;
 
 #[derive(Error, Debug)]
 pub enum FactorioExporterError {
