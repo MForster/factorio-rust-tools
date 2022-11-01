@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 <!-- next-header -->
 ## [Unreleased] - ReleaseDate
 
+## [0.1.2] - 2022-11-01
+
 ## [0.1.1] - 2022-11-01
 
 ### Important changes
@@ -29,5 +31,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Added the full feature as a library that can be embedded into other apps.
 
 <!-- next-url -->
-[Unreleased]: https://github.com/MForster/factorio-export/compare/v0.1.1...HEAD
+[Unreleased]: https://github.com/MForster/factorio-export/compare/v0.1.2...HEAD
+[0.1.2]: https://github.com/MForster/factorio-export/compare/v0.1.1...v0.1.2
 [0.1.1]: https://github.com/MForster/factorio-exporter/compare/v0.1.0...v0.1.1
