@@ -1,5 +1,5 @@
 use crate::{
-    api::{Api, Attribute, ComplexType, Type},
+    api::{is_number, Api, Attribute, HasAttributes, Type},
     exporter_script_builder::ExporterScriptBuilder,
 };
 
@@ -11,10 +11,10 @@ pub fn generate_exporter_script(api: &Api) -> String {
             .attributes
             .iter()
             .filter_map(|(_, attr)| {
-                if let Type::Complex(ComplexType::LuaCustomTable { value, .. }) = &attr.ty {
-                    if let Type::String(value_type) = &**value {
-                        if value_type.ends_with("Prototype") {
-                            return Some((value_type, &attr.name));
+                if let Type::LuaCustomTable { value, .. } = &attr.r#type {
+                    if let Type::NamedType { name } = &**value {
+                        if name.ends_with("Prototype") {
+                            return Some((name, &attr.name));
                         }
                     }
                 }
@@ -23,7 +23,7 @@ pub fn generate_exporter_script(api: &Api) -> String {
     {
         let object = script.begin_table(&format!("game.{attribute}"), attribute);
 
-        for attr in api.classes[class].attributes.values() {
+        for attr in api.classes[class].attributes() {
             visit_attribute(attr, &mut script, api, &object);
         }
         script.end_table();
@@ -32,17 +32,9 @@ pub fn generate_exporter_script(api: &Api) -> String {
     script.build()
 }
 
-fn is_number(ty: &Type) -> bool {
-    match ty {
-        Type::String(s) if s == "double" || s == "uint" => true,
-        Type::Complex(ComplexType::Union { options }) if options.iter().all(is_number) => true,
-        _ => false,
-    }
-}
-
 fn visit_attribute(attr: &Attribute, script: &mut ExporterScriptBuilder, api: &Api, object: &str) {
-    match &attr.ty {
-        Type::String(s) if s == "string" || s == "LocalisedString" => {
+    match &attr.r#type {
+        Type::String => {
             script.export_string(object, &attr.name);
         }
 
@@ -50,17 +42,17 @@ fn visit_attribute(attr: &Attribute, script: &mut ExporterScriptBuilder, api: &A
             script.export_number(object, &attr.name);
         }
 
-        Type::String(s) if s == "boolean" => {
+        Type::Boolean => {
             script.export_bool(object, &attr.name);
         }
 
-        Type::Complex(ComplexType::Array { value }) => {
-            if let Type::String(s) = &**value {
-                if let Some(concept) = api.concepts.get(s) {
-                    if let Type::Complex(ComplexType::Table {
+        Type::Array { value } => {
+            if let Type::NamedType { name } = &**value {
+                if let Some(concept) = api.concepts.get(name) {
+                    if let Type::Table {
                         parameters,
                         variant_parameter_groups,
-                    }) = &concept.ty
+                    } = &concept.r#type
                     {
                         let element = script.begin_array(object, &attr.name);
 
@@ -80,9 +72,9 @@ fn visit_attribute(attr: &Attribute, script: &mut ExporterScriptBuilder, api: &A
             }
         }
 
-        Type::Complex(ComplexType::Dictionary { value, .. }) => {
-            if let Type::String(s) = &**value {
-                if let Some(class) = api.classes.get(s) {
+        Type::Dictionary { value, .. } => {
+            if let Type::NamedType { name } = &**value {
+                if let Some(class) = api.classes.get(name) {
                     let element = script.begin_array(object, &attr.name);
 
                     for attr in class.attributes.values() {
