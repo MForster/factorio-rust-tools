@@ -6,11 +6,17 @@ A Rust library to export prototype definitions from
 This is both a library as well as a command line tool to export prototype
 definitions from Factorio.
 
+See crate page on [crates.io](https://crates.io/crates/factorio-exporter)
+
 ## Example invocation
 
 ```sh
 $ factorio_exporter ~/tmp/factorio-full -f json -d vanilla.json
 $ jq '.recipe_prototypes["iron-plate"]' vanilla.json
+```
+Output:
+
+```json
 {
   "allow_as_intermediate": true,
   "allow_decomposition": true,
@@ -56,7 +62,7 @@ $ jq '.recipe_prototypes["iron-plate"]' vanilla.json
 ## Command line
 
 ```sh
->> factorio_exporter --help
+$ factorio_exporter --help
 Exports prototypes from Factorio in JSON or YAML format
 
 Usage: factorio_exporter [OPTIONS] <FACTORIO_DIR>
@@ -73,7 +79,8 @@ Options:
 
 ## Library
 
-See [factorio_exporter.rs](./src/bin/factorio_exporter.rs) for how to use the crate as a library.
+See [factorio_exporter.rs](https://github.com/MForster/factorio-exporter/blob/main/src/bin/factorio_exporter.rs)
+for how to use the crate as a library.
 
 ## Status
 
