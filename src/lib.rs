@@ -1,10 +1,10 @@
 use thiserror::Error;
 
 pub use api::load_api;
-pub use driver::export;
+pub use exporter::export;
 
 mod api;
-mod driver;
+mod exporter;
 mod internal;
 mod prototypes;
 
