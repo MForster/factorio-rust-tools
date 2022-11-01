@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 <!-- next-header -->
 ## [Unreleased] - ReleaseDate
 
+## [0.1.1] - 2022-11-01
+
 ### Important changes
 
 - The MSRV is now 1.60.0. This makes only explicit what already was the
@@ -27,4 +29,5 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Added the full feature as a library that can be embedded into other apps.
 
 <!-- next-url -->
-[Unreleased]: https://github.com/MForster/factorio-exporter/compare/v0.0.1...HEAD
+[Unreleased]: https://github.com/MForster/factorio-export/compare/v0.1.1...HEAD
+[0.1.1]: https://github.com/MForster/factorio-exporter/compare/v0.0.1...v0.1.1
