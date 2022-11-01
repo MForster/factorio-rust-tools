@@ -1,10 +1,10 @@
 use crate::{
     api::{is_number, Api, Attribute, HasAttributes, Type},
-    exporter_script_builder::ExporterScriptBuilder,
+    script_builder::ScriptBuilder,
 };
 
 pub fn generate_exporter_script(api: &Api) -> String {
-    let mut script = ExporterScriptBuilder::new();
+    let mut script = ScriptBuilder::new();
 
     for (class, attribute) in
         api.classes["LuaGameScript"]
@@ -32,7 +32,7 @@ pub fn generate_exporter_script(api: &Api) -> String {
     script.build()
 }
 
-fn visit_attribute(attr: &Attribute, script: &mut ExporterScriptBuilder, api: &Api, object: &str) {
+fn visit_attribute(attr: &Attribute, script: &mut ScriptBuilder, api: &Api, object: &str) {
     match &attr.r#type {
         Type::String => {
             script.export_string(object, &attr.name);

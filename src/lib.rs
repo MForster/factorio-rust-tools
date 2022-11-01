@@ -1,10 +1,10 @@
 mod api;
-mod api_generator;
 mod driver;
 pub mod errors;
-mod exporter_script_builder;
 mod mod_controller;
 mod prototypes;
+mod script_builder;
+mod script_generator;
 
 use std::{
     fs::{self},

@@ -3,14 +3,14 @@ use std::fmt::{self, Write};
 use indoc::writedoc;
 
 #[derive(Default)]
-pub struct ExporterScriptBuilder {
+pub struct ScriptBuilder {
     script: String,
     indentation: usize,
 }
 
-impl ExporterScriptBuilder {
-    pub fn new() -> ExporterScriptBuilder {
-        let mut builder = ExporterScriptBuilder::default();
+impl ScriptBuilder {
+    pub fn new() -> ScriptBuilder {
+        let mut builder = ScriptBuilder::default();
 
         writedoc! {&mut builder, "
             local prototypes={{}}
@@ -84,7 +84,7 @@ impl ExporterScriptBuilder {
         self.script
     }
 }
-impl Write for ExporterScriptBuilder {
+impl Write for ScriptBuilder {
     fn write_str(&mut self, s: &str) -> fmt::Result {
         let indentation = if self.script.is_empty() || self.script.ends_with('\n') {
             self.indentation

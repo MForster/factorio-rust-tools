@@ -13,10 +13,10 @@ use tracing::{debug, error, info};
 
 use crate::{
     api::Api,
-    api_generator::generate_exporter_script,
     errors::{FactorioExporterError::FactorioExecutionError, Result},
     mod_controller::{ModController, ModManifestBuilder},
     prototypes::PrototypeExport,
+    script_generator::generate_exporter_script,
 };
 
 const CONFIG: &str = "config.ini";
