@@ -104,5 +104,5 @@ prototypes of loaded mods. This isn't implemented, yet, however.
 
 ## Contributing
 
-Contributions are welcome! Feel free to send pull request, but if you want to
+Contributions are welcome! Feel free to send pull requests, but if you want to
 make large-scale changes it would make sense to discuss them first.
