@@ -70,12 +70,8 @@ impl FactorioExporter<'_> {
             "--instrument-mod", MOD_NAME,
         ])?;
 
+        info!("parse Factorio output");
         self.parse_output(&String::from_utf8_lossy(&output.stdout))
-    }
-
-    pub fn json(&self) -> Result<String> {
-        let json: serde_json::Value = serde_yaml::from_str(&self.export()?)?;
-        Ok(json.to_string())
     }
 
     fn create_exec_dir(&self) -> Result<()> {
