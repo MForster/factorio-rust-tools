@@ -14,6 +14,7 @@ See crate page on [crates.io](https://crates.io/crates/factorio-exporter)
 $ factorio_exporter ~/tmp/factorio-full -f json -d vanilla.json
 $ jq '.recipe_prototypes["iron-plate"]' vanilla.json
 ```
+
 Output:
 
 ```json
@@ -97,7 +98,7 @@ definition of the prototypes. It tries to achieve that goal by two design decisi
   used in the game.
 
 * The list of exported properties is taken from the [official
-  definition](https://lua-api.factorio.com/latest/runtime-api.json).
+  definition](https://lua-api.factorio.com/latest/json-docs.html).
 
 Another consequence of this design is that it will be possible to export the
 prototypes of loaded mods. This isn't implemented, yet, however.
