@@ -7,16 +7,17 @@ use std::{
 
 use indoc::writedoc;
 
+use itertools::Itertools;
 use regex::{Captures, Regex};
 use tempdir::TempDir;
 use tracing::{debug, error, info};
 
 use crate::{
-    api::Api,
-    api_generator::generate_exporter_script,
+    api::{Api, HasAttributes},
     errors::{FactorioExporterError::FactorioExecutionError, Result},
     mod_controller::{ModController, ModManifestBuilder},
     prototypes::PrototypeExport,
+    script_generator::ScriptGenerator,
 };
 
 const CONFIG: &str = "config.ini";
@@ -65,6 +66,13 @@ fn create_exec_dir(exec_dir: &Path, locale: &str) -> Result<()> {
 }
 
 fn create_exporter_mod(temp_dir: &TempDir, api: &Api) -> Result<()> {
+    let attrs = api.classes["LuaGameScript"]
+        .attributes()
+        .iter()
+        .copied()
+        .filter(|attr| attr.name.ends_with("prototypes"))
+        .collect_vec();
+
     ModController::new(temp_dir.path().join(MODS_DIR))
         .create_mod(
             ModManifestBuilder::default()
@@ -80,7 +88,10 @@ fn create_exporter_mod(temp_dir: &TempDir, api: &Api) -> Result<()> {
             "instrument-control.lua",
             include_str!("../lua/instrument-control.lua"),
         )?
-        .add_file("prototypes.lua", &generate_exporter_script(api))?;
+        .add_file(
+            "prototypes.lua",
+            &ScriptGenerator::new(api).generate("game", attrs),
+        )?;
 
     Ok(())
 }
