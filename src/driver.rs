@@ -9,7 +9,7 @@ use indoc::writedoc;
 
 use itertools::Itertools;
 use regex::{Captures, Regex};
-use tempdir::TempDir;
+use tempfile::TempDir;
 use tracing::{debug, error, info};
 
 use crate::{
@@ -27,7 +27,7 @@ const MOD_VERSION: &str = "0.0.1";
 const MODS_DIR: &str = "mods";
 
 pub fn export(factorio_dir: &Path, api: &Api, locale: &str) -> Result<PrototypeExport> {
-    let temp_dir = TempDir::new(MOD_NAME)?;
+    let temp_dir = tempfile::Builder::new().prefix(MOD_NAME).tempdir()?;
 
     create_exec_dir(temp_dir.path(), locale)?;
     create_exporter_mod(&temp_dir, api)?;
