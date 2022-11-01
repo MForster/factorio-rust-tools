@@ -68,7 +68,7 @@ impl ScriptBuilder {
     }
 
     pub fn begin_array(&mut self, array: &str, attribute: &str) -> String {
-        self.begin_block("Array", array, &format!("{array}.{attribute}"))
+        self.begin_block("Array", &format!("{array}.{attribute}"), attribute)
     }
 
     pub fn end_array(&mut self) {
