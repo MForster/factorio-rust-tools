@@ -19,6 +19,8 @@ pub enum FactorioExporterError {
     YamlParsingError(#[from] serde_yaml::Error),
     #[error("error while executing Factorio")]
     FactorioExecutionError { stdout: String, stderr: String },
+    #[error("failed to parse Factorio output")]
+    FactorioOutputError { message: String, output: String },
 }
 
 pub type Result<T> = std::result::Result<T, FactorioExporterError>;

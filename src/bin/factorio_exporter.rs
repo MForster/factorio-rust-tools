@@ -21,6 +21,10 @@ struct Args {
     /// Format of the output
     #[arg(long, short, default_value = "json")]
     format: OutputFormat,
+
+    /// Export icon paths
+    #[arg(long, short)]
+    icons: bool,
 }
 
 #[derive(Clone, Debug, ValueEnum)]
@@ -35,11 +39,11 @@ fn main() -> Result<()> {
     debug!("Parsed arguments: {:?}", args);
 
     let api = load_api(&args.factorio_dir)?;
-    let exporter = FactorioExporter::new(&args.factorio_dir, &api, "en")?;
+    let exporter = FactorioExporter::new(&args.factorio_dir, &api, "en", args.icons)?;
 
     match exporter.export() {
         Ok(prototypes) => {
-            let parsed: Value = serde_yaml::from_str(&prototypes)?;
+            let parsed: Value = serde_yaml::from_value(prototypes)?;
 
             let output = match args.format {
                 OutputFormat::Json => serde_json::to_string_pretty(&parsed)?,

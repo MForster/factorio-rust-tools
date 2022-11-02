@@ -1,14 +1,17 @@
 use std::{
+    collections::HashMap,
     fs::File,
     io::Write,
     path::Path,
     process::{Command, Output},
 };
 
+use convert_case::{Case, Casing};
 use indoc::writedoc;
-
 use itertools::Itertools;
 use regex::{Captures, Regex};
+use serde_derive::Deserialize;
+use serde_yaml::Value;
 use tempfile::TempDir;
 use tracing::{debug, error, info};
 
@@ -18,7 +21,7 @@ use crate::{
         mod_controller::{ModController, ModManifestBuilder},
         script_generator::ScriptGenerator,
     },
-    FactorioExporterError::FactorioExecutionError,
+    FactorioExporterError::{self, FactorioExecutionError},
     Result,
 };
 
@@ -33,6 +36,7 @@ pub struct FactorioExporter<'a> {
     api: &'a Api,
     locale: &'a str,
     temp_dir: TempDir,
+    export_icons: bool,
 }
 
 impl FactorioExporter<'_> {
@@ -40,12 +44,14 @@ impl FactorioExporter<'_> {
         factorio_dir: &'a Path,
         api: &'a Api,
         locale: &'a str,
+        export_icons: bool,
     ) -> Result<FactorioExporter<'a>> {
         Ok(FactorioExporter {
             factorio_dir,
             api,
             locale,
             temp_dir: tempfile::Builder::new().prefix(MOD_NAME).tempdir()?,
+            export_icons,
         })
     }
 }
@@ -54,7 +60,7 @@ const FACTORIO_BINPATH: &str = "bin/x64/factorio";
 const ARGS: &[&str] = &["--config", CONFIG, "--mod-directory", MODS_DIR];
 
 impl FactorioExporter<'_> {
-    pub fn export(&self) -> Result<String> {
+    pub fn export(&self) -> Result<Value> {
         self.create_exec_dir()?;
         self.create_exporter_mod()?;
 
@@ -81,12 +87,12 @@ impl FactorioExporter<'_> {
         writedoc!(
             File::create(config)?,
             r#"
-            [path]
-            read-data=__PATH__executable__/../../data
-            write-data=.
-            [general]
-            locale={}
-        "#,
+                [path]
+                read-data=__PATH__executable__/../../data
+                write-data=.
+                [general]
+                locale={}
+            "#,
             self.locale
         )?;
         Ok(())
@@ -111,6 +117,10 @@ impl FactorioExporter<'_> {
                     .unwrap(),
             )?
             .add_file("export.lua", include_str!("../lua/export.lua"))?
+            .add_file(
+                "instrument-after-data.lua",
+                include_str!("../lua/instrument-after-data.lua"),
+            )?
             .add_file(
                 "instrument-control.lua",
                 include_str!("../lua/instrument-control.lua"),
@@ -144,21 +154,96 @@ impl FactorioExporter<'_> {
         Ok(output)
     }
 
-    fn parse_output(&self, s: &str) -> Result<String> {
-        let begin = s.find("<EXPORT>").expect("Didn't find <EXPORT> marker");
-        let end = s.find("</EXPORT>").expect("Didn't find </EXPORT> marker");
-        let yaml = &s[begin + 8..end];
+    fn find_section<'a>(output: &'a str, marker: &str) -> Result<&'a str> {
+        let start_marker = format!("<{marker}>");
+        let start = output.find(&start_marker).ok_or_else(|| {
+            FactorioExporterError::FactorioOutputError {
+                message: format!("Didn't find {start_marker} marker"),
+                output: output.into(),
+            }
+        })?;
 
+        let stop_marker = format!("</{marker}>");
+        let stop = output.find(&stop_marker).ok_or_else(|| {
+            FactorioExporterError::FactorioOutputError {
+                message: format!("Didn't find {stop_marker} marker"),
+                output: output.into(),
+            }
+        })?;
+
+        Ok(&output[start + start_marker.len()..stop])
+    }
+
+    fn parse_output(&self, s: &str) -> Result<Value> {
         // Unfortunately we have no control over the string printed by Lua's
         // `localised_print`. There can be single/double quotes or new lines in
         // there. Neither JSON nor YAML can deal with that well. YAML could if we
         // had a way to control the indentation, but we don't. So, let's solve it
         // the hacky way: post-processing.
+
+        debug!("parse prototype output");
+
         let re = Regex::new(r"(?s)<STRING>(.*?)</STRING>").unwrap();
-        Ok(re
-            .replace_all(yaml, |caps: &Captures| {
-                format!("'{}'", &caps[1].replace('\n', "\\n").replace('\'', "''"))
-            })
-            .into())
+        let sanitized = re.replace_all(Self::find_section(s, "EXPORT")?, |caps: &Captures| {
+            format!("'{}'", &caps[1].replace('\n', "\\n").replace('\'', "''"))
+        });
+        let mut data: Value = serde_yaml::from_str::<Value>(&sanitized)?;
+
+        // Icon paths are not available in Factorio's runtime stage, so we must
+        // resort to getting them in the data stage. Unfortunately data
+        // structures in the data stage are a bit messy, so we need to apply
+        // some heuristics to map icons into the prototypes that we get in the
+        // runtime stage. We add an icon property to a prototype if it's `name`
+        // and `object_name` or `type` match the section names and section
+        // element names in `data.raw`.
+
+        if self.export_icons {
+            debug!("parse icons output");
+
+            let icons: Vec<Icon> = serde_yaml::from_str(Self::find_section(s, "ICONS")?)?;
+            let icons: HashMap<(&str, &str), &str> = icons
+                .iter()
+                .map(|icon| ((icon.name, icon.section), icon.path))
+                .collect();
+
+            debug!("patch icons into prototypes");
+
+            let object_name_pattern = regex::Regex::new("Lua(.*)Prototype").unwrap();
+            for (_, section) in data.as_mapping_mut().expect("root should be a mapping") {
+                if let Value::Mapping(section) = section {
+                    for (name, el) in section {
+                        let name = name.as_str().expect("key should be a string");
+                        let val = el.as_mapping_mut().expect("value should be mapping");
+
+                        if let Some(path) = val
+                            .get("type")
+                            .and_then(|value| value.as_str())
+                            .and_then(|ty| icons.get(&(name, ty)).map(|r| r.to_string()))
+                            .or_else(|| {
+                                val.get("object_name")
+                                    .and_then(|value| value.as_str())
+                                    .and_then(|name| {
+                                        object_name_pattern
+                                            .captures(name)
+                                            .map(|captures| (&captures[1]).to_case(Case::Kebab))
+                                    })
+                                    .and_then(|ty| icons.get(&(name, &ty)).map(|r| r.to_string()))
+                            })
+                        {
+                            val.insert("icon".into(), (*path).into());
+                        };
+                    }
+                }
+            }
+        }
+
+        Ok(data)
     }
+}
+
+#[derive(Debug, Deserialize)]
+struct Icon<'a> {
+    section: &'a str,
+    name: &'a str,
+    path: &'a str,
 }
