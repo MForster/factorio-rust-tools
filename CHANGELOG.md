@@ -8,6 +8,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 <!-- next-header -->
 ## [Unreleased] - ReleaseDate
 
+### New features
+
+- Factorio Exporter can now export icon paths for prototypes.
+
+### Incompatible changes
+
+- To avoid double parsing, `FactorioExporter::export` now returns a
+  `serde_yaml::Value` instead of a `String`.
+
 ## [0.1.2] - 2022-11-01
 
 ## [0.1.1] - 2022-11-01
