@@ -40,13 +40,13 @@ impl<'a> ScriptGenerator<'a> {
                     self.script.export_bool(object, &attr.name);
                 }
 
-                Array { value } | Dictionary { value, .. } => {
+                Array { value } => {
                     let element = self.script.begin_array(object, &attr.name);
                     self.export_value(&element, value, depth);
                     self.script.end_array();
                 }
 
-                LuaCustomTable { value, .. } => {
+                LuaCustomTable { value, .. } | Dictionary { value, .. } => {
                     let table = format!("{object}.{}", attr.name);
                     let element = self.script.begin_table(&table, &attr.name);
                     self.export_value(&element, value, depth);
