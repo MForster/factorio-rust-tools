@@ -13,7 +13,7 @@ function Indent(callback)
     indent = old_indent
 end
 
-function export.ExportString(name, value)
+function export.ExportStringAttr(name, value)
     -- Unfortunately we have no control over the string printed by
     -- `localised_print`. There can be single/double quotes or new lines in
     -- there. Neither JSON nor YAML can deal with that well. YAML could if we
@@ -24,7 +24,7 @@ function export.ExportString(name, value)
     end
 end
 
-function export.ExportNumber(name, value)
+function export.ExportNumberAttr(name, value)
     -- Number values shouldn't be false, but it happens.
     -- Let's map them to numbers in a sensible way.
     if value ~= nil then
@@ -38,9 +38,15 @@ function export.ExportNumber(name, value)
     end
 end
 
-function export.ExportBool(name, value)
+function export.ExportBoolAttr(name, value)
     if value ~= nil then
         export.Export(name, ": ", value)
+    end
+end
+
+function export.ExportBoolValue(value)
+    if value ~= nil then
+        export.Export(value)
     end
 end
 

@@ -29,15 +29,15 @@ impl<'a> ScriptGenerator<'a> {
             use self::Type::*;
             match &attr.r#type {
                 String => {
-                    self.script.export_string(object, &attr.name);
+                    self.script.export_string_attr(object, &attr.name);
                 }
 
                 r#type if is_number(r#type) => {
-                    self.script.export_number(object, &attr.name);
+                    self.script.export_number_attr(object, &attr.name);
                 }
 
                 Boolean => {
-                    self.script.export_bool(object, &attr.name);
+                    self.script.export_bool_attr(object, &attr.name);
                 }
 
                 Array { value } => {
@@ -60,19 +60,23 @@ impl<'a> ScriptGenerator<'a> {
 
     fn export_value(&mut self, object: &str, ty: &Type, depth: usize) {
         let depth = depth + 1;
-        if let Type::NamedType { name } = ty {
-            if let Some(class) = self.api.classes.get(name) {
-                let mut attrs = class.attributes();
-                // TODO: Cut infinite recursion in a more principled way
-                if depth > 1 {
-                    attrs.retain(|a| a.name == "name")
+        match ty {
+            Type::NamedType { name } => {
+                if let Some(class) = self.api.classes.get(name) {
+                    let mut attrs = class.attributes();
+                    // TODO: Cut infinite recursion in a more principled way
+                    if depth > 1 {
+                        attrs.retain(|a| a.name == "name")
+                    }
+                    self.export_attrs(object, attrs, depth);
                 }
-                self.export_attrs(object, attrs, depth);
-            }
 
-            if let Some(concept) = self.api.concepts.get(name) {
-                self.export_attrs(object, concept.attributes(), depth);
+                if let Some(concept) = self.api.concepts.get(name) {
+                    self.export_attrs(object, concept.attributes(), depth);
+                }
             }
+            Type::Boolean => self.script.export_bool_value(object),
+            _ => (),
         };
     }
 }
