@@ -8,6 +8,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 <!-- next-header -->
 ## [Unreleased] - ReleaseDate
 
+## Important changes
+
+Dictionaries with boolean values are now exported correctly, see
+[#33](https://github.com/MForster/factorio-exporter/issues/33)
+
 ## [0.2.0] - 2022-11-02
 
 ### New features

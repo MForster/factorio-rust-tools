@@ -23,24 +23,27 @@ impl ScriptBuilder {
         builder
     }
 
-    pub fn export_primitive(&mut self, primitive_type: &str, object: &str, property: &str) {
+    pub fn export_primitive_attr(&mut self, primitive_type: &str, object: &str, property: &str) {
         writeln!(
             self,
-            r#"export.Export{primitive_type}("{property}", {object}.{property})"#,
+            r#"export.Export{primitive_type}Attr("{property}", {object}.{property})"#,
         )
         .unwrap();
     }
 
-    pub fn export_string(&mut self, object: &str, property: &str) {
-        self.export_primitive("String", object, property);
+    pub fn export_bool_value(&mut self, value: &str) {
+        writeln!(self, r#"export.ExportBoolValue({value})"#,).unwrap();
+    }
+    pub fn export_string_attr(&mut self, object: &str, property: &str) {
+        self.export_primitive_attr("String", object, property);
     }
 
-    pub fn export_number(&mut self, object: &str, property: &str) {
-        self.export_primitive("Number", object, property);
+    pub fn export_number_attr(&mut self, object: &str, property: &str) {
+        self.export_primitive_attr("Number", object, property);
     }
 
-    pub fn export_bool(&mut self, object: &str, property: &str) {
-        self.export_primitive("Bool", object, property);
+    pub fn export_bool_attr(&mut self, object: &str, property: &str) {
+        self.export_primitive_attr("Bool", object, property);
     }
 
     pub fn begin_block(&mut self, block_type: &str, object: &str, attribute: &str) -> String {
