@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 <!-- next-header -->
 ## [Unreleased] - ReleaseDate
 
+### New features
+
+- It is now possible to install mods before exporting the prototype definitions
+
 ## Important changes
 
 Dictionaries with boolean values are now exported correctly, see

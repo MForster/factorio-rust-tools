@@ -36,6 +36,7 @@ pub struct FactorioExporter<'a> {
     api: &'a Api,
     locale: &'a str,
     temp_dir: TempDir,
+    mod_controller: ModController,
     export_icons: bool,
 }
 
@@ -46,11 +47,14 @@ impl FactorioExporter<'_> {
         locale: &'a str,
         export_icons: bool,
     ) -> Result<FactorioExporter<'a>> {
+        let temp_dir = tempfile::Builder::new().prefix(MOD_NAME).tempdir()?;
+        let mod_controller = ModController::new(temp_dir.path().join(MODS_DIR));
         Ok(FactorioExporter {
             factorio_dir,
             api,
             locale,
-            temp_dir: tempfile::Builder::new().prefix(MOD_NAME).tempdir()?,
+            temp_dir,
+            mod_controller,
             export_icons,
         })
     }
@@ -98,6 +102,20 @@ impl FactorioExporter<'_> {
         Ok(())
     }
 
+    pub fn install_mods<I, P>(&self, mods: I) -> Result<()>
+    where
+        I: IntoIterator<Item = P>,
+        P: AsRef<Path>,
+    {
+        info!("installing mods");
+
+        for m in mods {
+            debug!("installing mod: {:?}", m.as_ref());
+            self.mod_controller.add_mod(m.as_ref())?;
+        }
+        Ok(())
+    }
+
     fn create_exporter_mod(&self) -> Result<()> {
         let attrs = self.api.classes["LuaGameScript"]
             .attributes()
@@ -106,7 +124,7 @@ impl FactorioExporter<'_> {
             .filter(|attr| attr.name.ends_with("prototypes"))
             .collect_vec();
 
-        ModController::new(self.temp_dir.path().join(MODS_DIR))
+        self.mod_controller
             .create_mod(
                 ModManifestBuilder::default()
                     .name(MOD_NAME)

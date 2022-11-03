@@ -25,6 +25,9 @@ struct Args {
     /// Export icon paths
     #[arg(long, short)]
     icons: bool,
+
+    /// Mods to install before exporting the prototypes
+    mods: Vec<PathBuf>,
 }
 
 #[derive(Clone, Debug, ValueEnum)]
@@ -40,6 +43,8 @@ fn main() -> Result<()> {
 
     let api = load_api(&args.factorio_dir)?;
     let exporter = FactorioExporter::new(&args.factorio_dir, &api, "en", args.icons)?;
+
+    exporter.install_mods(&args.mods)?;
 
     match exporter.export() {
         Ok(prototypes) => {

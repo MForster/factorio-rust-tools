@@ -1,6 +1,6 @@
 use std::{
     fs::{self},
-    path::PathBuf,
+    path::{Path, PathBuf},
 };
 
 use derive_builder::Builder;
@@ -18,6 +18,24 @@ pub struct ModController {
 impl ModController {
     pub fn new(mods_dir: PathBuf) -> ModController {
         ModController { mods_dir }
+    }
+
+    #[cfg(unix)]
+    fn copy_or_link<P: AsRef<Path>, Q: AsRef<Path>>(from: P, to: Q) -> Result<()> {
+        std::os::unix::fs::symlink(from, to)?;
+        Ok(())
+    }
+
+    #[cfg(not(unix))]
+    fn copy_or_link<P: AsRef<Path>, Q: AsRef<Path>>(from: P, to: Q) -> Result<()> {
+        fs::copy(from, to)?;
+        Ok(())
+    }
+
+    pub fn add_mod(&self, path: &Path) -> Result<()> {
+        fs::create_dir_all(&self.mods_dir)?;
+        Self::copy_or_link(path, &self.mods_dir.join(path.file_name().unwrap()))?;
+        Ok(())
     }
 
     pub fn create_mod(&self, manifest: ModManifest) -> Result<Mod> {

@@ -11,8 +11,7 @@ See crate page on [crates.io](https://crates.io/crates/factorio-exporter)
 ## Example invocation
 
 ```sh
-$ factorio_exporter ~/tmp/factorio-full -f json -d vanilla.json
-$ jq '.recipe_prototypes["iron-plate"]' vanilla.json
+factorio_exporter ~/tmp/factorio-full -f json | jq '.recipe_prototypes["iron-plate"]'
 ```
 
 Output:
@@ -66,14 +65,16 @@ Output:
 $ factorio_exporter --help
 Exports prototypes from Factorio in JSON or YAML format
 
-Usage: factorio_exporter [OPTIONS] <FACTORIO_DIR>
+Usage: factorio_exporter [OPTIONS] <FACTORIO_DIR> [MODS]...
 
 Arguments:
   <FACTORIO_DIR>  Directory where Factorio is installed. This needs to be the full version. Neither the demo nor the headless version are sufficient
+  [MODS]...       Mods to install before exporting the prototypes
 
 Options:
   -d, --destination <DESTINATION>  Path where the result should be written. Uses STDOUT if not specified
   -f, --format <FORMAT>            Format of the output [default: json] [possible values: json, yaml]
+  -i, --icons                      Export icon paths
   -h, --help                       Print help information
   -V, --version                    Print version information
 ```
@@ -100,8 +101,8 @@ definition of the prototypes. It tries to achieve that goal by two design decisi
 * The list of exported properties is taken from the [official
   definition](https://lua-api.factorio.com/latest/json-docs.html).
 
-Another consequence of this design is that it will be possible to export the
-prototypes of loaded mods. This isn't implemented, yet, however.
+Another consequence of this design is that it allows to export the
+prototypes of loaded mods.
 
 ## Contributing
 
