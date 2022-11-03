@@ -12,10 +12,41 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 - It is now possible to install mods before exporting the prototype definitions
 
-## Important changes
+## Incompatible changes
 
-Dictionaries with boolean values are now exported correctly, see
-[#33](https://github.com/MForster/factorio-exporter/issues/33)
+-Dictionaries and boolean values are now exported correctly, see
+ [#33](https://github.com/MForster/factorio-exporter/issues/33). Example:
+
+```diff
+     "assembling-machine-2": {
+       "additional_pastable_entities": null,
+       "allow_copy_paste": true,
+-      "allowed_effects": null,
++      "allowed_effects": {
++        "consumption": true,
++        "pollution": true,
++        "productivity": true,
++        "speed": true
++      },
+       "attack_result": null,
+       "build_base_evolution_requirement": 0,
+       "building_grid_bit_shift": 1,
+```
+
+```diff
+       "name": "advanced-electronics-2",
+       "object_name": "LuaTechnologyPrototype",
+       "order": "a-d-c",
+-      "prerequisites": null,
++      "prerequisites": {
++        "chemical-science-pack": {
++          "name": "chemical-science-pack"
++        }
++      },
+       "research_unit_count": 300,
+       "research_unit_energy": 1800,
+       "research_unit_ingredients": [
+```
 
 ## [0.2.0] - 2022-11-02
 
