@@ -16,7 +16,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## Incompatible changes
 
--Dictionaries and boolean values are now exported correctly, see
+- Dictionaries and boolean values are now exported correctly, see
  [#33](https://github.com/MForster/factorio-exporter/issues/33). Example:
 
 ```diff
