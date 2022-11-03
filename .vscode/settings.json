@@ -1,4 +1,8 @@
 {
   "nixEnvSelector.nixFile": "${workspaceRoot}/shell.nix",
-  "rust-analyzer.cargo.features": "all"
+  "rust-analyzer.cargo.features": "all",
+  "markdownlint.config": {
+    "commands-show-output": false,
+    "no-duplicate-header": false
+  }
 }

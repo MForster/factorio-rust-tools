@@ -11,7 +11,7 @@ See crate page on [crates.io](https://crates.io/crates/factorio-exporter)
 ## Example invocation
 
 ```sh
-factorio_exporter ~/tmp/factorio-full -f json | jq '.recipe_prototypes["iron-plate"]'
+$ factorio_exporter ~/tmp/factorio-full -f json | jq '.recipe_prototypes["iron-plate"]'
 ```
 
 Output:
