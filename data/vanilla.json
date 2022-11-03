@@ -29155,7 +29155,7 @@
   "equipment_grid_prototypes": {
     "large-equipment-grid": {
       "equipment_categories": [
-        null
+        "armor"
       ],
       "height": 10,
       "localised_description": "Unknown key: \"equipment-grid-description.large-equipment-grid\"",
@@ -29169,7 +29169,7 @@
     },
     "medium-equipment-grid": {
       "equipment_categories": [
-        null
+        "armor"
       ],
       "height": 7,
       "localised_description": "Unknown key: \"equipment-grid-description.medium-equipment-grid\"",
@@ -29183,7 +29183,7 @@
     },
     "small-equipment-grid": {
       "equipment_categories": [
-        null
+        "armor"
       ],
       "height": 5,
       "localised_description": "Unknown key: \"equipment-grid-description.small-equipment-grid\"",
@@ -29197,7 +29197,7 @@
     },
     "spidertron-equipment-grid": {
       "equipment_categories": [
-        null
+        "armor"
       ],
       "height": 6,
       "localised_description": "Unknown key: \"equipment-grid-description.spidertron-equipment-grid\"",
@@ -29217,7 +29217,7 @@
       "energy_per_shield": 0,
       "energy_production": 0,
       "equipment_categories": [
-        null
+        "armor"
       ],
       "localised_description": "Unknown key: \"equipment-description.battery-equipment\"",
       "localised_name": "Personal battery",
@@ -29234,7 +29234,7 @@
       "energy_per_shield": 0,
       "energy_production": 0,
       "equipment_categories": [
-        null
+        "armor"
       ],
       "localised_description": "Unknown key: \"equipment-description.battery-mk2-equipment\"",
       "localised_name": "Personal battery MK2",
@@ -29251,7 +29251,7 @@
       "energy_per_shield": 0,
       "energy_production": 0,
       "equipment_categories": [
-        null
+        "armor"
       ],
       "localised_description": "Unknown key: \"equipment-description.belt-immunity-equipment\"",
       "localised_name": "Belt immunity equipment",
@@ -29268,7 +29268,7 @@
       "energy_per_shield": 0,
       "energy_production": 0,
       "equipment_categories": [
-        null
+        "armor"
       ],
       "localised_description": "Unknown key: \"equipment-description.discharge-defense-equipment\"",
       "localised_name": "Discharge defense",
@@ -29285,7 +29285,7 @@
       "energy_per_shield": 20000,
       "energy_production": 0,
       "equipment_categories": [
-        null
+        "armor"
       ],
       "localised_description": "Unknown key: \"equipment-description.energy-shield-equipment\"",
       "localised_name": "Energy shield",
@@ -29302,7 +29302,7 @@
       "energy_per_shield": 30000,
       "energy_production": 0,
       "equipment_categories": [
-        null
+        "armor"
       ],
       "localised_description": "Unknown key: \"equipment-description.energy-shield-mk2-equipment\"",
       "localised_name": "Energy shield MK2",
@@ -29319,7 +29319,7 @@
       "energy_per_shield": 0,
       "energy_production": 0,
       "equipment_categories": [
-        null
+        "armor"
       ],
       "localised_description": "Unknown key: \"equipment-description.exoskeleton-equipment\"",
       "localised_name": "Exoskeleton",
@@ -29336,7 +29336,7 @@
       "energy_per_shield": 0,
       "energy_production": 12500,
       "equipment_categories": [
-        null
+        "armor"
       ],
       "localised_description": "Unknown key: \"equipment-description.fusion-reactor-equipment\"",
       "localised_name": "Portable fusion reactor",
@@ -29353,7 +29353,7 @@
       "energy_per_shield": 0,
       "energy_production": 0,
       "equipment_categories": [
-        null
+        "armor"
       ],
       "localised_description": "Unknown key: \"equipment-description.night-vision-equipment\"",
       "localised_name": "Nightvision",
@@ -29370,7 +29370,7 @@
       "energy_per_shield": 0,
       "energy_production": 0,
       "equipment_categories": [
-        null
+        "armor"
       ],
       "localised_description": "Unknown key: \"equipment-description.personal-laser-defense-equipment\"",
       "localised_name": "Personal laser defense",
@@ -29387,7 +29387,7 @@
       "energy_per_shield": 0,
       "energy_production": 0,
       "equipment_categories": [
-        null
+        "armor"
       ],
       "localised_description": "Unknown key: \"equipment-description.personal-roboport-equipment\"",
       "localised_name": "Personal roboport",
@@ -29404,7 +29404,7 @@
       "energy_per_shield": 0,
       "energy_production": 0,
       "equipment_categories": [
-        null
+        "armor"
       ],
       "localised_description": "Unknown key: \"equipment-description.personal-roboport-mk2-equipment\"",
       "localised_name": "Personal roboport MK2",
@@ -29421,7 +29421,7 @@
       "energy_per_shield": 0,
       "energy_production": 500,
       "equipment_categories": [
-        null
+        "armor"
       ],
       "localised_description": "Unknown key: \"equipment-description.solar-panel-equipment\"",
       "localised_name": "Portable solar panel",

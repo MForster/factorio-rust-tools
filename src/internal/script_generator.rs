@@ -46,7 +46,9 @@ impl<'a> ScriptGenerator<'a> {
                     self.script.end_array();
                 }
 
-                LuaCustomTable { value, .. } | Dictionary { value, .. } => {
+                LuaCustomTable { key, value } | Dictionary { key, value }
+                    if matches!(key.as_ref(), String) =>
+                {
                     let table = format!("{object}.{}", attr.name);
                     let element = self.script.begin_table(&table, &attr.name);
                     self.export_value(&element, value, depth);
@@ -58,7 +60,7 @@ impl<'a> ScriptGenerator<'a> {
         }
     }
 
-    fn export_value(&mut self, object: &str, ty: &Type, depth: usize) {
+    fn export_value(&mut self, value: &str, ty: &Type, depth: usize) {
         let depth = depth + 1;
         match ty {
             Type::NamedType { name } => {
@@ -68,15 +70,19 @@ impl<'a> ScriptGenerator<'a> {
                     if depth > 1 {
                         attrs.retain(|a| a.name == "name")
                     }
-                    self.export_attrs(object, attrs, depth);
+                    self.export_attrs(value, attrs, depth);
                 }
 
                 if let Some(concept) = self.api.concepts.get(name) {
-                    self.export_attrs(object, concept.attributes(), depth);
+                    self.export_attrs(value, concept.attributes(), depth);
                 }
             }
-            Type::Boolean => self.script.export_bool_value(object),
-            _ => (),
+
+            Type::String => self.script.export_string_value(value),
+            r#type if is_number(r#type) => self.script.export_number_value(value),
+            Type::Boolean => self.script.export_bool_value(value),
+
+            _ => unimplemented!("export_value for {value}"),
         };
     }
 }

@@ -23,6 +23,22 @@ impl ScriptBuilder {
         builder
     }
 
+    pub fn export_primitive_value(&mut self, primitive_type: &str, value: &str) {
+        writeln!(self, r#"export.Export{primitive_type}Value({value})"#,).unwrap();
+    }
+
+    pub fn export_string_value(&mut self, value: &str) {
+        self.export_primitive_value("String", value);
+    }
+
+    pub fn export_number_value(&mut self, value: &str) {
+        self.export_primitive_value("Number", value);
+    }
+
+    pub fn export_bool_value(&mut self, value: &str) {
+        self.export_primitive_value("Bool", value);
+    }
+
     pub fn export_primitive_attr(&mut self, primitive_type: &str, object: &str, property: &str) {
         writeln!(
             self,
@@ -31,9 +47,6 @@ impl ScriptBuilder {
         .unwrap();
     }
 
-    pub fn export_bool_value(&mut self, value: &str) {
-        writeln!(self, r#"export.ExportBoolValue({value})"#,).unwrap();
-    }
     pub fn export_string_attr(&mut self, object: &str, property: &str) {
         self.export_primitive_attr("String", object, property);
     }

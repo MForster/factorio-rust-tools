@@ -8,6 +8,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 <!-- next-header -->
 ## [Unreleased] - ReleaseDate
 
+### Incompatible changes
+
+- More string and number values are exported correctly:
+
+```diff
+       "equipment_categories": [
+-        null
++        "armor"
+       ],
+```
+
 ### New features
 
 - It is now possible to specify the location of the API spec and the Factorio
