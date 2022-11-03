@@ -97,7 +97,7 @@ impl HasAttributes for Class {
         self.attributes
             .values()
             // TODO: Support subclasses and base classes
-            .filter(|a| a.read != Some(false) && a.subclasses == None)
+            .filter(|a| a.read != Some(false) && a.subclasses.is_none())
             .sorted_by_key(|attr| &attr.order)
             .collect_vec()
     }
