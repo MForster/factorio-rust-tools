@@ -25,6 +25,8 @@ pub enum FactorioExporterError {
     FactorioOutputError { message: String, output: String },
     #[error("{file} does not exist or isn't a file")]
     FileNotFoundError { file: PathBuf },
+    #[error("{0}")]
+    InvocationError(String),
 }
 
 pub type Result<T> = std::result::Result<T, FactorioExporterError>;

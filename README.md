@@ -11,7 +11,7 @@ See crate page on [crates.io](https://crates.io/crates/factorio-exporter)
 ## Example invocation
 
 ```sh
-$ factorio_exporter ~/tmp/factorio-full -f json | jq '.recipe_prototypes["iron-plate"]'
+$ factorio_exporter --factorio-dir ~/tmp/factorio-full -f json | jq '.recipe_prototypes["iron-plate"]'
 ```
 
 Output:
@@ -65,18 +65,41 @@ Output:
 $ factorio_exporter --help
 Exports prototypes from Factorio in JSON or YAML format
 
-Usage: factorio_exporter [OPTIONS] <FACTORIO_DIR> [MODS]...
+Usage: factorio_exporter [OPTIONS] [MODS]...
 
 Arguments:
-  <FACTORIO_DIR>  Directory where Factorio is installed. This needs to be the full version. Neither the demo nor the headless version are sufficient
-  [MODS]...       Mods to install before exporting the prototypes
+  [MODS]...
+          Mods to install before exporting the prototypes
 
 Options:
-  -d, --destination <DESTINATION>  Path where the result should be written. Uses STDOUT if not specified
-  -f, --format <FORMAT>            Format of the output [default: json] [possible values: json, yaml]
-  -i, --icons                      Export icon paths
-  -h, --help                       Print help information
-  -V, --version                    Print version information
+      --factorio-dir <FACTORIO_DIR>
+          Directory where Factorio is installed. This needs to be the full version. Neither the demo nor the headless version are sufficient. This argument is optional if both of `--factorio-api-spec` and `--factorio-binary` are specified
+
+      --factorio-api-spec <FACTORIO_API_SPEC>
+          Location of the `runtime-api.json` file. Defaults to `<FACTORIO_DIR>/doc-html/runtime-api.json`
+
+          The spec can be found in the `doc-html` directory of a full Factorio installation, or [online](https://lua-api.factorio.com/latest/runtime-api.json).
+
+      --factorio-binary <FACTORIO_BINARY>
+          Location of the factorio binary. Defaults to `<FACTORIO_DIR>/bin/x64/factorio(.exe)`. This can be any Factorio binary (full, headless, demo)
+
+  -d, --destination <DESTINATION>
+          Path where the result should be written. Uses STDOUT if not specified
+
+  -f, --format <FORMAT>
+          Format of the output
+
+          [default: json]
+          [possible values: json, yaml]
+
+  -i, --icons
+          Export icon paths
+
+  -h, --help
+          Print help information (use `-h` for a summary)
+
+  -V, --version
+          Print version information
 ```
 
 ## Library
@@ -105,6 +128,11 @@ definition of the prototypes. It tries to achieve that goal by two design decisi
 
 Another consequence of this design is that it allows to export the
 prototypes of loaded mods.
+
+## Platform support
+
+This library is intended to be platform-independent, but it's currently only
+tested on Linux.
 
 ## Contributing
 
