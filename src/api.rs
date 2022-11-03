@@ -5,17 +5,19 @@ use semver::Version;
 use serde_derive::Deserialize;
 use tracing::debug;
 
-use crate::Result;
+use crate::{FactorioExporterError, Result};
 
-const RUNTIME_API_DEFINITION: &str = "doc-html/runtime-api.json";
-
-pub fn load_api(factorio_dir: &Path) -> Result<Api> {
-    let api_file_path = factorio_dir.join(RUNTIME_API_DEFINITION);
-
+pub fn load_api(api_file_path: &Path) -> Result<Api> {
     debug!(
         "Loading API definition file from {}",
         &api_file_path.display()
     );
+
+    if !api_file_path.is_file() {
+        return Err(FactorioExporterError::FileNotFoundError {
+            file: api_file_path.into(),
+        });
+    }
 
     let s = fs::read_to_string(api_file_path)?;
     let api: Api = serde_json::from_str(&s)?;

@@ -8,6 +8,19 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 <!-- next-header -->
 ## [Unreleased] - ReleaseDate
 
+### New features
+
+- It is now possible to specify the location of the API spec and the Factorio
+  binary individually, using the new command line options `--factorio-api-spec`
+  and `--factorio-binary`. If both of them are specified, no factorio directory
+  needs to be specified
+
+### Incompatible changes
+
+- The positional command line argument for the factorio directory has been
+  replaced with a new option `--factorio_dir`. It is optional if both of
+  `--factorio-api-spec` and `--factorio-binary` are specified.
+
 ## [0.3.0] - 2022-11-03
 
 ### New features

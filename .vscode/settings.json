@@ -4,5 +4,23 @@
   "markdownlint.config": {
     "commands-show-output": false,
     "no-duplicate-header": false
-  }
+  },
+  "cSpell.enabled": true,
+  "cSpell.words": [
+    "BINPATH",
+    "canonicalize",
+    "factorio",
+    "indoc",
+    "itertools",
+    "Localised",
+    "MSRV",
+    "pastable",
+    "printdoc",
+    "rustfmt",
+    "serde",
+    "tempdir",
+    "tempfile",
+    "thiserror",
+    "writedoc"
+  ]
 }

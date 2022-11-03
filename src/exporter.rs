@@ -32,7 +32,7 @@ const MOD_VERSION: &str = "0.0.1";
 const MODS_DIR: &str = "mods";
 
 pub struct FactorioExporter<'a> {
-    factorio_dir: &'a Path,
+    factorio_binary: &'a Path,
     api: &'a Api,
     locale: &'a str,
     temp_dir: TempDir,
@@ -42,7 +42,7 @@ pub struct FactorioExporter<'a> {
 
 impl FactorioExporter<'_> {
     pub fn new<'a>(
-        factorio_dir: &'a Path,
+        factorio_binary: &'a Path,
         api: &'a Api,
         locale: &'a str,
         export_icons: bool,
@@ -50,7 +50,7 @@ impl FactorioExporter<'_> {
         let temp_dir = tempfile::Builder::new().prefix(MOD_NAME).tempdir()?;
         let mod_controller = ModController::new(temp_dir.path().join(MODS_DIR));
         Ok(FactorioExporter {
-            factorio_dir,
+            factorio_binary,
             api,
             locale,
             temp_dir,
@@ -60,7 +60,6 @@ impl FactorioExporter<'_> {
     }
 }
 
-const FACTORIO_BINPATH: &str = "bin/x64/factorio";
 const ARGS: &[&str] = &["--config", CONFIG, "--mod-directory", MODS_DIR];
 
 impl FactorioExporter<'_> {
@@ -152,7 +151,13 @@ impl FactorioExporter<'_> {
     }
 
     fn run_factorio(&self, args: &[&str]) -> Result<Output> {
-        let mut binary = Command::new(self.factorio_dir.join(FACTORIO_BINPATH));
+        if !self.factorio_binary.is_file() {
+            return Err(FactorioExporterError::FileNotFoundError {
+                file: self.factorio_binary.into(),
+            });
+        }
+
+        let mut binary = Command::new(self.factorio_binary);
         let command = &mut binary.current_dir(&self.temp_dir).args(ARGS).args(args);
 
         debug!("executing command: {:?}", command);
