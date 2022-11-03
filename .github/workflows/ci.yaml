@@ -4,11 +4,11 @@ on:
   pull_request:
     branches: [main]
 
-name: Continuous integration
+name: CI
 
 jobs:
   check:
-    name: Check
+    name: Golden
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -23,9 +23,36 @@ jobs:
           toolchain: ${{ matrix.rust }}
           override: true
       - uses: Swatinem/rust-cache@v2
-      - uses: actions-rs/cargo@v1
+      - uses: actions/cache@v3
         with:
-          command: check
+          key: downloads
+          path: |
+            downloads/factorio
+            downloads/runtime-api.json
+
+      - name: Download Factorio
+        run: |
+          mkdir -p downloads
+          test -e downloads/factorio \
+          || wget --no-verbose -O - https://www.factorio.com/get-download/latest/headless/linux64 \
+          | tar --extract --xz --directory=downloads
+          test -e downloads/runtime-api.json \
+          || wget --no-verbose -O downloads/runtime-api.json https://lua-api.factorio.com/latest/runtime-api.json
+
+      - name: Run factorio-exporter
+        uses: actions-rs/cargo@v1
+        with:
+          command: run
+          args: |
+            -q
+            --features=clap,tracing-subscriber
+            -- -i
+            --factorio-binary downloads/factorio/bin/x64/factorio
+            --factorio-api-spec downloads/runtime-api.json
+            -d new-vanilla.json
+
+      - name: Validate output
+        run: diff data/vanilla.json new-vanilla.json
 
   test:
     name: Test Suite
@@ -50,17 +77,12 @@ jobs:
   fmt:
     name: Rustfmt
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        rust:
-          - stable
-          - 1.60.0
     steps:
       - uses: actions/checkout@v3
       - uses: actions-rs/toolchain@v1
         with:
           profile: minimal
-          toolchain: ${{ matrix.rust }}
+          toolchain: stable
           override: true
       - run: rustup component add rustfmt
       - uses: Swatinem/rust-cache@v2
@@ -72,17 +94,12 @@ jobs:
   clippy:
     name: Clippy
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        rust:
-          - stable
-          - 1.60.0
     steps:
       - uses: actions/checkout@v3
       - uses: actions-rs/toolchain@v1
         with:
           profile: minimal
-          toolchain: ${{ matrix.rust }}
+          toolchain: stable
           override: true
       - run: rustup component add clippy
       - uses: Swatinem/rust-cache@v2

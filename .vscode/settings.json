@@ -9,6 +9,7 @@
   "cSpell.words": [
     "BINPATH",
     "canonicalize",
+    "Clippy",
     "factorio",
     "indoc",
     "itertools",
@@ -17,7 +18,9 @@
     "pastable",
     "printdoc",
     "rustfmt",
+    "rustup",
     "serde",
+    "Swatinem",
     "tempdir",
     "tempfile",
     "thiserror",
