@@ -52,7 +52,7 @@ jobs:
             -d new-vanilla.json
 
       - name: Validate output
-        run: diff data/vanilla.json new-vanilla.json
+        run: diff -u data/vanilla.json new-vanilla.json
 
   test:
     name: Test Suite

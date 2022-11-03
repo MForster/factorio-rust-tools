@@ -44,6 +44,18 @@ function export.ExportBoolAttr(name, value)
     end
 end
 
+function export.ExportStringValue(value)
+    if value ~= nil then
+        export.Export("<STRING>", value, "</STRING>")
+    end
+end
+
+function export.ExportNumberValue(value)
+    if value ~= nil then
+        export.Export(value)
+    end
+end
+
 function export.ExportBoolValue(value)
     if value ~= nil then
         export.Export(value)
