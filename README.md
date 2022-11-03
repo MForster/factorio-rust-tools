@@ -89,6 +89,8 @@ for how to use the crate as a library.
 This is still very much in the prototype phase. The output will be incomplete
 and have bugs. Please try it out anyway and report any issues that you run into!
 
+See the [change log](CHANGELOG.md) for progress.
+
 ## Design
 
 The goal of the importer is to be as close as possible to the authoritative
