@@ -1,6 +1,6 @@
 [package]
 name = "factorio-exporter"
-version = "0.3.0"
+version = "0.4.0"
 authors = ["Michael Forster <email@michael-forster.de>"]
 edition = "2021"
 description = "A library to export prototype definitions from Factorio (http://www.factorio.com)"
