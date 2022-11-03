@@ -1,3 +1,5 @@
+use std::path::PathBuf;
+
 use thiserror::Error;
 
 pub use api::load_api;
@@ -21,6 +23,8 @@ pub enum FactorioExporterError {
     FactorioExecutionError { stdout: String, stderr: String },
     #[error("failed to parse Factorio output")]
     FactorioOutputError { message: String, output: String },
+    #[error("{file} does not exist or isn't a file")]
+    FileNotFoundError { file: PathBuf },
 }
 
 pub type Result<T> = std::result::Result<T, FactorioExporterError>;

@@ -7,7 +7,7 @@ use derive_builder::Builder;
 use serde_derive::Serialize;
 use tracing::debug;
 
-use crate::Result;
+use crate::{FactorioExporterError, Result};
 
 const MOD_MANIFEST_NAME: &str = "info.json";
 
@@ -33,6 +33,10 @@ impl ModController {
     }
 
     pub fn add_mod(&self, path: &Path) -> Result<()> {
+        if !path.exists() || !path.is_file() {
+            return Err(FactorioExporterError::FileNotFoundError { file: path.into() });
+        }
+
         fs::create_dir_all(&self.mods_dir)?;
         Self::copy_or_link(path, &self.mods_dir.join(path.file_name().unwrap()))?;
         Ok(())
