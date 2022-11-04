@@ -16,6 +16,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - The [`table` type](https://lua-api.factorio.com/latest/Builtin-Types.html#table)
   is now supported. This leads to more information in the export.
 
+### Minor changes
+
+- Instead of blacklisting a few specific properties that Factorio doesn't allow
+  to be read without declaring them as such in the metadata, we now protect all
+  property accesses with `pcall`.
+
 ## [0.4.0] - 2022-11-03
 
 ### Incompatible changes
