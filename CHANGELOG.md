@@ -10,6 +10,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Incompatible changes
 
+- Infinite recursion is now handled in a more principled way: The object graph
+  is only cut when reaching a "top-level" class, i.e. a class that is contained
+  in one of the `game.*_prototypes` tables.
 - The [`table` type](https://lua-api.factorio.com/latest/Builtin-Types.html#table)
   is now supported. This leads to more information in the export.
 
