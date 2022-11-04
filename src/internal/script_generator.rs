@@ -1,3 +1,5 @@
+use std::collections::HashSet;
+
 use itertools::Itertools;
 
 use crate::api::{is_number, HasAttributes};
@@ -8,12 +10,32 @@ use super::script_builder::ScriptBuilder;
 pub struct ScriptGenerator<'a> {
     api: &'a Api,
     script: ScriptBuilder,
+    toplevel_classes: HashSet<&'a str>,
 }
 
 impl<'a> ScriptGenerator<'a> {
     pub fn new(api: &'a Api) -> ScriptGenerator<'a> {
+        let toplevel_classes = api.classes["LuaGameScript"]
+            .attributes()
+            .iter()
+            .filter_map(|attr| {
+                if attr.name.ends_with("_prototypes") {
+                    if let Type::LuaCustomTable { value, .. } = &attr.r#type {
+                        if let Type::NamedType { name } = value.as_ref() {
+                            return Some(name.as_str());
+                        }
+                    }
+                }
+                None
+            })
+            .collect();
+
         let script = ScriptBuilder::new();
-        ScriptGenerator { api, script }
+        ScriptGenerator {
+            api,
+            script,
+            toplevel_classes,
+        }
     }
 
     pub fn generate(mut self, object: &str, attributes: Vec<&Attribute>) -> String {
@@ -51,10 +73,16 @@ impl<'a> ScriptGenerator<'a> {
             Type::NamedType { name } => {
                 if let Some(class) = self.api.classes.get(name) {
                     let mut attrs = class.attributes();
-                    // TODO: Cut infinite recursion in a more principled way
-                    if depth > 2 {
-                        attrs.retain(|a| a.name == "name")
+
+                    // To avoid infinite loops in the object graph, we cut the
+                    // recursive visitation as soon as we get to a class that is
+                    // stored in one of the top-level tables.
+                    if depth > 2 && self.toplevel_classes.contains(&**name) {
+                        attrs.retain(|a| a.name == "name");
+                        assert!(!attrs.is_empty(),
+                            "don't know how to reference top-level classes without a `name` attribute: {name}");
                     }
+
                     self.export_attrs(attrs, depth);
                 }
 

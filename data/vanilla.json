@@ -2862,7 +2862,18 @@
       },
       "default_collision_mask_with_flags": null,
       "drawing_box": null,
-      "electric_energy_source_prototype": null,
+      "electric_energy_source_prototype": {
+        "buffer_capacity": 5000000,
+        "drain": 0,
+        "emissions": 0,
+        "input_flow_limit": 5000,
+        "object_name": "LuaElectricEnergySourcePrototype",
+        "output_flow_limit": 5000,
+        "render_no_network_icon": true,
+        "render_no_power_icon": true,
+        "usage_priority": "managed-accumulator",
+        "valid": true
+      },
       "emissions_per_second": 0,
       "enemy_map_color": null,
       "flags": null,
@@ -4388,7 +4399,18 @@
       },
       "default_collision_mask_with_flags": null,
       "drawing_box": null,
-      "electric_energy_source_prototype": null,
+      "electric_energy_source_prototype": {
+        "buffer_capacity": 0,
+        "drain": 0,
+        "emissions": 0,
+        "input_flow_limit": 1.7976931348623e308,
+        "object_name": "LuaElectricEnergySourcePrototype",
+        "output_flow_limit": 1.7976931348623e308,
+        "render_no_network_icon": true,
+        "render_no_power_icon": true,
+        "usage_priority": "secondary-input",
+        "valid": true
+      },
       "emissions_per_second": 0,
       "enemy_map_color": null,
       "energy_usage": 16.666666666667,
@@ -5367,7 +5389,18 @@
       },
       "default_collision_mask_with_flags": null,
       "drawing_box": null,
-      "electric_energy_source_prototype": null,
+      "electric_energy_source_prototype": {
+        "buffer_capacity": 1333.3333333333,
+        "drain": 41.666666666667,
+        "emissions": 8.8888888888889e-7,
+        "input_flow_limit": 1.7976931348623e308,
+        "object_name": "LuaElectricEnergySourcePrototype",
+        "output_flow_limit": 1.7976931348623e308,
+        "render_no_network_icon": true,
+        "render_no_power_icon": true,
+        "usage_priority": "secondary-input",
+        "valid": true
+      },
       "emissions_per_second": 0,
       "enemy_map_color": null,
       "energy_usage": 1250,
@@ -5631,7 +5664,18 @@
       },
       "default_collision_mask_with_flags": null,
       "drawing_box": null,
-      "electric_energy_source_prototype": null,
+      "electric_energy_source_prototype": {
+        "buffer_capacity": 2666.6666666667,
+        "drain": 83.333333333333,
+        "emissions": 3.3333333333333e-7,
+        "input_flow_limit": 1.7976931348623e308,
+        "object_name": "LuaElectricEnergySourcePrototype",
+        "output_flow_limit": 1.7976931348623e308,
+        "render_no_network_icon": true,
+        "render_no_power_icon": true,
+        "usage_priority": "secondary-input",
+        "valid": true
+      },
       "emissions_per_second": 0,
       "enemy_map_color": null,
       "energy_usage": 2500,
@@ -5639,8 +5683,68 @@
       "flags": null,
       "fluid_capacity": 0,
       "fluidbox_prototypes": [
-        null,
-        null
+        {
+          "base_area": 10,
+          "base_level": -1,
+          "entity": {
+            "name": "assembling-machine-2"
+          },
+          "height": 1,
+          "index": 1,
+          "object_name": "LuaFluidBoxPrototype",
+          "pipe_connections": [
+            {
+              "positions": [
+                null,
+                null,
+                null,
+                null
+              ],
+              "type": "input"
+            }
+          ],
+          "production_type": "input",
+          "render_layer": "object",
+          "secondary_draw_orders": [
+            -1,
+            1,
+            1,
+            1
+          ],
+          "valid": true,
+          "volume": 1000
+        },
+        {
+          "base_area": 10,
+          "base_level": 1,
+          "entity": {
+            "name": "assembling-machine-2"
+          },
+          "height": 1,
+          "index": 2,
+          "object_name": "LuaFluidBoxPrototype",
+          "pipe_connections": [
+            {
+              "positions": [
+                null,
+                null,
+                null,
+                null
+              ],
+              "type": "output"
+            }
+          ],
+          "production_type": "output",
+          "render_layer": "object",
+          "secondary_draw_orders": [
+            -1,
+            1,
+            1,
+            1
+          ],
+          "valid": true,
+          "volume": 1000
+        }
       ],
       "friendly_map_color": null,
       "healing_per_tick": 0,
@@ -5898,7 +6002,18 @@
       },
       "default_collision_mask_with_flags": null,
       "drawing_box": null,
-      "electric_energy_source_prototype": null,
+      "electric_energy_source_prototype": {
+        "buffer_capacity": 6666.6666666667,
+        "drain": 208.33333333333,
+        "emissions": 8.8888888888889e-8,
+        "input_flow_limit": 1.7976931348623e308,
+        "object_name": "LuaElectricEnergySourcePrototype",
+        "output_flow_limit": 1.7976931348623e308,
+        "render_no_network_icon": true,
+        "render_no_power_icon": true,
+        "usage_priority": "secondary-input",
+        "valid": true
+      },
       "emissions_per_second": 0,
       "enemy_map_color": null,
       "energy_usage": 6250,
@@ -5906,8 +6021,68 @@
       "flags": null,
       "fluid_capacity": 0,
       "fluidbox_prototypes": [
-        null,
-        null
+        {
+          "base_area": 10,
+          "base_level": -1,
+          "entity": {
+            "name": "assembling-machine-3"
+          },
+          "height": 1,
+          "index": 1,
+          "object_name": "LuaFluidBoxPrototype",
+          "pipe_connections": [
+            {
+              "positions": [
+                null,
+                null,
+                null,
+                null
+              ],
+              "type": "input"
+            }
+          ],
+          "production_type": "input",
+          "render_layer": "object",
+          "secondary_draw_orders": [
+            -1,
+            1,
+            1,
+            1
+          ],
+          "valid": true,
+          "volume": 1000
+        },
+        {
+          "base_area": 10,
+          "base_level": 1,
+          "entity": {
+            "name": "assembling-machine-3"
+          },
+          "height": 1,
+          "index": 2,
+          "object_name": "LuaFluidBoxPrototype",
+          "pipe_connections": [
+            {
+              "positions": [
+                null,
+                null,
+                null,
+                null
+              ],
+              "type": "output"
+            }
+          ],
+          "production_type": "output",
+          "render_layer": "object",
+          "secondary_draw_orders": [
+            -1,
+            1,
+            1,
+            1
+          ],
+          "valid": true,
+          "volume": 1000
+        }
       ],
       "friendly_map_color": null,
       "healing_per_tick": 0,
@@ -6910,7 +7085,18 @@
       },
       "default_collision_mask_with_flags": null,
       "drawing_box": null,
-      "electric_energy_source_prototype": null,
+      "electric_energy_source_prototype": {
+        "buffer_capacity": 0,
+        "drain": 8000,
+        "emissions": 0,
+        "input_flow_limit": 1.7976931348623e308,
+        "object_name": "LuaElectricEnergySourcePrototype",
+        "output_flow_limit": 1.7976931348623e308,
+        "render_no_network_icon": true,
+        "render_no_power_icon": true,
+        "usage_priority": "secondary-input",
+        "valid": true
+      },
       "emissions_per_second": 0,
       "enemy_map_color": null,
       "energy_usage": 8000,
@@ -10453,7 +10639,50 @@
       "allow_copy_paste": true,
       "build_base_evolution_requirement": 0,
       "building_grid_bit_shift": 1,
-      "burner_prototype": null,
+      "burner_prototype": {
+        "burnt_inventory_size": 0,
+        "effectivity": 1,
+        "emissions": 2.7777777777778e-7,
+        "fuel_categories": {
+          "chemical": true
+        },
+        "fuel_inventory_size": 1,
+        "light_flicker": {
+          "border_fix_speed": 0.019999999552965,
+          "color": null,
+          "derivation_change_deviation": 0.059999998658895,
+          "derivation_change_frequency": 0.30000001192093,
+          "light_intensity_to_size_coefficient": 0.5,
+          "maximum_intensity": 0.94999998807907,
+          "minimum_intensity": 0.60000002384186,
+          "minimum_light_size": 0.5
+        },
+        "object_name": "LuaBurnerPrototype",
+        "render_no_network_icon": true,
+        "render_no_power_icon": true,
+        "smoke": [
+          {
+            "east_position": null,
+            "frequency": 15,
+            "height": 0,
+            "height_deviation": 0,
+            "name": "smoke",
+            "north_position": null,
+            "offset": 0,
+            "slow_down_factor": 1,
+            "south_position": null,
+            "starting_frame": 0,
+            "starting_frame_deviation": 60,
+            "starting_frame_speed": 0,
+            "starting_frame_speed_deviation": 0,
+            "starting_vertical_speed": 0,
+            "starting_vertical_speed_deviation": 0,
+            "vertical_speed_slowdown": 0.96499997377396,
+            "west_position": null
+          }
+        ],
+        "valid": true
+      },
       "collision_box": null,
       "collision_mask": null,
       "collision_mask_collides_with_self": true,
@@ -10485,8 +10714,83 @@
       "flags": null,
       "fluid_capacity": 200,
       "fluidbox_prototypes": [
-        null,
-        null
+        {
+          "base_area": 1,
+          "base_level": -1,
+          "entity": {
+            "name": "boiler"
+          },
+          "filter": {
+            "name": "water"
+          },
+          "height": 2,
+          "index": 1,
+          "object_name": "LuaFluidBoxPrototype",
+          "pipe_connections": [
+            {
+              "positions": [
+                null,
+                null,
+                null,
+                null
+              ],
+              "type": "input-output"
+            },
+            {
+              "positions": [
+                null,
+                null,
+                null,
+                null
+              ],
+              "type": "input-output"
+            }
+          ],
+          "production_type": "input-output",
+          "render_layer": "object",
+          "secondary_draw_orders": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "valid": true,
+          "volume": 200
+        },
+        {
+          "base_area": 1,
+          "base_level": 1,
+          "entity": {
+            "name": "boiler"
+          },
+          "filter": {
+            "name": "steam"
+          },
+          "height": 2,
+          "index": 2,
+          "object_name": "LuaFluidBoxPrototype",
+          "pipe_connections": [
+            {
+              "positions": [
+                null,
+                null,
+                null,
+                null
+              ],
+              "type": "output"
+            }
+          ],
+          "production_type": "output",
+          "render_layer": "object",
+          "secondary_draw_orders": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "valid": true,
+          "volume": 200
+        }
       ],
       "friendly_map_color": null,
       "healing_per_tick": 0,
@@ -10842,7 +11146,49 @@
       "allow_copy_paste": true,
       "build_base_evolution_requirement": 0,
       "building_grid_bit_shift": 1,
-      "burner_prototype": null,
+      "burner_prototype": {
+        "burnt_inventory_size": 0,
+        "effectivity": 0.5,
+        "emissions": 1.6666666666667e-7,
+        "fuel_categories": {
+          "chemical": true
+        },
+        "fuel_inventory_size": 1,
+        "light_flicker": {
+          "border_fix_speed": 0.019999999552965,
+          "color": null,
+          "derivation_change_deviation": 0.059999998658895,
+          "derivation_change_frequency": 0.30000001192093,
+          "light_intensity_to_size_coefficient": 0.5,
+          "maximum_intensity": 0.80000001192093,
+          "minimum_intensity": 0.20000000298023,
+          "minimum_light_size": 0.5
+        },
+        "object_name": "LuaBurnerPrototype",
+        "render_no_network_icon": true,
+        "render_no_power_icon": true,
+        "smoke": [
+          {
+            "deviation": null,
+            "east_position": null,
+            "frequency": 9,
+            "height": 0,
+            "height_deviation": 0,
+            "name": "smoke",
+            "north_position": null,
+            "offset": 0,
+            "slow_down_factor": 1,
+            "starting_frame": 0,
+            "starting_frame_deviation": 0,
+            "starting_frame_speed": 0,
+            "starting_frame_speed_deviation": 0,
+            "starting_vertical_speed": 0,
+            "starting_vertical_speed_deviation": 0,
+            "vertical_speed_slowdown": 0.96499997377396
+          }
+        ],
+        "valid": true
+      },
       "collision_box": null,
       "collision_mask": null,
       "collision_mask_collides_with_self": true,
@@ -10869,7 +11215,18 @@
       },
       "default_collision_mask_with_flags": null,
       "drawing_box": null,
-      "electric_energy_source_prototype": null,
+      "electric_energy_source_prototype": {
+        "buffer_capacity": 0,
+        "drain": 0,
+        "emissions": 0,
+        "input_flow_limit": 1.7976931348623e308,
+        "object_name": "LuaElectricEnergySourcePrototype",
+        "output_flow_limit": 1.7976931348623e308,
+        "render_no_network_icon": true,
+        "render_no_power_icon": true,
+        "usage_priority": "secondary-output",
+        "valid": true
+      },
       "emissions_per_second": 0,
       "enemy_map_color": null,
       "flags": null,
@@ -10931,7 +11288,47 @@
       "allow_copy_paste": true,
       "build_base_evolution_requirement": 0,
       "building_grid_bit_shift": 1,
-      "burner_prototype": null,
+      "burner_prototype": {
+        "burnt_inventory_size": 0,
+        "effectivity": 1,
+        "emissions": 0,
+        "fuel_categories": {
+          "chemical": true
+        },
+        "fuel_inventory_size": 1,
+        "light_flicker": {
+          "border_fix_speed": 0.019999999552965,
+          "color": null,
+          "derivation_change_deviation": 0.059999998658895,
+          "derivation_change_frequency": 0.30000001192093,
+          "light_intensity_to_size_coefficient": 0.5,
+          "maximum_intensity": 0.80000001192093,
+          "minimum_intensity": 0.20000000298023,
+          "minimum_light_size": 0.5
+        },
+        "object_name": "LuaBurnerPrototype",
+        "render_no_network_icon": true,
+        "render_no_power_icon": true,
+        "smoke": [
+          {
+            "deviation": null,
+            "frequency": 9,
+            "height": 0,
+            "height_deviation": 0,
+            "name": "smoke",
+            "offset": 0,
+            "slow_down_factor": 1,
+            "starting_frame": 0,
+            "starting_frame_deviation": 0,
+            "starting_frame_speed": 0,
+            "starting_frame_speed_deviation": 0,
+            "starting_vertical_speed": 0,
+            "starting_vertical_speed_deviation": 0,
+            "vertical_speed_slowdown": 0.96499997377396
+          }
+        ],
+        "valid": true
+      },
       "collision_box": null,
       "collision_mask": null,
       "collision_mask_collides_with_self": true,
@@ -11178,7 +11575,47 @@
       },
       "build_base_evolution_requirement": 0,
       "building_grid_bit_shift": 1,
-      "burner_prototype": null,
+      "burner_prototype": {
+        "burnt_inventory_size": 0,
+        "effectivity": 1,
+        "emissions": 1.3333333333333e-6,
+        "fuel_categories": {
+          "chemical": true
+        },
+        "fuel_inventory_size": 1,
+        "light_flicker": {
+          "border_fix_speed": 0.019999999552965,
+          "color": null,
+          "derivation_change_deviation": 0.059999998658895,
+          "derivation_change_frequency": 0.30000001192093,
+          "light_intensity_to_size_coefficient": 0.5,
+          "maximum_intensity": 0.80000001192093,
+          "minimum_intensity": 0.20000000298023,
+          "minimum_light_size": 0.5
+        },
+        "object_name": "LuaBurnerPrototype",
+        "render_no_network_icon": true,
+        "render_no_power_icon": true,
+        "smoke": [
+          {
+            "deviation": null,
+            "frequency": 3,
+            "height": 0,
+            "height_deviation": 0,
+            "name": "smoke",
+            "offset": 0,
+            "slow_down_factor": 1,
+            "starting_frame": 0,
+            "starting_frame_deviation": 0,
+            "starting_frame_speed": 0,
+            "starting_frame_speed_deviation": 0,
+            "starting_vertical_speed": 0,
+            "starting_vertical_speed_deviation": 0,
+            "vertical_speed_slowdown": 0.96499997377396
+          }
+        ],
+        "valid": true
+      },
       "collision_box": null,
       "collision_mask": null,
       "collision_mask_collides_with_self": true,
@@ -11520,7 +11957,48 @@
       "allow_copy_paste": true,
       "build_base_evolution_requirement": 0,
       "building_grid_bit_shift": 1,
-      "burner_prototype": null,
+      "burner_prototype": {
+        "burnt_inventory_size": 0,
+        "effectivity": 1,
+        "emissions": 0,
+        "fuel_categories": {
+          "chemical": true
+        },
+        "fuel_inventory_size": 1,
+        "light_flicker": {
+          "border_fix_speed": 0.019999999552965,
+          "color": null,
+          "derivation_change_deviation": 0.059999998658895,
+          "derivation_change_frequency": 0.30000001192093,
+          "light_intensity_to_size_coefficient": 0.5,
+          "maximum_intensity": 0.80000001192093,
+          "minimum_intensity": 0.20000000298023,
+          "minimum_light_size": 0.5
+        },
+        "object_name": "LuaBurnerPrototype",
+        "render_no_network_icon": true,
+        "render_no_power_icon": true,
+        "smoke": [
+          {
+            "deviation": null,
+            "frequency": 200,
+            "height": 0,
+            "height_deviation": 0,
+            "name": "car-smoke",
+            "offset": 0,
+            "position": null,
+            "slow_down_factor": 1,
+            "starting_frame": 0,
+            "starting_frame_deviation": 60,
+            "starting_frame_speed": 0,
+            "starting_frame_speed_deviation": 0,
+            "starting_vertical_speed": 0,
+            "starting_vertical_speed_deviation": 0,
+            "vertical_speed_slowdown": 0.96499997377396
+          }
+        ],
+        "valid": true
+      },
       "collision_box": null,
       "collision_mask": null,
       "collision_mask_collides_with_self": true,
@@ -12043,7 +12521,18 @@
       },
       "default_collision_mask_with_flags": null,
       "drawing_box": null,
-      "electric_energy_source_prototype": null,
+      "electric_energy_source_prototype": {
+        "buffer_capacity": 6222.2222222222,
+        "drain": 194.44444444444,
+        "emissions": 1.9047619047619e-7,
+        "input_flow_limit": 1.7976931348623e308,
+        "object_name": "LuaElectricEnergySourcePrototype",
+        "output_flow_limit": 1.7976931348623e308,
+        "render_no_network_icon": true,
+        "render_no_power_icon": true,
+        "usage_priority": "secondary-input",
+        "valid": true
+      },
       "emissions_per_second": 0,
       "enemy_map_color": null,
       "energy_usage": 5833.3333333333,
@@ -12420,17 +12909,148 @@
       },
       "default_collision_mask_with_flags": null,
       "drawing_box": null,
-      "electric_energy_source_prototype": null,
+      "electric_energy_source_prototype": {
+        "buffer_capacity": 3733.3333333333,
+        "drain": 116.66666666667,
+        "emissions": 3.1746031746032e-7,
+        "input_flow_limit": 1.7976931348623e308,
+        "object_name": "LuaElectricEnergySourcePrototype",
+        "output_flow_limit": 1.7976931348623e308,
+        "render_no_network_icon": true,
+        "render_no_power_icon": true,
+        "usage_priority": "secondary-input",
+        "valid": true
+      },
       "emissions_per_second": 0,
       "enemy_map_color": null,
       "energy_usage": 3500,
       "flags": null,
       "fluid_capacity": 0,
       "fluidbox_prototypes": [
-        null,
-        null,
-        null,
-        null
+        {
+          "base_area": 10,
+          "base_level": -1,
+          "entity": {
+            "name": "chemical-plant"
+          },
+          "height": 1,
+          "index": 1,
+          "object_name": "LuaFluidBoxPrototype",
+          "pipe_connections": [
+            {
+              "positions": [
+                null,
+                null,
+                null,
+                null
+              ],
+              "type": "input"
+            }
+          ],
+          "production_type": "input",
+          "render_layer": "object",
+          "secondary_draw_orders": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "valid": true,
+          "volume": 1000
+        },
+        {
+          "base_area": 10,
+          "base_level": -1,
+          "entity": {
+            "name": "chemical-plant"
+          },
+          "height": 1,
+          "index": 2,
+          "object_name": "LuaFluidBoxPrototype",
+          "pipe_connections": [
+            {
+              "positions": [
+                null,
+                null,
+                null,
+                null
+              ],
+              "type": "input"
+            }
+          ],
+          "production_type": "input",
+          "render_layer": "object",
+          "secondary_draw_orders": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "valid": true,
+          "volume": 1000
+        },
+        {
+          "base_area": 1,
+          "base_level": 1,
+          "entity": {
+            "name": "chemical-plant"
+          },
+          "height": 1,
+          "index": 3,
+          "object_name": "LuaFluidBoxPrototype",
+          "pipe_connections": [
+            {
+              "positions": [
+                null,
+                null,
+                null,
+                null
+              ],
+              "type": "output"
+            }
+          ],
+          "production_type": "output",
+          "render_layer": "object",
+          "secondary_draw_orders": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "valid": true,
+          "volume": 100
+        },
+        {
+          "base_area": 1,
+          "base_level": 1,
+          "entity": {
+            "name": "chemical-plant"
+          },
+          "height": 1,
+          "index": 4,
+          "object_name": "LuaFluidBoxPrototype",
+          "pipe_connections": [
+            {
+              "positions": [
+                null,
+                null,
+                null,
+                null
+              ],
+              "type": "output"
+            }
+          ],
+          "production_type": "output",
+          "render_layer": "object",
+          "secondary_draw_orders": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "valid": true,
+          "volume": 100
+        }
       ],
       "friendly_map_color": null,
       "healing_per_tick": 0,
@@ -15731,7 +16351,18 @@
       },
       "default_collision_mask_with_flags": null,
       "drawing_box": null,
-      "electric_energy_source_prototype": null,
+      "electric_energy_source_prototype": {
+        "buffer_capacity": 0,
+        "drain": 0,
+        "emissions": 0,
+        "input_flow_limit": 1.7976931348623e308,
+        "object_name": "LuaElectricEnergySourcePrototype",
+        "output_flow_limit": 1.7976931348623e308,
+        "render_no_network_icon": true,
+        "render_no_power_icon": true,
+        "usage_priority": "secondary-input",
+        "valid": true
+      },
       "emissions_per_second": 0,
       "enemy_map_color": null,
       "energy_usage": 16.666666666667,
@@ -17543,7 +18174,18 @@
       },
       "default_collision_mask_with_flags": null,
       "drawing_box": null,
-      "electric_energy_source_prototype": null,
+      "electric_energy_source_prototype": {
+        "buffer_capacity": 10000000000,
+        "drain": 0,
+        "emissions": 0,
+        "input_flow_limit": 1.7976931348623e308,
+        "object_name": "LuaElectricEnergySourcePrototype",
+        "output_flow_limit": 1.7976931348623e308,
+        "render_no_network_icon": true,
+        "render_no_power_icon": true,
+        "usage_priority": "tertiary",
+        "valid": true
+      },
       "emissions_per_second": 0,
       "enemy_map_color": null,
       "flags": null,
@@ -17637,7 +18279,18 @@
       },
       "default_collision_mask_with_flags": null,
       "drawing_box": null,
-      "electric_energy_source_prototype": null,
+      "electric_energy_source_prototype": {
+        "buffer_capacity": 0,
+        "drain": 100,
+        "emissions": 9.2592592592593e-8,
+        "input_flow_limit": 1.7976931348623e308,
+        "object_name": "LuaElectricEnergySourcePrototype",
+        "output_flow_limit": 1.7976931348623e308,
+        "render_no_network_icon": true,
+        "render_no_power_icon": true,
+        "usage_priority": "secondary-input",
+        "valid": true
+      },
       "emissions_per_second": 0,
       "enemy_map_color": null,
       "energy_usage": 3000,
@@ -17886,7 +18539,18 @@
       },
       "default_collision_mask_with_flags": null,
       "drawing_box": null,
-      "electric_energy_source_prototype": null,
+      "electric_energy_source_prototype": {
+        "buffer_capacity": 0,
+        "drain": 0,
+        "emissions": 1.8518518518519e-6,
+        "input_flow_limit": 1.7976931348623e308,
+        "object_name": "LuaElectricEnergySourcePrototype",
+        "output_flow_limit": 1.7976931348623e308,
+        "render_no_network_icon": true,
+        "render_no_power_icon": true,
+        "usage_priority": "secondary-input",
+        "valid": true
+      },
       "emissions_per_second": 0,
       "enemy_map_color": null,
       "energy_usage": 1500,
@@ -17894,7 +18558,55 @@
       "flags": null,
       "fluid_capacity": 0,
       "fluidbox_prototypes": [
-        null
+        {
+          "base_area": 1,
+          "base_level": -1,
+          "entity": {
+            "name": "electric-mining-drill"
+          },
+          "height": 2,
+          "index": 1,
+          "object_name": "LuaFluidBoxPrototype",
+          "pipe_connections": [
+            {
+              "positions": [
+                null,
+                null,
+                null,
+                null
+              ],
+              "type": "input-output"
+            },
+            {
+              "positions": [
+                null,
+                null,
+                null,
+                null
+              ],
+              "type": "input-output"
+            },
+            {
+              "positions": [
+                null,
+                null,
+                null,
+                null
+              ],
+              "type": "input-output"
+            }
+          ],
+          "production_type": "input-output",
+          "render_layer": "object",
+          "secondary_draw_orders": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "valid": true,
+          "volume": 200
+        }
       ],
       "friendly_map_color": null,
       "healing_per_tick": 0,
@@ -19960,7 +20672,18 @@
       },
       "default_collision_mask_with_flags": null,
       "drawing_box": null,
-      "electric_energy_source_prototype": null,
+      "electric_energy_source_prototype": {
+        "buffer_capacity": 0,
+        "drain": 8.3333333333333,
+        "emissions": 0,
+        "input_flow_limit": 1.7976931348623e308,
+        "object_name": "LuaElectricEnergySourcePrototype",
+        "output_flow_limit": 1.7976931348623e308,
+        "render_no_network_icon": true,
+        "render_no_power_icon": true,
+        "usage_priority": "secondary-input",
+        "valid": true
+      },
       "emissions_per_second": 0,
       "enemy_map_color": null,
       "fast_replaceable_group": "inserter",
@@ -21039,7 +21762,18 @@
       },
       "default_collision_mask_with_flags": null,
       "drawing_box": null,
-      "electric_energy_source_prototype": null,
+      "electric_energy_source_prototype": {
+        "buffer_capacity": 0,
+        "drain": 8.3333333333333,
+        "emissions": 0,
+        "input_flow_limit": 1.7976931348623e308,
+        "object_name": "LuaElectricEnergySourcePrototype",
+        "output_flow_limit": 1.7976931348623e308,
+        "render_no_network_icon": true,
+        "render_no_power_icon": true,
+        "usage_priority": "secondary-input",
+        "valid": true
+      },
       "emissions_per_second": 0,
       "enemy_map_color": null,
       "fast_replaceable_group": "inserter",
@@ -21720,7 +22454,46 @@
       "flags": null,
       "fluid_capacity": 0,
       "fluidbox_prototypes": [
-        null
+        {
+          "base_area": 1,
+          "base_level": 0,
+          "entity": {
+            "name": "flamethrower-turret"
+          },
+          "height": 1,
+          "index": 1,
+          "object_name": "LuaFluidBoxPrototype",
+          "pipe_connections": [
+            {
+              "positions": [
+                null,
+                null,
+                null,
+                null
+              ],
+              "type": "input-output"
+            },
+            {
+              "positions": [
+                null,
+                null,
+                null,
+                null
+              ],
+              "type": "input-output"
+            }
+          ],
+          "production_type": "input-output",
+          "render_layer": "lower-object",
+          "secondary_draw_orders": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "valid": true,
+          "volume": 100
+        }
       ],
       "friendly_map_color": null,
       "healing_per_tick": 0,
@@ -23270,13 +24043,140 @@
       "flags": null,
       "fluid_capacity": 200,
       "fluidbox_prototypes": [
-        null,
-        null
+        {
+          "base_area": 1,
+          "base_level": -1,
+          "entity": {
+            "name": "heat-exchanger"
+          },
+          "filter": {
+            "name": "water"
+          },
+          "height": 2,
+          "index": 1,
+          "object_name": "LuaFluidBoxPrototype",
+          "pipe_connections": [
+            {
+              "positions": [
+                null,
+                null,
+                null,
+                null
+              ],
+              "type": "input-output"
+            },
+            {
+              "positions": [
+                null,
+                null,
+                null,
+                null
+              ],
+              "type": "input-output"
+            }
+          ],
+          "production_type": "input-output",
+          "render_layer": "object",
+          "secondary_draw_orders": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "valid": true,
+          "volume": 200
+        },
+        {
+          "base_area": 1,
+          "base_level": 1,
+          "entity": {
+            "name": "heat-exchanger"
+          },
+          "filter": {
+            "name": "steam"
+          },
+          "height": 2,
+          "index": 2,
+          "object_name": "LuaFluidBoxPrototype",
+          "pipe_connections": [
+            {
+              "positions": [
+                null,
+                null,
+                null,
+                null
+              ],
+              "type": "output"
+            }
+          ],
+          "production_type": "output",
+          "render_layer": "object",
+          "secondary_draw_orders": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "valid": true,
+          "volume": 200
+        }
       ],
       "friendly_map_color": null,
       "healing_per_tick": 0,
-      "heat_buffer_prototype": null,
-      "heat_energy_source_prototype": null,
+      "heat_buffer_prototype": {
+        "connections": [
+          {
+            "direction": null,
+            "position": null
+          }
+        ],
+        "default_temperature": 15,
+        "max_temperature": 1000,
+        "max_transfer": 33333333.333333,
+        "min_temperature_gradient": 1,
+        "min_working_temperature": 500,
+        "minimum_glow_temperature": 350,
+        "object_name": "LuaHeatBufferPrototype",
+        "specific_heat": 1000000,
+        "valid": true
+      },
+      "heat_energy_source_prototype": {
+        "connections": [
+          {
+            "direction": null,
+            "position": null
+          }
+        ],
+        "default_temperature": 15,
+        "emissions": 0,
+        "heat_buffer_prototype": {
+          "connections": [
+            {
+              "direction": null,
+              "position": null
+            }
+          ],
+          "default_temperature": 15,
+          "max_temperature": 1000,
+          "max_transfer": 33333333.333333,
+          "min_temperature_gradient": 1,
+          "min_working_temperature": 500,
+          "minimum_glow_temperature": 350,
+          "object_name": "LuaHeatBufferPrototype",
+          "specific_heat": 1000000,
+          "valid": true
+        },
+        "max_temperature": 1000,
+        "max_transfer": 33333333.333333,
+        "min_temperature_gradient": 1,
+        "min_working_temperature": 500,
+        "minimum_glow_temperature": 350,
+        "object_name": "LuaHeatEnergySourcePrototype",
+        "render_no_network_icon": true,
+        "render_no_power_icon": true,
+        "specific_heat": 1000000,
+        "valid": true
+      },
       "icon": "__base__/graphics/icons/heat-boiler.png",
       "is_building": true,
       "is_entity_with_owner": true,
@@ -23516,7 +24416,35 @@
       "fluidbox_prototypes": null,
       "friendly_map_color": null,
       "healing_per_tick": 0,
-      "heat_buffer_prototype": null,
+      "heat_buffer_prototype": {
+        "connections": [
+          {
+            "direction": null,
+            "position": null
+          },
+          {
+            "direction": null,
+            "position": null
+          },
+          {
+            "direction": null,
+            "position": null
+          },
+          {
+            "direction": null,
+            "position": null
+          }
+        ],
+        "default_temperature": 0,
+        "max_temperature": 1000,
+        "max_transfer": 166666666.66667,
+        "min_temperature_gradient": 1,
+        "min_working_temperature": 0,
+        "minimum_glow_temperature": 1,
+        "object_name": "LuaHeatBufferPrototype",
+        "specific_heat": 10000000,
+        "valid": true
+      },
       "icon": "__base__/graphics/icons/heat-interface.png",
       "is_building": true,
       "is_entity_with_owner": true,
@@ -23604,7 +24532,35 @@
       "fluidbox_prototypes": null,
       "friendly_map_color": null,
       "healing_per_tick": 0,
-      "heat_buffer_prototype": null,
+      "heat_buffer_prototype": {
+        "connections": [
+          {
+            "direction": null,
+            "position": null
+          },
+          {
+            "direction": null,
+            "position": null
+          },
+          {
+            "direction": null,
+            "position": null
+          },
+          {
+            "direction": null,
+            "position": null
+          }
+        ],
+        "default_temperature": 15,
+        "max_temperature": 1000,
+        "max_transfer": 16666666.666667,
+        "min_temperature_gradient": 1,
+        "min_working_temperature": 15,
+        "minimum_glow_temperature": 350,
+        "object_name": "LuaHeatBufferPrototype",
+        "specific_heat": 1000000,
+        "valid": true
+      },
       "icon": "__base__/graphics/icons/heat-pipe.png",
       "is_building": true,
       "is_entity_with_owner": true,
@@ -23814,7 +24770,18 @@
       "create_ghost_on_death": false,
       "default_collision_mask_with_flags": null,
       "drawing_box": null,
-      "electric_energy_source_prototype": null,
+      "electric_energy_source_prototype": {
+        "buffer_capacity": 10000000000,
+        "drain": 0,
+        "emissions": 0,
+        "input_flow_limit": 0,
+        "object_name": "LuaElectricEnergySourcePrototype",
+        "output_flow_limit": 8333333333.3333,
+        "render_no_network_icon": true,
+        "render_no_power_icon": true,
+        "usage_priority": "tertiary",
+        "valid": true
+      },
       "emissions_per_second": 0,
       "enemy_map_color": null,
       "flags": null,
@@ -24157,7 +25124,64 @@
       "flags": null,
       "fluid_capacity": 100,
       "fluidbox_prototypes": [
-        null
+        {
+          "base_area": 1,
+          "base_level": 0,
+          "entity": {
+            "name": "infinity-pipe"
+          },
+          "height": 1,
+          "index": 1,
+          "object_name": "LuaFluidBoxPrototype",
+          "pipe_connections": [
+            {
+              "positions": [
+                null,
+                null,
+                null,
+                null
+              ],
+              "type": "input-output"
+            },
+            {
+              "positions": [
+                null,
+                null,
+                null,
+                null
+              ],
+              "type": "input-output"
+            },
+            {
+              "positions": [
+                null,
+                null,
+                null,
+                null
+              ],
+              "type": "input-output"
+            },
+            {
+              "positions": [
+                null,
+                null,
+                null,
+                null
+              ],
+              "type": "input-output"
+            }
+          ],
+          "production_type": "none",
+          "render_layer": "object",
+          "secondary_draw_orders": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "valid": true,
+          "volume": 100
+        }
       ],
       "friendly_map_color": null,
       "healing_per_tick": 0,
@@ -24241,7 +25265,18 @@
       },
       "default_collision_mask_with_flags": null,
       "drawing_box": null,
-      "electric_energy_source_prototype": null,
+      "electric_energy_source_prototype": {
+        "buffer_capacity": 0,
+        "drain": 6.6666666666667,
+        "emissions": 0,
+        "input_flow_limit": 1.7976931348623e308,
+        "object_name": "LuaElectricEnergySourcePrototype",
+        "output_flow_limit": 1.7976931348623e308,
+        "render_no_network_icon": true,
+        "render_no_power_icon": true,
+        "usage_priority": "secondary-input",
+        "valid": true
+      },
       "emissions_per_second": 0,
       "enemy_map_color": null,
       "fast_replaceable_group": "inserter",
@@ -24922,7 +25957,18 @@
       },
       "default_collision_mask_with_flags": null,
       "drawing_box": null,
-      "electric_energy_source_prototype": null,
+      "electric_energy_source_prototype": {
+        "buffer_capacity": 0,
+        "drain": 0,
+        "emissions": 0,
+        "input_flow_limit": 1.7976931348623e308,
+        "object_name": "LuaElectricEnergySourcePrototype",
+        "output_flow_limit": 1.7976931348623e308,
+        "render_no_network_icon": true,
+        "render_no_power_icon": true,
+        "usage_priority": "secondary-input",
+        "valid": true
+      },
       "emissions_per_second": 0,
       "enemy_map_color": null,
       "energy_usage": 1000,
@@ -25823,7 +26869,18 @@
       },
       "default_collision_mask_with_flags": null,
       "drawing_box": null,
-      "electric_energy_source_prototype": null,
+      "electric_energy_source_prototype": {
+        "buffer_capacity": 801000,
+        "drain": 400,
+        "emissions": 0,
+        "input_flow_limit": 160000,
+        "object_name": "LuaElectricEnergySourcePrototype",
+        "output_flow_limit": 1.7976931348623e308,
+        "render_no_network_icon": true,
+        "render_no_power_icon": true,
+        "usage_priority": "primary-input",
+        "valid": true
+      },
       "emissions_per_second": 0,
       "enemy_map_color": null,
       "flags": null,
@@ -26422,7 +27479,47 @@
       "allow_copy_paste": true,
       "build_base_evolution_requirement": 0,
       "building_grid_bit_shift": 1,
-      "burner_prototype": null,
+      "burner_prototype": {
+        "burnt_inventory_size": 0,
+        "effectivity": 1,
+        "emissions": 0,
+        "fuel_categories": {
+          "chemical": true
+        },
+        "fuel_inventory_size": 3,
+        "light_flicker": {
+          "border_fix_speed": 0.019999999552965,
+          "color": null,
+          "derivation_change_deviation": 0.059999998658895,
+          "derivation_change_frequency": 0.30000001192093,
+          "light_intensity_to_size_coefficient": 0.5,
+          "maximum_intensity": 0.80000001192093,
+          "minimum_intensity": 0.20000000298023,
+          "minimum_light_size": 0.5
+        },
+        "object_name": "LuaBurnerPrototype",
+        "render_no_network_icon": true,
+        "render_no_power_icon": true,
+        "smoke": [
+          {
+            "deviation": null,
+            "frequency": 100,
+            "height": 2,
+            "height_deviation": 0.5,
+            "name": "train-smoke",
+            "offset": 0,
+            "slow_down_factor": 1,
+            "starting_frame": 0,
+            "starting_frame_deviation": 60,
+            "starting_frame_speed": 0,
+            "starting_frame_speed_deviation": 0,
+            "starting_vertical_speed": 0.20000000298023,
+            "starting_vertical_speed_deviation": 0.10000000149012,
+            "vertical_speed_slowdown": 0.96499997377396
+          }
+        ],
+        "valid": true
+      },
       "collision_box": null,
       "collision_mask": null,
       "collision_mask_collides_with_self": true,
@@ -27357,7 +28454,18 @@
       },
       "default_collision_mask_with_flags": null,
       "drawing_box": null,
-      "electric_energy_source_prototype": null,
+      "electric_energy_source_prototype": {
+        "buffer_capacity": 0,
+        "drain": 6.6666666666667,
+        "emissions": 0,
+        "input_flow_limit": 1.7976931348623e308,
+        "object_name": "LuaElectricEnergySourcePrototype",
+        "output_flow_limit": 1.7976931348623e308,
+        "render_no_network_icon": true,
+        "render_no_power_icon": true,
+        "usage_priority": "secondary-input",
+        "valid": true
+      },
       "emissions_per_second": 0,
       "enemy_map_color": null,
       "fast_replaceable_group": "long-handed-inserter",
@@ -29223,7 +30331,29 @@
       "allow_copy_paste": true,
       "build_base_evolution_requirement": 0,
       "building_grid_bit_shift": 1,
-      "burner_prototype": null,
+      "burner_prototype": {
+        "burnt_inventory_size": 1,
+        "effectivity": 1,
+        "emissions": 0,
+        "fuel_categories": {
+          "nuclear": true
+        },
+        "fuel_inventory_size": 1,
+        "light_flicker": {
+          "border_fix_speed": 0.019999999552965,
+          "color": null,
+          "derivation_change_deviation": 0.059999998658895,
+          "derivation_change_frequency": 0.30000001192093,
+          "light_intensity_to_size_coefficient": 0.5,
+          "maximum_intensity": 0.94999998807907,
+          "minimum_intensity": 0.69999998807907,
+          "minimum_light_size": 0.5
+        },
+        "object_name": "LuaBurnerPrototype",
+        "render_no_network_icon": true,
+        "render_no_power_icon": true,
+        "valid": true
+      },
       "collision_box": null,
       "collision_mask": null,
       "collision_mask_collides_with_self": true,
@@ -29257,7 +30387,67 @@
       "fluidbox_prototypes": null,
       "friendly_map_color": null,
       "healing_per_tick": 0,
-      "heat_buffer_prototype": null,
+      "heat_buffer_prototype": {
+        "connections": [
+          {
+            "direction": null,
+            "position": null
+          },
+          {
+            "direction": null,
+            "position": null
+          },
+          {
+            "direction": null,
+            "position": null
+          },
+          {
+            "direction": null,
+            "position": null
+          },
+          {
+            "direction": null,
+            "position": null
+          },
+          {
+            "direction": null,
+            "position": null
+          },
+          {
+            "direction": null,
+            "position": null
+          },
+          {
+            "direction": null,
+            "position": null
+          },
+          {
+            "direction": null,
+            "position": null
+          },
+          {
+            "direction": null,
+            "position": null
+          },
+          {
+            "direction": null,
+            "position": null
+          },
+          {
+            "direction": null,
+            "position": null
+          }
+        ],
+        "default_temperature": 15,
+        "max_temperature": 1000,
+        "max_transfer": 166666666.66667,
+        "min_temperature_gradient": 1,
+        "min_working_temperature": 15,
+        "minimum_glow_temperature": 350,
+        "object_name": "LuaHeatBufferPrototype",
+        "specific_heat": 10000000,
+        "valid": true
+      },
       "icon": "__base__/graphics/icons/nuclear-reactor.png",
       "is_building": true,
       "is_entity_with_owner": true,
@@ -29626,7 +30816,40 @@
       "flags": null,
       "fluid_capacity": 100,
       "fluidbox_prototypes": [
-        null
+        {
+          "base_area": 1,
+          "base_level": 1,
+          "entity": {
+            "name": "offshore-pump"
+          },
+          "filter": {
+            "name": "water"
+          },
+          "height": 1,
+          "index": 1,
+          "object_name": "LuaFluidBoxPrototype",
+          "pipe_connections": [
+            {
+              "positions": [
+                null,
+                null,
+                null,
+                null
+              ],
+              "type": "output"
+            }
+          ],
+          "production_type": "output",
+          "render_layer": "object",
+          "secondary_draw_orders": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "valid": true,
+          "volume": 100
+        }
       ],
       "friendly_map_color": null,
       "healing_per_tick": 0,
@@ -29880,18 +31103,179 @@
       },
       "default_collision_mask_with_flags": null,
       "drawing_box": null,
-      "electric_energy_source_prototype": null,
+      "electric_energy_source_prototype": {
+        "buffer_capacity": 7466.6666666667,
+        "drain": 233.33333333333,
+        "emissions": 2.3809523809524e-7,
+        "input_flow_limit": 1.7976931348623e308,
+        "object_name": "LuaElectricEnergySourcePrototype",
+        "output_flow_limit": 1.7976931348623e308,
+        "render_no_network_icon": true,
+        "render_no_power_icon": true,
+        "usage_priority": "secondary-input",
+        "valid": true
+      },
       "emissions_per_second": 0,
       "enemy_map_color": null,
       "energy_usage": 7000,
       "flags": null,
       "fluid_capacity": 0,
       "fluidbox_prototypes": [
-        null,
-        null,
-        null,
-        null,
-        null
+        {
+          "base_area": 10,
+          "base_level": -1,
+          "entity": {
+            "name": "oil-refinery"
+          },
+          "height": 1,
+          "index": 1,
+          "object_name": "LuaFluidBoxPrototype",
+          "pipe_connections": [
+            {
+              "positions": [
+                null,
+                null,
+                null,
+                null
+              ],
+              "type": "input"
+            }
+          ],
+          "production_type": "input",
+          "render_layer": "object",
+          "secondary_draw_orders": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "valid": true,
+          "volume": 1000
+        },
+        {
+          "base_area": 10,
+          "base_level": -1,
+          "entity": {
+            "name": "oil-refinery"
+          },
+          "height": 1,
+          "index": 2,
+          "object_name": "LuaFluidBoxPrototype",
+          "pipe_connections": [
+            {
+              "positions": [
+                null,
+                null,
+                null,
+                null
+              ],
+              "type": "input"
+            }
+          ],
+          "production_type": "input",
+          "render_layer": "object",
+          "secondary_draw_orders": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "valid": true,
+          "volume": 1000
+        },
+        {
+          "base_area": 1,
+          "base_level": 1,
+          "entity": {
+            "name": "oil-refinery"
+          },
+          "height": 1,
+          "index": 3,
+          "object_name": "LuaFluidBoxPrototype",
+          "pipe_connections": [
+            {
+              "positions": [
+                null,
+                null,
+                null,
+                null
+              ],
+              "type": "output"
+            }
+          ],
+          "production_type": "output",
+          "render_layer": "object",
+          "secondary_draw_orders": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "valid": true,
+          "volume": 100
+        },
+        {
+          "base_area": 1,
+          "base_level": 1,
+          "entity": {
+            "name": "oil-refinery"
+          },
+          "height": 1,
+          "index": 4,
+          "object_name": "LuaFluidBoxPrototype",
+          "pipe_connections": [
+            {
+              "positions": [
+                null,
+                null,
+                null,
+                null
+              ],
+              "type": "output"
+            }
+          ],
+          "production_type": "output",
+          "render_layer": "object",
+          "secondary_draw_orders": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "valid": true,
+          "volume": 100
+        },
+        {
+          "base_area": 1,
+          "base_level": 1,
+          "entity": {
+            "name": "oil-refinery"
+          },
+          "height": 1,
+          "index": 5,
+          "object_name": "LuaFluidBoxPrototype",
+          "pipe_connections": [
+            {
+              "positions": [
+                null,
+                null,
+                null,
+                null
+              ],
+              "type": "output"
+            }
+          ],
+          "production_type": "output",
+          "render_layer": "object",
+          "secondary_draw_orders": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "valid": true,
+          "volume": 100
+        }
       ],
       "friendly_map_color": null,
       "healing_per_tick": 0,
@@ -30486,7 +31870,64 @@
       "flags": null,
       "fluid_capacity": 100,
       "fluidbox_prototypes": [
-        null
+        {
+          "base_area": 1,
+          "base_level": 0,
+          "entity": {
+            "name": "pipe"
+          },
+          "height": 1,
+          "index": 1,
+          "object_name": "LuaFluidBoxPrototype",
+          "pipe_connections": [
+            {
+              "positions": [
+                null,
+                null,
+                null,
+                null
+              ],
+              "type": "input-output"
+            },
+            {
+              "positions": [
+                null,
+                null,
+                null,
+                null
+              ],
+              "type": "input-output"
+            },
+            {
+              "positions": [
+                null,
+                null,
+                null,
+                null
+              ],
+              "type": "input-output"
+            },
+            {
+              "positions": [
+                null,
+                null,
+                null,
+                null
+              ],
+              "type": "input-output"
+            }
+          ],
+          "production_type": "none",
+          "render_layer": "object",
+          "secondary_draw_orders": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "valid": true,
+          "volume": 100
+        }
       ],
       "friendly_map_color": null,
       "healing_per_tick": 0,
@@ -30728,7 +32169,47 @@
       "flags": null,
       "fluid_capacity": 100,
       "fluidbox_prototypes": [
-        null
+        {
+          "base_area": 1,
+          "base_level": 0,
+          "entity": {
+            "name": "pipe-to-ground"
+          },
+          "height": 1,
+          "index": 1,
+          "object_name": "LuaFluidBoxPrototype",
+          "pipe_connections": [
+            {
+              "positions": [
+                null,
+                null,
+                null,
+                null
+              ],
+              "type": "input-output"
+            },
+            {
+              "max_underground_distance": 10,
+              "positions": [
+                null,
+                null,
+                null,
+                null
+              ],
+              "type": "input-output"
+            }
+          ],
+          "production_type": "none",
+          "render_layer": "object",
+          "secondary_draw_orders": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "valid": true,
+          "volume": 100
+        }
       ],
       "friendly_map_color": null,
       "healing_per_tick": 0,
@@ -31556,7 +33037,18 @@
       },
       "default_collision_mask_with_flags": null,
       "drawing_box": null,
-      "electric_energy_source_prototype": null,
+      "electric_energy_source_prototype": {
+        "buffer_capacity": 0,
+        "drain": 0,
+        "emissions": 0,
+        "input_flow_limit": 1.7976931348623e308,
+        "object_name": "LuaElectricEnergySourcePrototype",
+        "output_flow_limit": 1.7976931348623e308,
+        "render_no_network_icon": true,
+        "render_no_power_icon": true,
+        "usage_priority": "secondary-input",
+        "valid": true
+      },
       "emissions_per_second": 0,
       "enemy_map_color": null,
       "energy_usage": 33.333333333333,
@@ -31803,7 +33295,18 @@
       },
       "default_collision_mask_with_flags": null,
       "drawing_box": null,
-      "electric_energy_source_prototype": null,
+      "electric_energy_source_prototype": {
+        "buffer_capacity": 0,
+        "drain": 16.666666666667,
+        "emissions": 0,
+        "input_flow_limit": 1.7976931348623e308,
+        "object_name": "LuaElectricEnergySourcePrototype",
+        "output_flow_limit": 1.7976931348623e308,
+        "render_no_network_icon": true,
+        "render_no_power_icon": true,
+        "usage_priority": "secondary-input",
+        "valid": true
+      },
       "emissions_per_second": 0,
       "enemy_map_color": null,
       "energy_usage": 483.33333333333,
@@ -31811,7 +33314,46 @@
       "flags": null,
       "fluid_capacity": 400,
       "fluidbox_prototypes": [
-        null
+        {
+          "base_area": 1,
+          "base_level": 0,
+          "entity": {
+            "name": "pump"
+          },
+          "height": 4,
+          "index": 1,
+          "object_name": "LuaFluidBoxPrototype",
+          "pipe_connections": [
+            {
+              "positions": [
+                null,
+                null,
+                null,
+                null
+              ],
+              "type": "output"
+            },
+            {
+              "positions": [
+                null,
+                null,
+                null,
+                null
+              ],
+              "type": "input"
+            }
+          ],
+          "production_type": "none",
+          "render_layer": "object",
+          "secondary_draw_orders": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "valid": true,
+          "volume": 400
+        }
       ],
       "friendly_map_color": null,
       "healing_per_tick": 0,
@@ -32059,7 +33601,18 @@
       },
       "default_collision_mask_with_flags": null,
       "drawing_box": null,
-      "electric_energy_source_prototype": null,
+      "electric_energy_source_prototype": {
+        "buffer_capacity": 0,
+        "drain": 0,
+        "emissions": 1.8518518518519e-6,
+        "input_flow_limit": 1.7976931348623e308,
+        "object_name": "LuaElectricEnergySourcePrototype",
+        "output_flow_limit": 1.7976931348623e308,
+        "render_no_network_icon": true,
+        "render_no_power_icon": true,
+        "usage_priority": "secondary-input",
+        "valid": true
+      },
       "emissions_per_second": 0,
       "enemy_map_color": null,
       "energy_usage": 1500,
@@ -32067,7 +33620,37 @@
       "flags": null,
       "fluid_capacity": 0,
       "fluidbox_prototypes": [
-        null
+        {
+          "base_area": 10,
+          "base_level": 1,
+          "entity": {
+            "name": "pumpjack"
+          },
+          "height": 1,
+          "index": 1,
+          "object_name": "LuaFluidBoxPrototype",
+          "pipe_connections": [
+            {
+              "positions": [
+                null,
+                null,
+                null,
+                null
+              ],
+              "type": "output"
+            }
+          ],
+          "production_type": "output",
+          "render_layer": "object",
+          "secondary_draw_orders": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "valid": true,
+          "volume": 1000
+        }
       ],
       "friendly_map_color": null,
       "healing_per_tick": 0,
@@ -32310,7 +33893,18 @@
       },
       "default_collision_mask_with_flags": null,
       "drawing_box": null,
-      "electric_energy_source_prototype": null,
+      "electric_energy_source_prototype": {
+        "buffer_capacity": 0,
+        "drain": 0,
+        "emissions": 0,
+        "input_flow_limit": 1.7976931348623e308,
+        "object_name": "LuaElectricEnergySourcePrototype",
+        "output_flow_limit": 1.7976931348623e308,
+        "render_no_network_icon": true,
+        "render_no_power_icon": true,
+        "usage_priority": "secondary-input",
+        "valid": true
+      },
       "emissions_per_second": 0,
       "enemy_map_color": null,
       "energy_usage": 5000,
@@ -33430,7 +35024,18 @@
       },
       "default_collision_mask_with_flags": null,
       "drawing_box": null,
-      "electric_energy_source_prototype": null,
+      "electric_energy_source_prototype": {
+        "buffer_capacity": 100000000,
+        "drain": 0,
+        "emissions": 0,
+        "input_flow_limit": 83333.333333333,
+        "object_name": "LuaElectricEnergySourcePrototype",
+        "output_flow_limit": 1.7976931348623e308,
+        "render_no_network_icon": true,
+        "render_no_power_icon": true,
+        "usage_priority": "secondary-input",
+        "valid": true
+      },
       "emissions_per_second": 0,
       "enemy_map_color": null,
       "energy_usage": 833.33333333333,
@@ -34094,7 +35699,18 @@
       },
       "default_collision_mask_with_flags": null,
       "drawing_box": null,
-      "electric_energy_source_prototype": null,
+      "electric_energy_source_prototype": {
+        "buffer_capacity": 4444.4444444444,
+        "drain": 138.88888888889,
+        "emissions": 0,
+        "input_flow_limit": 1.7976931348623e308,
+        "object_name": "LuaElectricEnergySourcePrototype",
+        "output_flow_limit": 1.7976931348623e308,
+        "render_no_network_icon": true,
+        "render_no_power_icon": true,
+        "usage_priority": "primary-input",
+        "valid": true
+      },
       "emissions_per_second": 0,
       "enemy_map_color": null,
       "energy_usage": 4166.6666666667,
@@ -35594,7 +37210,18 @@
       },
       "default_collision_mask_with_flags": null,
       "drawing_box": null,
-      "electric_energy_source_prototype": null,
+      "electric_energy_source_prototype": {
+        "buffer_capacity": 88.888888888889,
+        "drain": 0,
+        "emissions": 0,
+        "input_flow_limit": 1.7976931348623e308,
+        "object_name": "LuaElectricEnergySourcePrototype",
+        "output_flow_limit": 1.7976931348623e308,
+        "render_no_network_icon": true,
+        "render_no_power_icon": true,
+        "usage_priority": "lamp",
+        "valid": true
+      },
       "emissions_per_second": 0,
       "enemy_map_color": null,
       "energy_usage": 83.333333333333,
@@ -36548,7 +38175,18 @@
       },
       "default_collision_mask_with_flags": null,
       "drawing_box": null,
-      "electric_energy_source_prototype": null,
+      "electric_energy_source_prototype": {
+        "buffer_capacity": 0,
+        "drain": 0,
+        "emissions": 0,
+        "input_flow_limit": 1.7976931348623e308,
+        "object_name": "LuaElectricEnergySourcePrototype",
+        "output_flow_limit": 1.7976931348623e308,
+        "render_no_network_icon": true,
+        "render_no_power_icon": true,
+        "usage_priority": "solar",
+        "valid": true
+      },
       "emissions_per_second": 0,
       "enemy_map_color": null,
       "flags": null,
@@ -37033,7 +38671,13 @@
       "time_to_live": 0,
       "type": "spider-vehicle",
       "valid": true,
-      "void_energy_source_prototype": null
+      "void_energy_source_prototype": {
+        "emissions": 0,
+        "object_name": "LuaVoidEnergySourcePrototype",
+        "render_no_network_icon": true,
+        "render_no_power_icon": true,
+        "valid": true
+      }
     },
     "spidertron-explosion": {
       "additional_pastable_entities": null,
@@ -38275,7 +39919,18 @@
       },
       "default_collision_mask_with_flags": null,
       "drawing_box": null,
-      "electric_energy_source_prototype": null,
+      "electric_energy_source_prototype": {
+        "buffer_capacity": 0,
+        "drain": 16.666666666667,
+        "emissions": 0,
+        "input_flow_limit": 1.7976931348623e308,
+        "object_name": "LuaElectricEnergySourcePrototype",
+        "output_flow_limit": 1.7976931348623e308,
+        "render_no_network_icon": true,
+        "render_no_power_icon": true,
+        "usage_priority": "secondary-input",
+        "valid": true
+      },
       "emissions_per_second": 0,
       "enemy_map_color": null,
       "fast_replaceable_group": "inserter",
@@ -38516,7 +40171,18 @@
       },
       "default_collision_mask_with_flags": null,
       "drawing_box": null,
-      "electric_energy_source_prototype": null,
+      "electric_energy_source_prototype": {
+        "buffer_capacity": 0,
+        "drain": 16.666666666667,
+        "emissions": 0,
+        "input_flow_limit": 1.7976931348623e308,
+        "object_name": "LuaElectricEnergySourcePrototype",
+        "output_flow_limit": 1.7976931348623e308,
+        "render_no_network_icon": true,
+        "render_no_power_icon": true,
+        "usage_priority": "secondary-input",
+        "valid": true
+      },
       "emissions_per_second": 0,
       "enemy_map_color": null,
       "fast_replaceable_group": "inserter",
@@ -38757,14 +40423,68 @@
       },
       "default_collision_mask_with_flags": null,
       "drawing_box": null,
-      "electric_energy_source_prototype": null,
+      "electric_energy_source_prototype": {
+        "buffer_capacity": 0,
+        "drain": 0,
+        "emissions": 0,
+        "input_flow_limit": 1.7976931348623e308,
+        "object_name": "LuaElectricEnergySourcePrototype",
+        "output_flow_limit": 1.7976931348623e308,
+        "render_no_network_icon": true,
+        "render_no_power_icon": true,
+        "usage_priority": "secondary-output",
+        "valid": true
+      },
       "emissions_per_second": 0,
       "enemy_map_color": null,
       "fast_replaceable_group": "steam-engine",
       "flags": null,
       "fluid_capacity": 200,
       "fluidbox_prototypes": [
-        null
+        {
+          "base_area": 1,
+          "base_level": -1,
+          "entity": {
+            "name": "steam-engine"
+          },
+          "filter": {
+            "name": "steam"
+          },
+          "height": 2,
+          "index": 1,
+          "minimum_temperature": 100,
+          "object_name": "LuaFluidBoxPrototype",
+          "pipe_connections": [
+            {
+              "positions": [
+                null,
+                null,
+                null,
+                null
+              ],
+              "type": "input-output"
+            },
+            {
+              "positions": [
+                null,
+                null,
+                null,
+                null
+              ],
+              "type": "input-output"
+            }
+          ],
+          "production_type": "input-output",
+          "render_layer": "object",
+          "secondary_draw_orders": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "valid": true,
+          "volume": 200
+        }
       ],
       "friendly_map_color": null,
       "healing_per_tick": 0,
@@ -39006,14 +40726,68 @@
       },
       "default_collision_mask_with_flags": null,
       "drawing_box": null,
-      "electric_energy_source_prototype": null,
+      "electric_energy_source_prototype": {
+        "buffer_capacity": 0,
+        "drain": 0,
+        "emissions": 0,
+        "input_flow_limit": 1.7976931348623e308,
+        "object_name": "LuaElectricEnergySourcePrototype",
+        "output_flow_limit": 1.7976931348623e308,
+        "render_no_network_icon": true,
+        "render_no_power_icon": true,
+        "usage_priority": "secondary-output",
+        "valid": true
+      },
       "emissions_per_second": 0,
       "enemy_map_color": null,
       "fast_replaceable_group": "steam-engine",
       "flags": null,
       "fluid_capacity": 200,
       "fluidbox_prototypes": [
-        null
+        {
+          "base_area": 1,
+          "base_level": -1,
+          "entity": {
+            "name": "steam-turbine"
+          },
+          "filter": {
+            "name": "steam"
+          },
+          "height": 2,
+          "index": 1,
+          "minimum_temperature": 100,
+          "object_name": "LuaFluidBoxPrototype",
+          "pipe_connections": [
+            {
+              "positions": [
+                null,
+                null,
+                null,
+                null
+              ],
+              "type": "input-output"
+            },
+            {
+              "positions": [
+                null,
+                null,
+                null,
+                null
+              ],
+              "type": "input-output"
+            }
+          ],
+          "production_type": "input-output",
+          "render_layer": "object",
+          "secondary_draw_orders": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "valid": true,
+          "volume": 200
+        }
       ],
       "friendly_map_color": null,
       "healing_per_tick": 0,
@@ -39469,7 +41243,47 @@
       },
       "build_base_evolution_requirement": 0,
       "building_grid_bit_shift": 1,
-      "burner_prototype": null,
+      "burner_prototype": {
+        "burnt_inventory_size": 0,
+        "effectivity": 1,
+        "emissions": 7.4074074074074e-7,
+        "fuel_categories": {
+          "chemical": true
+        },
+        "fuel_inventory_size": 1,
+        "light_flicker": {
+          "border_fix_speed": 0.019999999552965,
+          "color": null,
+          "derivation_change_deviation": 0.059999998658895,
+          "derivation_change_frequency": 0.30000001192093,
+          "light_intensity_to_size_coefficient": 0.5,
+          "maximum_intensity": 0.94999998807907,
+          "minimum_intensity": 0.60000002384186,
+          "minimum_light_size": 0.5
+        },
+        "object_name": "LuaBurnerPrototype",
+        "render_no_network_icon": true,
+        "render_no_power_icon": true,
+        "smoke": [
+          {
+            "frequency": 10,
+            "height": 0,
+            "height_deviation": 0,
+            "name": "smoke",
+            "offset": 0,
+            "position": null,
+            "slow_down_factor": 1,
+            "starting_frame": 0,
+            "starting_frame_deviation": 60,
+            "starting_frame_speed": 0,
+            "starting_frame_speed_deviation": 0,
+            "starting_vertical_speed": 0.079999998211861,
+            "starting_vertical_speed_deviation": 0,
+            "vertical_speed_slowdown": 0.96499997377396
+          }
+        ],
+        "valid": true
+      },
       "collision_box": null,
       "collision_mask": null,
       "collision_mask_collides_with_self": true,
@@ -39799,7 +41613,48 @@
       },
       "build_base_evolution_requirement": 0,
       "building_grid_bit_shift": 1,
-      "burner_prototype": null,
+      "burner_prototype": {
+        "burnt_inventory_size": 0,
+        "effectivity": 1,
+        "emissions": 3.7037037037037e-7,
+        "fuel_categories": {
+          "chemical": true
+        },
+        "fuel_inventory_size": 1,
+        "light_flicker": {
+          "border_fix_speed": 0.019999999552965,
+          "color": null,
+          "derivation_change_deviation": 0.059999998658895,
+          "derivation_change_frequency": 0.30000001192093,
+          "light_intensity_to_size_coefficient": 0.5,
+          "maximum_intensity": 0.94999998807907,
+          "minimum_intensity": 0.60000002384186,
+          "minimum_light_size": 0.5
+        },
+        "object_name": "LuaBurnerPrototype",
+        "render_no_network_icon": true,
+        "render_no_power_icon": true,
+        "smoke": [
+          {
+            "deviation": null,
+            "frequency": 5,
+            "height": 0,
+            "height_deviation": 0,
+            "name": "smoke",
+            "offset": 0,
+            "position": null,
+            "slow_down_factor": 1,
+            "starting_frame": 0,
+            "starting_frame_deviation": 60,
+            "starting_frame_speed": 0,
+            "starting_frame_speed_deviation": 0,
+            "starting_vertical_speed": 0.079999998211861,
+            "starting_vertical_speed_deviation": 0,
+            "vertical_speed_slowdown": 0.96499997377396
+          }
+        ],
+        "valid": true
+      },
       "collision_box": null,
       "collision_mask": null,
       "collision_mask_collides_with_self": true,
@@ -40310,7 +42165,64 @@
       "flags": null,
       "fluid_capacity": 25000,
       "fluidbox_prototypes": [
-        null
+        {
+          "base_area": 250,
+          "base_level": 0,
+          "entity": {
+            "name": "storage-tank"
+          },
+          "height": 1,
+          "index": 1,
+          "object_name": "LuaFluidBoxPrototype",
+          "pipe_connections": [
+            {
+              "positions": [
+                null,
+                null,
+                null,
+                null
+              ],
+              "type": "input-output"
+            },
+            {
+              "positions": [
+                null,
+                null,
+                null,
+                null
+              ],
+              "type": "input-output"
+            },
+            {
+              "positions": [
+                null,
+                null,
+                null,
+                null
+              ],
+              "type": "input-output"
+            },
+            {
+              "positions": [
+                null,
+                null,
+                null,
+                null
+              ],
+              "type": "input-output"
+            }
+          ],
+          "production_type": "none",
+          "render_layer": "object",
+          "secondary_draw_orders": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "valid": true,
+          "volume": 25000
+        }
       ],
       "friendly_map_color": null,
       "healing_per_tick": 0,
@@ -40967,7 +42879,48 @@
       "allow_copy_paste": true,
       "build_base_evolution_requirement": 0,
       "building_grid_bit_shift": 1,
-      "burner_prototype": null,
+      "burner_prototype": {
+        "burnt_inventory_size": 0,
+        "effectivity": 1,
+        "emissions": 0,
+        "fuel_categories": {
+          "chemical": true
+        },
+        "fuel_inventory_size": 2,
+        "light_flicker": {
+          "border_fix_speed": 0.019999999552965,
+          "color": null,
+          "derivation_change_deviation": 0.059999998658895,
+          "derivation_change_frequency": 0.30000001192093,
+          "light_intensity_to_size_coefficient": 0.5,
+          "maximum_intensity": 0.80000001192093,
+          "minimum_intensity": 0.20000000298023,
+          "minimum_light_size": 0.5
+        },
+        "object_name": "LuaBurnerPrototype",
+        "render_no_network_icon": true,
+        "render_no_power_icon": true,
+        "smoke": [
+          {
+            "deviation": null,
+            "frequency": 50,
+            "height": 0,
+            "height_deviation": 0,
+            "name": "tank-smoke",
+            "offset": 0,
+            "position": null,
+            "slow_down_factor": 1,
+            "starting_frame": 0,
+            "starting_frame_deviation": 60,
+            "starting_frame_speed": 0,
+            "starting_frame_speed_deviation": 0,
+            "starting_vertical_speed": 0,
+            "starting_vertical_speed_deviation": 0,
+            "vertical_speed_slowdown": 0.96499997377396
+          }
+        ],
+        "valid": true
+      },
       "collision_box": null,
       "collision_mask": null,
       "collision_mask_collides_with_self": true,
@@ -46409,11 +48362,33 @@
     "battery-equipment": {
       "automatic": false,
       "background_color": null,
-      "electric_energy_source_prototype": null,
+      "electric_energy_source_prototype": {
+        "buffer_capacity": 20000000,
+        "drain": 0,
+        "emissions": 0,
+        "input_flow_limit": 1.7976931348623e308,
+        "object_name": "LuaElectricEnergySourcePrototype",
+        "output_flow_limit": 1.7976931348623e308,
+        "render_no_network_icon": true,
+        "render_no_power_icon": true,
+        "usage_priority": "tertiary",
+        "valid": true
+      },
       "energy_consumption": 0,
       "energy_per_shield": 0,
       "energy_production": 0,
-      "energy_source": null,
+      "energy_source": {
+        "buffer_capacity": 20000000,
+        "drain": 0,
+        "emissions": 0,
+        "input_flow_limit": 1.7976931348623e308,
+        "object_name": "LuaElectricEnergySourcePrototype",
+        "output_flow_limit": 1.7976931348623e308,
+        "render_no_network_icon": true,
+        "render_no_power_icon": true,
+        "usage_priority": "tertiary",
+        "valid": true
+      },
       "equipment_categories": [
         "armor"
       ],
@@ -46436,11 +48411,33 @@
     "battery-mk2-equipment": {
       "automatic": false,
       "background_color": null,
-      "electric_energy_source_prototype": null,
+      "electric_energy_source_prototype": {
+        "buffer_capacity": 100000000,
+        "drain": 0,
+        "emissions": 0,
+        "input_flow_limit": 1.7976931348623e308,
+        "object_name": "LuaElectricEnergySourcePrototype",
+        "output_flow_limit": 1.7976931348623e308,
+        "render_no_network_icon": true,
+        "render_no_power_icon": true,
+        "usage_priority": "tertiary",
+        "valid": true
+      },
       "energy_consumption": 0,
       "energy_per_shield": 0,
       "energy_production": 0,
-      "energy_source": null,
+      "energy_source": {
+        "buffer_capacity": 100000000,
+        "drain": 0,
+        "emissions": 0,
+        "input_flow_limit": 1.7976931348623e308,
+        "object_name": "LuaElectricEnergySourcePrototype",
+        "output_flow_limit": 1.7976931348623e308,
+        "render_no_network_icon": true,
+        "render_no_power_icon": true,
+        "usage_priority": "tertiary",
+        "valid": true
+      },
       "equipment_categories": [
         "armor"
       ],
@@ -46463,11 +48460,33 @@
     "belt-immunity-equipment": {
       "automatic": false,
       "background_color": null,
-      "electric_energy_source_prototype": null,
+      "electric_energy_source_prototype": {
+        "buffer_capacity": 100000,
+        "drain": 0,
+        "emissions": 0,
+        "input_flow_limit": 4000,
+        "object_name": "LuaElectricEnergySourcePrototype",
+        "output_flow_limit": 1.7976931348623e308,
+        "render_no_network_icon": true,
+        "render_no_power_icon": true,
+        "usage_priority": "primary-input",
+        "valid": true
+      },
       "energy_consumption": 1666.6666666667,
       "energy_per_shield": 0,
       "energy_production": 0,
-      "energy_source": null,
+      "energy_source": {
+        "buffer_capacity": 100000,
+        "drain": 0,
+        "emissions": 0,
+        "input_flow_limit": 4000,
+        "object_name": "LuaElectricEnergySourcePrototype",
+        "output_flow_limit": 1.7976931348623e308,
+        "render_no_network_icon": true,
+        "render_no_power_icon": true,
+        "usage_priority": "primary-input",
+        "valid": true
+      },
       "equipment_categories": [
         "armor"
       ],
@@ -46490,11 +48509,33 @@
     "discharge-defense-equipment": {
       "automatic": false,
       "background_color": null,
-      "electric_energy_source_prototype": null,
+      "electric_energy_source_prototype": {
+        "buffer_capacity": 4040000,
+        "drain": 0,
+        "emissions": 0,
+        "input_flow_limit": 1.7976931348623e308,
+        "object_name": "LuaElectricEnergySourcePrototype",
+        "output_flow_limit": 1.7976931348623e308,
+        "render_no_network_icon": true,
+        "render_no_power_icon": true,
+        "usage_priority": "secondary-input",
+        "valid": true
+      },
       "energy_consumption": 0,
       "energy_per_shield": 0,
       "energy_production": 0,
-      "energy_source": null,
+      "energy_source": {
+        "buffer_capacity": 4040000,
+        "drain": 0,
+        "emissions": 0,
+        "input_flow_limit": 1.7976931348623e308,
+        "object_name": "LuaElectricEnergySourcePrototype",
+        "output_flow_limit": 1.7976931348623e308,
+        "render_no_network_icon": true,
+        "render_no_power_icon": true,
+        "usage_priority": "secondary-input",
+        "valid": true
+      },
       "equipment_categories": [
         "armor"
       ],
@@ -46517,11 +48558,33 @@
     "energy-shield-equipment": {
       "automatic": false,
       "background_color": null,
-      "electric_energy_source_prototype": null,
+      "electric_energy_source_prototype": {
+        "buffer_capacity": 120000,
+        "drain": 0,
+        "emissions": 0,
+        "input_flow_limit": 4000,
+        "object_name": "LuaElectricEnergySourcePrototype",
+        "output_flow_limit": 1.7976931348623e308,
+        "render_no_network_icon": true,
+        "render_no_power_icon": true,
+        "usage_priority": "primary-input",
+        "valid": true
+      },
       "energy_consumption": 4000,
       "energy_per_shield": 20000,
       "energy_production": 0,
-      "energy_source": null,
+      "energy_source": {
+        "buffer_capacity": 120000,
+        "drain": 0,
+        "emissions": 0,
+        "input_flow_limit": 4000,
+        "object_name": "LuaElectricEnergySourcePrototype",
+        "output_flow_limit": 1.7976931348623e308,
+        "render_no_network_icon": true,
+        "render_no_power_icon": true,
+        "usage_priority": "primary-input",
+        "valid": true
+      },
       "equipment_categories": [
         "armor"
       ],
@@ -46544,11 +48607,33 @@
     "energy-shield-mk2-equipment": {
       "automatic": false,
       "background_color": null,
-      "electric_energy_source_prototype": null,
+      "electric_energy_source_prototype": {
+        "buffer_capacity": 180000,
+        "drain": 0,
+        "emissions": 0,
+        "input_flow_limit": 6000,
+        "object_name": "LuaElectricEnergySourcePrototype",
+        "output_flow_limit": 1.7976931348623e308,
+        "render_no_network_icon": true,
+        "render_no_power_icon": true,
+        "usage_priority": "primary-input",
+        "valid": true
+      },
       "energy_consumption": 6000,
       "energy_per_shield": 30000,
       "energy_production": 0,
-      "energy_source": null,
+      "energy_source": {
+        "buffer_capacity": 180000,
+        "drain": 0,
+        "emissions": 0,
+        "input_flow_limit": 6000,
+        "object_name": "LuaElectricEnergySourcePrototype",
+        "output_flow_limit": 1.7976931348623e308,
+        "render_no_network_icon": true,
+        "render_no_power_icon": true,
+        "usage_priority": "primary-input",
+        "valid": true
+      },
       "equipment_categories": [
         "armor"
       ],
@@ -46571,11 +48656,33 @@
     "exoskeleton-equipment": {
       "automatic": false,
       "background_color": null,
-      "electric_energy_source_prototype": null,
+      "electric_energy_source_prototype": {
+        "buffer_capacity": 0,
+        "drain": 0,
+        "emissions": 0,
+        "input_flow_limit": 1.7976931348623e308,
+        "object_name": "LuaElectricEnergySourcePrototype",
+        "output_flow_limit": 1.7976931348623e308,
+        "render_no_network_icon": true,
+        "render_no_power_icon": true,
+        "usage_priority": "secondary-input",
+        "valid": true
+      },
       "energy_consumption": 3333.3333333333,
       "energy_per_shield": 0,
       "energy_production": 0,
-      "energy_source": null,
+      "energy_source": {
+        "buffer_capacity": 0,
+        "drain": 0,
+        "emissions": 0,
+        "input_flow_limit": 1.7976931348623e308,
+        "object_name": "LuaElectricEnergySourcePrototype",
+        "output_flow_limit": 1.7976931348623e308,
+        "render_no_network_icon": true,
+        "render_no_power_icon": true,
+        "usage_priority": "secondary-input",
+        "valid": true
+      },
       "equipment_categories": [
         "armor"
       ],
@@ -46598,11 +48705,33 @@
     "fusion-reactor-equipment": {
       "automatic": false,
       "background_color": null,
-      "electric_energy_source_prototype": null,
+      "electric_energy_source_prototype": {
+        "buffer_capacity": 0,
+        "drain": 0,
+        "emissions": 0,
+        "input_flow_limit": 1.7976931348623e308,
+        "object_name": "LuaElectricEnergySourcePrototype",
+        "output_flow_limit": 1.7976931348623e308,
+        "render_no_network_icon": true,
+        "render_no_power_icon": true,
+        "usage_priority": "primary-output",
+        "valid": true
+      },
       "energy_consumption": 0,
       "energy_per_shield": 0,
       "energy_production": 12500,
-      "energy_source": null,
+      "energy_source": {
+        "buffer_capacity": 0,
+        "drain": 0,
+        "emissions": 0,
+        "input_flow_limit": 1.7976931348623e308,
+        "object_name": "LuaElectricEnergySourcePrototype",
+        "output_flow_limit": 1.7976931348623e308,
+        "render_no_network_icon": true,
+        "render_no_power_icon": true,
+        "usage_priority": "primary-output",
+        "valid": true
+      },
       "equipment_categories": [
         "armor"
       ],
@@ -46625,11 +48754,33 @@
     "night-vision-equipment": {
       "automatic": false,
       "background_color": null,
-      "electric_energy_source_prototype": null,
+      "electric_energy_source_prototype": {
+        "buffer_capacity": 120000,
+        "drain": 0,
+        "emissions": 0,
+        "input_flow_limit": 4000,
+        "object_name": "LuaElectricEnergySourcePrototype",
+        "output_flow_limit": 1.7976931348623e308,
+        "render_no_network_icon": true,
+        "render_no_power_icon": true,
+        "usage_priority": "primary-input",
+        "valid": true
+      },
       "energy_consumption": 166.66666666667,
       "energy_per_shield": 0,
       "energy_production": 0,
-      "energy_source": null,
+      "energy_source": {
+        "buffer_capacity": 120000,
+        "drain": 0,
+        "emissions": 0,
+        "input_flow_limit": 4000,
+        "object_name": "LuaElectricEnergySourcePrototype",
+        "output_flow_limit": 1.7976931348623e308,
+        "render_no_network_icon": true,
+        "render_no_power_icon": true,
+        "usage_priority": "primary-input",
+        "valid": true
+      },
       "equipment_categories": [
         "armor"
       ],
@@ -46652,11 +48803,33 @@
     "personal-laser-defense-equipment": {
       "automatic": true,
       "background_color": null,
-      "electric_energy_source_prototype": null,
+      "electric_energy_source_prototype": {
+        "buffer_capacity": 220000,
+        "drain": 0,
+        "emissions": 0,
+        "input_flow_limit": 1.7976931348623e308,
+        "object_name": "LuaElectricEnergySourcePrototype",
+        "output_flow_limit": 1.7976931348623e308,
+        "render_no_network_icon": true,
+        "render_no_power_icon": true,
+        "usage_priority": "secondary-input",
+        "valid": true
+      },
       "energy_consumption": 0,
       "energy_per_shield": 0,
       "energy_production": 0,
-      "energy_source": null,
+      "energy_source": {
+        "buffer_capacity": 220000,
+        "drain": 0,
+        "emissions": 0,
+        "input_flow_limit": 1.7976931348623e308,
+        "object_name": "LuaElectricEnergySourcePrototype",
+        "output_flow_limit": 1.7976931348623e308,
+        "render_no_network_icon": true,
+        "render_no_power_icon": true,
+        "usage_priority": "secondary-input",
+        "valid": true
+      },
       "equipment_categories": [
         "armor"
       ],
@@ -46679,11 +48852,33 @@
     "personal-roboport-equipment": {
       "automatic": false,
       "background_color": null,
-      "electric_energy_source_prototype": null,
+      "electric_energy_source_prototype": {
+        "buffer_capacity": 35000000,
+        "drain": 0,
+        "emissions": 0,
+        "input_flow_limit": 58333.333333333,
+        "object_name": "LuaElectricEnergySourcePrototype",
+        "output_flow_limit": 1.7976931348623e308,
+        "render_no_network_icon": true,
+        "render_no_power_icon": true,
+        "usage_priority": "secondary-input",
+        "valid": true
+      },
       "energy_consumption": 33333.333333333,
       "energy_per_shield": 0,
       "energy_production": 0,
-      "energy_source": null,
+      "energy_source": {
+        "buffer_capacity": 35000000,
+        "drain": 0,
+        "emissions": 0,
+        "input_flow_limit": 58333.333333333,
+        "object_name": "LuaElectricEnergySourcePrototype",
+        "output_flow_limit": 1.7976931348623e308,
+        "render_no_network_icon": true,
+        "render_no_power_icon": true,
+        "usage_priority": "secondary-input",
+        "valid": true
+      },
       "equipment_categories": [
         "armor"
       ],
@@ -46706,11 +48901,33 @@
     "personal-roboport-mk2-equipment": {
       "automatic": false,
       "background_color": null,
-      "electric_energy_source_prototype": null,
+      "electric_energy_source_prototype": {
+        "buffer_capacity": 35000000,
+        "drain": 0,
+        "emissions": 0,
+        "input_flow_limit": 58333.333333333,
+        "object_name": "LuaElectricEnergySourcePrototype",
+        "output_flow_limit": 1.7976931348623e308,
+        "render_no_network_icon": true,
+        "render_no_power_icon": true,
+        "usage_priority": "secondary-input",
+        "valid": true
+      },
       "energy_consumption": 58333.333333333,
       "energy_per_shield": 0,
       "energy_production": 0,
-      "energy_source": null,
+      "energy_source": {
+        "buffer_capacity": 35000000,
+        "drain": 0,
+        "emissions": 0,
+        "input_flow_limit": 58333.333333333,
+        "object_name": "LuaElectricEnergySourcePrototype",
+        "output_flow_limit": 1.7976931348623e308,
+        "render_no_network_icon": true,
+        "render_no_power_icon": true,
+        "usage_priority": "secondary-input",
+        "valid": true
+      },
       "equipment_categories": [
         "armor"
       ],
@@ -46733,11 +48950,33 @@
     "solar-panel-equipment": {
       "automatic": false,
       "background_color": null,
-      "electric_energy_source_prototype": null,
+      "electric_energy_source_prototype": {
+        "buffer_capacity": 0,
+        "drain": 0,
+        "emissions": 0,
+        "input_flow_limit": 1.7976931348623e308,
+        "object_name": "LuaElectricEnergySourcePrototype",
+        "output_flow_limit": 1.7976931348623e308,
+        "render_no_network_icon": true,
+        "render_no_power_icon": true,
+        "usage_priority": "primary-output",
+        "valid": true
+      },
       "energy_consumption": 0,
       "energy_per_shield": 0,
       "energy_production": 500,
-      "energy_source": null,
+      "energy_source": {
+        "buffer_capacity": 0,
+        "drain": 0,
+        "emissions": 0,
+        "input_flow_limit": 1.7976931348623e308,
+        "object_name": "LuaElectricEnergySourcePrototype",
+        "output_flow_limit": 1.7976931348623e308,
+        "render_no_network_icon": true,
+        "render_no_power_icon": true,
+        "usage_priority": "primary-output",
+        "valid": true
+      },
       "equipment_categories": [
         "armor"
       ],
