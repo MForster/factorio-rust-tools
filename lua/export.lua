@@ -13,6 +13,10 @@ function Indent(callback)
     indent = old_indent
 end
 
+function export.SetContext(context, callback)
+    callback(context)
+end
+
 function export.ExportStringAttr(name, value)
     -- Unfortunately we have no control over the string printed by
     -- `localised_print`. There can be single/double quotes or new lines in
@@ -62,13 +66,16 @@ function export.ExportBoolValue(value)
     end
 end
 
-function export.ExportObject(name, callback)
-    export.Export(name, ":")
-    Indent(callback)
+function export.ExportObject(name, object, callback)
+    if object ~= nil then
+        export.Export(name, ":")
+        Indent(function()
+            callback(object)
+        end)
+    end
 end
 
-function export.ExportArray(name, array, callback)
-    export.Export(name, ":")
+function export.ExportArray(array, callback)
     if array ~= nil then
         for _, value in ipairs(array) do
             export.Export("- ")
@@ -79,15 +86,13 @@ function export.ExportArray(name, array, callback)
     end
 end
 
-function export.ExportTable(name, table, callback)
+function export.ExportMapping(table, callback)
     if table ~= nil then
-        export.ExportObject(name, function()
-            for key, value in pairs(table) do
-                export.ExportObject(key, function()
-                    callback(value)
-                end)
-            end
-        end)
+        for key, value in pairs(table) do
+            export.ExportObject(key, table, function()
+                callback(value)
+            end)
+        end
     end
 end
 

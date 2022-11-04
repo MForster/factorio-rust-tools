@@ -1,3 +1,5 @@
+use itertools::Itertools;
+
 use crate::api::{is_number, HasAttributes};
 use crate::api::{Api, Attribute, Type};
 
@@ -15,74 +17,88 @@ impl<'a> ScriptGenerator<'a> {
     }
 
     pub fn generate(mut self, object: &str, attributes: Vec<&Attribute>) -> String {
-        self.export_attrs(object, attributes, 0);
+        self.script.begin_context(object);
+        self.export_attrs(attributes, 0);
+        self.script.end_block();
         self.script.build()
     }
 
-    fn export_attrs(&mut self, object: &str, attrs: Vec<&Attribute>, depth: usize) {
+    fn export_attrs(&mut self, attrs: Vec<&Attribute>, depth: usize) {
         for attr in attrs {
             // TODO: Reading fails, but the documentation only says so in prose.
-            if attr.name == "order_in_recipe" || attr.name == "subgroups" {
+            if attr.name == "order_in_recipe" || attr.name == "subgroups" || attr.name == "group" {
                 continue;
             }
 
-            use self::Type::*;
             match &attr.r#type {
-                String => {
-                    self.script.export_string_attr(object, &attr.name);
-                }
+                Type::String => self.script.export_string_attr(&attr.name),
+                Type::Boolean => self.script.export_bool_attr(&attr.name),
+                ty if is_number(ty) => self.script.export_number_attr(&attr.name),
 
-                r#type if is_number(r#type) => {
-                    self.script.export_number_attr(object, &attr.name);
+                _ => {
+                    self.script.begin_object(&attr.name);
+                    self.export_value(&attr.r#type, depth);
+                    self.script.end_block();
                 }
-
-                Boolean => {
-                    self.script.export_bool_attr(object, &attr.name);
-                }
-
-                Array { value } => {
-                    let element = self.script.begin_array(object, &attr.name);
-                    self.export_value(&element, value, depth);
-                    self.script.end_array();
-                }
-
-                LuaCustomTable { key, value } | Dictionary { key, value }
-                    if matches!(key.as_ref(), String) =>
-                {
-                    let table = format!("{object}.{}", attr.name);
-                    let element = self.script.begin_table(&table, &attr.name);
-                    self.export_value(&element, value, depth);
-                    self.script.end_table();
-                }
-
-                _ => {}
             }
         }
     }
 
-    fn export_value(&mut self, value: &str, ty: &Type, depth: usize) {
+    fn export_value(&mut self, ty: &Type, depth: usize) {
         let depth = depth + 1;
+
         match ty {
             Type::NamedType { name } => {
                 if let Some(class) = self.api.classes.get(name) {
                     let mut attrs = class.attributes();
                     // TODO: Cut infinite recursion in a more principled way
-                    if depth > 1 {
+                    if depth > 2 {
                         attrs.retain(|a| a.name == "name")
                     }
-                    self.export_attrs(value, attrs, depth);
+                    self.export_attrs(attrs, depth);
                 }
 
                 if let Some(concept) = self.api.concepts.get(name) {
-                    self.export_attrs(value, concept.attributes(), depth);
+                    self.export_attrs(concept.attributes(), depth);
                 }
             }
 
-            Type::String => self.script.export_string_value(value),
-            r#type if is_number(r#type) => self.script.export_number_value(value),
-            Type::Boolean => self.script.export_bool_value(value),
+            Type::LuaCustomTable { key, value } | Type::Dictionary { key, value }
+                if matches!(key.as_ref(), Type::String) =>
+            {
+                self.script.begin_mapping();
+                self.export_value(value, depth);
+                self.script.end_block();
+            }
 
-            _ => unimplemented!("export_value for {value}"),
+            Type::Array { value } => {
+                self.script.begin_array();
+                self.export_value(value, depth);
+                self.script.end_block();
+            }
+
+            Type::Table {
+                parameters,
+                variant_parameter_groups,
+            } => {
+                self.export_attrs(
+                    variant_parameter_groups
+                        .iter()
+                        .flatten()
+                        .flat_map(|vpg| &vpg.parameters)
+                        .chain(parameters)
+                        .collect_vec(),
+                    depth,
+                );
+            }
+
+            Type::String => self.script.export_string_value(),
+            Type::Boolean => self.script.export_bool_value(),
+            ty if is_number(ty) => self.script.export_number_value(),
+
+            Type::Union { .. } => {} // TODO
+
+            _ => unimplemented!("unsupported attribute type: {ty:#?}"),
         };
     }
 }

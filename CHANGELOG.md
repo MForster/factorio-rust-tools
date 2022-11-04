@@ -8,6 +8,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 <!-- next-header -->
 ## [Unreleased] - ReleaseDate
 
+### Incompatible changes
+
+- The [`table` type](https://lua-api.factorio.com/latest/Builtin-Types.html#table)
+  is now supported. This leads to more information in the export.
+
 ## [0.4.0] - 2022-11-03
 
 ### Incompatible changes

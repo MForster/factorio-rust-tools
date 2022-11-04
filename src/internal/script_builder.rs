@@ -23,72 +23,57 @@ impl ScriptBuilder {
         builder
     }
 
-    pub fn export_primitive_value(&mut self, primitive_type: &str, value: &str) {
-        writeln!(self, r#"export.Export{primitive_type}Value({value})"#,).unwrap();
+    pub fn export_string_value(&mut self) {
+        writeln!(self, r#"export.ExportStringValue(context)"#).unwrap();
     }
 
-    pub fn export_string_value(&mut self, value: &str) {
-        self.export_primitive_value("String", value);
+    pub fn export_number_value(&mut self) {
+        writeln!(self, r#"export.ExportNumberValue(context)"#).unwrap();
     }
 
-    pub fn export_number_value(&mut self, value: &str) {
-        self.export_primitive_value("Number", value);
+    pub fn export_bool_value(&mut self) {
+        writeln!(self, r#"export.ExportBoolValue(context)"#).unwrap();
     }
 
-    pub fn export_bool_value(&mut self, value: &str) {
-        self.export_primitive_value("Bool", value);
+    pub fn export_string_attr(&mut self, attr: &str) {
+        writeln!(self, r#"export.ExportStringAttr("{attr}", context.{attr})"#,).unwrap();
     }
 
-    pub fn export_primitive_attr(&mut self, primitive_type: &str, object: &str, property: &str) {
+    pub fn export_number_attr(&mut self, attr: &str) {
+        writeln!(self, r#"export.ExportNumberAttr("{attr}", context.{attr})"#,).unwrap();
+    }
+
+    pub fn export_bool_attr(&mut self, attr: &str) {
+        writeln!(self, r#"export.ExportBoolAttr("{attr}", context.{attr})"#,).unwrap();
+    }
+
+    pub fn begin_context(&mut self, context: &str) {
+        writeln!(self, r#"export.SetContext({context}, function(context)"#,).unwrap();
+        self.indentation += 4;
+    }
+
+    pub fn begin_object(&mut self, attr: &str) {
         writeln!(
             self,
-            r#"export.Export{primitive_type}Attr("{property}", {object}.{property})"#,
-        )
-        .unwrap();
-    }
-
-    pub fn export_string_attr(&mut self, object: &str, property: &str) {
-        self.export_primitive_attr("String", object, property);
-    }
-
-    pub fn export_number_attr(&mut self, object: &str, property: &str) {
-        self.export_primitive_attr("Number", object, property);
-    }
-
-    pub fn export_bool_attr(&mut self, object: &str, property: &str) {
-        self.export_primitive_attr("Bool", object, property);
-    }
-
-    pub fn begin_block(&mut self, block_type: &str, object: &str, attribute: &str) -> String {
-        let element = "prototype";
-        writeln!(
-            self,
-            r#"export.Export{block_type}("{attribute}", {object}, function({element})"#,
+            r#"export.ExportObject("{attr}", context.{attr}, function(context)"#,
         )
         .unwrap();
         self.indentation += 4;
-        element.into()
+    }
+
+    pub fn begin_mapping(&mut self) {
+        writeln!(self, r#"export.ExportMapping(context, function(context)"#,).unwrap();
+        self.indentation += 4;
+    }
+
+    pub fn begin_array(&mut self) {
+        writeln!(self, r#"export.ExportArray(context, function(context)"#,).unwrap();
+        self.indentation += 4;
     }
 
     pub fn end_block(&mut self) {
         self.indentation -= 4;
         writeln!(self, "end)").unwrap();
-    }
-
-    pub fn begin_table(&mut self, table: &str, attribute: &str) -> String {
-        self.begin_block("Table", table, attribute)
-    }
-
-    pub fn end_table(&mut self) {
-        self.end_block();
-    }
-
-    pub fn begin_array(&mut self, array: &str, attribute: &str) -> String {
-        self.begin_block("Array", &format!("{array}.{attribute}"), attribute)
-    }
-
-    pub fn end_array(&mut self) {
-        self.end_block();
     }
 
     pub fn build(mut self) -> String {
