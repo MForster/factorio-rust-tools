@@ -13,6 +13,23 @@ function Indent(callback)
     indent = old_indent
 end
 
+--- Read an object property safely.
+-- There are a few properties where we can't predict safely if they are allowed
+-- to be read on an object or not, in particular these examples:
+--
+-- https://lua-api.factorio.com/latest/LuaGroup.html#LuaGroup.group
+-- https://lua-api.factorio.com/latest/LuaGroup.html#LuaGroup.subgroups
+-- https://lua-api.factorio.com/latest/LuaGroup.html#LuaGroup.order_in_recipe
+--
+-- This function is used to wrap any access to properties with `pcall`.
+function export.SaveRead(context, attr)
+    local value = nil
+    pcall(function()
+        value = context[attr]
+    end)
+    return value
+end
+
 function export.SetContext(context, callback)
     callback(context)
 end

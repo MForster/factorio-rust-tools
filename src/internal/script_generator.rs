@@ -47,11 +47,6 @@ impl<'a> ScriptGenerator<'a> {
 
     fn export_attrs(&mut self, attrs: Vec<&Attribute>, depth: usize) {
         for attr in attrs {
-            // TODO: Reading fails, but the documentation only says so in prose.
-            if attr.name == "order_in_recipe" || attr.name == "subgroups" || attr.name == "group" {
-                continue;
-            }
-
             match &attr.r#type {
                 Type::String => self.script.export_string_attr(&attr.name),
                 Type::Boolean => self.script.export_bool_attr(&attr.name),
