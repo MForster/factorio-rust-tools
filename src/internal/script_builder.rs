@@ -36,7 +36,11 @@ impl ScriptBuilder {
     }
 
     pub fn export_string_attr(&mut self, attr: &str) {
-        writeln!(self, r#"export.ExportStringAttr("{attr}", context.{attr})"#,).unwrap();
+        writeln!(
+            self,
+            r#"export.ExportStringAttr("{attr}", export.SaveRead(context, "{attr}"))"#,
+        )
+        .unwrap();
     }
 
     pub fn export_number_attr(&mut self, attr: &str) {
@@ -55,7 +59,7 @@ impl ScriptBuilder {
     pub fn begin_object(&mut self, attr: &str) {
         writeln!(
             self,
-            r#"export.ExportObject("{attr}", context.{attr}, function(context)"#,
+            r#"export.ExportObject("{attr}", export.SaveRead(context, "{attr}"), function(context)"#,
         )
         .unwrap();
         self.indentation += 4;
