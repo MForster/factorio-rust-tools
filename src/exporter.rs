@@ -31,6 +31,7 @@ const MOD_NAME: &str = "factorio_exporter";
 const MOD_VERSION: &str = "0.0.1";
 const MODS_DIR: &str = "mods";
 
+/// Main class for orchestrating the export.
 pub struct FactorioExporter<'a> {
     factorio_binary: &'a Path,
     api: &'a Api,
@@ -41,6 +42,17 @@ pub struct FactorioExporter<'a> {
 }
 
 impl FactorioExporter<'_> {
+    /// Creates and configures a new `FactorioExporter` instance.
+    ///
+    /// # Arguments
+    ///
+    /// * `factorio_binary` - File system path of a Factorio binary. This can be
+    ///   any variant of the binary, full, headless, or demo.
+    /// * `api` - The definition of the Factorio API, as loaded by
+    ///   [`load_api`](super::load_api).
+    /// * `locale` - Locale code to use for translated strings.
+    /// * `export_icons` - Whether icon paths should be collected in the data
+    ///   phase and patched into the prototype definitions using a heuristic.
     pub fn new<'a>(
         factorio_binary: &'a Path,
         api: &'a Api,
@@ -63,6 +75,15 @@ impl FactorioExporter<'_> {
 const ARGS: &[&str] = &["--config", CONFIG, "--mod-directory", MODS_DIR];
 
 impl FactorioExporter<'_> {
+    /// Export the prototype definitions from Factorio and partially deserialize
+    /// them into a [`serde_yaml::Value`] object, which can easily deserialized
+    /// of serialized into other data types further.
+    ///
+    /// This function executes Factorio twice, once to create a save file, and a
+    /// second time to execute an exporter mod that does the heavy-lifting. The
+    /// process uses a temporary directory, so that the main Factorio
+    /// installation is not touched. Any existing Factorio configuration,
+    /// including installed mods are therefore ignored.
     pub fn export(&self) -> Result<Value> {
         self.create_exec_dir()?;
         self.create_exporter_mod()?;
@@ -101,6 +122,18 @@ impl FactorioExporter<'_> {
         Ok(())
     }
 
+    /// Install mods into the temporary execution directory before exporting.
+    /// This allows exporting additional items, recipes, and all other changes
+    /// that the mods make to be part of the export.
+    ///
+    /// No particular checks are made that the dependencies of the specified
+    /// mods can be resolved. This is the responsibility of the caller.
+    /// Otherwise Factorio will probably not start.
+    ///
+    /// # Arguments
+    ///
+    /// * `mods` - A list of file system paths that point to Factorio mods in
+    ///   `.zip` format.
     pub fn install_mods<I, P>(&self, mods: I) -> Result<()>
     where
         I: IntoIterator<Item = P>,
