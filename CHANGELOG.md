@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 <!-- next-header -->
 ## [Unreleased] - ReleaseDate
 
+## [0.5.1] - 2022-11-05
+
 ### Minor changes
 
 - Most of the public API is now initially documented.
@@ -130,7 +132,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Added the full feature as a library that can be embedded into other apps.
 
 <!-- next-url -->
-[Unreleased]: https://github.com/MForster/factorio-export/compare/v0.5.0...HEAD
+[Unreleased]: https://github.com/MForster/factorio-export/compare/v0.5.1...HEAD
+[0.5.1]: https://github.com/MForster/factorio-export/compare/v0.5.0...v0.5.1
 [0.5.0]: https://github.com/MForster/factorio-export/compare/v0.4.0...v0.5.0
 [0.4.0]: https://github.com/MForster/factorio-export/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/MForster/factorio-export/compare/v0.2.0...v0.3.0
