@@ -3,7 +3,7 @@ members = ["crates/*"]
 
 [workspace.metadata.release]
 allow-branch = ["main"]
-pre-release-commit-message = "Release version {{version}}"
+pre-release-commit-message = "Release of one or more crates"
 tag-message = "Release version {{version}}"
 pre-release-replacements = [
   { file = "CHANGELOG.md", search = "Unreleased", replace = "{{version}}", min = 1 },
