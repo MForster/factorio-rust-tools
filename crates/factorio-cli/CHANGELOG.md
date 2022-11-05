@@ -13,4 +13,4 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Initial version of the standalone `factorio-cli` create, being split out from `factorio-exporter`.
 
 <!-- next-url -->
-[Unreleased]: https://github.com/MForster/factorio-exporter/compare/v0.5.1...HEAD
+[Unreleased]: https://github.com/MForster/factorio-rust-tools/compare/v0.5.1...HEAD

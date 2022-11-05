@@ -69,7 +69,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Incompatible changes
 
 - Dictionaries and boolean values are now exported correctly, see
- [#33](https://github.com/MForster/factorio-exporter/issues/33). Example:
+ [#33](https://github.com/MForster/factorio-rust-tools/issues/33). Example:
 
 ```diff
      "assembling-machine-2": {
@@ -136,11 +136,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Added the full feature as a library that can be embedded into other apps.
 
 <!-- next-url -->
-[Unreleased]: https://github.com/MForster/factorio-exporter/compare/v0.5.1...HEAD
-[0.5.1]: https://github.com/MForster/factorio-exporter/compare/v0.5.0...v0.5.1
-[0.5.0]: https://github.com/MForster/factorio-exporter/compare/v0.4.0...v0.5.0
-[0.4.0]: https://github.com/MForster/factorio-exporter/compare/v0.3.0...v0.4.0
-[0.3.0]: https://github.com/MForster/factorio-exporter/compare/v0.2.0...v0.3.0
-[0.2.0]: https://github.com/MForster/factorio-exporter/compare/v0.1.2...v0.2.0
-[0.1.2]: https://github.com/MForster/factorio-exporter/compare/v0.1.1...v0.1.2
-[0.1.1]: https://github.com/MForster/factorio-exporter/compare/v0.1.0...v0.1.1
+[Unreleased]: https://github.com/MForster/factorio-rust-tools/compare/v0.5.1...HEAD
+[0.5.1]: https://github.com/MForster/factorio-rust-tools/compare/v0.5.0...v0.5.1
+[0.5.0]: https://github.com/MForster/factorio-rust-tools/compare/v0.4.0...v0.5.0
+[0.4.0]: https://github.com/MForster/factorio-rust-tools/compare/v0.3.0...v0.4.0
+[0.3.0]: https://github.com/MForster/factorio-rust-tools/compare/v0.2.0...v0.3.0
+[0.2.0]: https://github.com/MForster/factorio-rust-tools/compare/v0.1.2...v0.2.0
+[0.1.2]: https://github.com/MForster/factorio-rust-tools/compare/v0.1.1...v0.1.2
+[0.1.1]: https://github.com/MForster/factorio-rust-tools/compare/v0.1.0...v0.1.1
