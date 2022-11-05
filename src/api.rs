@@ -7,6 +7,31 @@ use tracing::debug;
 
 use crate::{FactorioExporterError, Result};
 
+/// Loads the API definition from the definition file
+///
+/// This file is usually called `runtime-api.json` and can be found in the
+/// `factorio/doc-html` directory of a full (not headless or demo) Factorio
+/// installation, or on the [API website]. Its content can be browsed in a [nice
+/// format] as well.
+///
+/// [API website]: https://lua-api.factorio.com/latest/runtime-api.json
+/// [nice format]: https://lua-api.factorio.com/
+///
+/// # Arguments
+///
+/// * `api_file_path` - File system path to read the API definition from.
+///
+/// # Example
+///
+/// ```no_run
+/// use factorio_exporter::{ load_api, FactorioExporterError };
+/// use std::path::PathBuf;
+///
+/// let api_spec = PathBuf::from("/home/user/factorio/doc-html/runtime-api.json");
+/// let api = load_api(&api_spec)?;
+///
+/// # Ok::<(), FactorioExporterError>(())
+/// ```
 pub fn load_api(api_file_path: &Path) -> Result<Api> {
     debug!(
         "Loading API definition file from {}",

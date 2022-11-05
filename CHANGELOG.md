@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 <!-- next-header -->
 ## [Unreleased] - ReleaseDate
 
+### Minor changes
+
+- Most of the public API is now initially documented.
+
 ## [0.5.0] - 2022-11-04
 
 ### Incompatible changes
