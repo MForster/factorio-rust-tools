@@ -104,7 +104,7 @@ Options:
 
 ## Library
 
-See [factorio_exporter.rs](https://github.com/MForster/factorio-exporter/blob/main/src/bin/factorio_exporter.rs)
+See [factorio_exporter.rs](https://github.com/MForster/factorio-rust-tools/blob/main/crates/factorio-cli/src/main.rs)
 for how to use the crate as a library.
 
 ## Status

@@ -22,7 +22,7 @@
 //! to see the structure that the data has.
 //!
 //! [example]:
-//!     https://raw.githubusercontent.com/MForster/factorio-exporter/main/data/vanilla.json
+//!     https://raw.githubusercontent.com/MForster/factorio-rust-tools/main/crates/factorio-exporter/data/vanilla.json
 #![deny(unused_must_use)]
 use std::path::PathBuf;
 
