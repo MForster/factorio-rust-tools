@@ -1,111 +1,12 @@
-# Factorio Exporter
+# Factorio Rust Tools
 
-A Rust library to export prototype definitions from
-[Factorio](http://www.factorio.com).
+This is a small collection of utilities for [Factorio](http://www.factorio.com):
 
-This is both a library as well as a command line tool to export prototype
-definitions from Factorio.
-
-See crate page on [crates.io](https://crates.io/crates/factorio-exporter)
-
-## Example invocation
-
-```sh
-$ factorio_exporter --factorio-dir ~/tmp/factorio-full -f json | jq '.recipe_prototypes["iron-plate"]'
-```
-
-Output:
-
-```json
-{
-  "allow_as_intermediate": true,
-  "allow_decomposition": true,
-  "allow_inserter_overload": true,
-  "allow_intermediates": true,
-  "always_show_made_in": false,
-  "always_show_products": false,
-  "category": "smelting",
-  "emissions_multiplier": 1,
-  "enabled": true,
-  "energy": 3.2,
-  "hidden": false,
-  "hidden_from_flow_stats": false,
-  "hidden_from_player_crafting": false,
-  "ingredients": [
-    {
-      "amount": 1,
-      "name": "iron-ore",
-      "type": "item"
-    }
-  ],
-  "localised_description": "Unknown key: \"recipe-description.iron-plate\"",
-  "localised_name": "Iron plate",
-  "name": "iron-plate",
-  "object_name": "LuaRecipePrototype",
-  "order": "b[iron-plate]",
-  "overload_multiplier": 0,
-  "products": [
-    {
-      "amount": 1,
-      "name": "iron-plate",
-      "probability": 1,
-      "type": "item"
-    }
-  ],
-  "request_paste_multiplier": 30,
-  "show_amount_in_title": true,
-  "unlock_results": true,
-  "valid": true
-}
-```
-
-## Command line
-
-```sh
-$ factorio_exporter --help
-Exports prototypes from Factorio in JSON or YAML format
-
-Usage: factorio_exporter [OPTIONS] [MODS]...
-
-Arguments:
-  [MODS]...
-          Mods to install before exporting the prototypes
-
-Options:
-      --factorio-dir <FACTORIO_DIR>
-          Directory where Factorio is installed. This needs to be the full version. Neither the demo nor the headless version are sufficient. This argument is optional if both of `--factorio-api-spec` and `--factorio-binary` are specified
-
-      --factorio-api-spec <FACTORIO_API_SPEC>
-          Location of the `runtime-api.json` file. Defaults to `<FACTORIO_DIR>/doc-html/runtime-api.json`
-
-          The spec can be found in the `doc-html` directory of a full Factorio installation, or [online](https://lua-api.factorio.com/latest/runtime-api.json).
-
-      --factorio-binary <FACTORIO_BINARY>
-          Location of the factorio binary. Defaults to `<FACTORIO_DIR>/bin/x64/factorio(.exe)`. This can be any Factorio binary (full, headless, demo)
-
-  -d, --destination <DESTINATION>
-          Path where the result should be written. Uses STDOUT if not specified
-
-  -f, --format <FORMAT>
-          Format of the output
-
-          [default: json]
-          [possible values: json, yaml]
-
-  -i, --icons
-          Export icon paths
-
-  -h, --help
-          Print help information (use `-h` for a summary)
-
-  -V, --version
-          Print version information
-```
-
-## Library
-
-See [factorio_exporter.rs](https://github.com/MForster/factorio-rust-tools/blob/main/crates/factorio-cli/src/main.rs)
-for how to use the crate as a library.
+* [`factorio-exporter`](crates/factorio-exporter): A Rust library to export
+  prototype definitions from Factorio.
+* [`factorio-cli`](crates/factorio-cli): A small utility to manipulate data
+  related to Factorio, currently mostly a command-line front-end for
+  `factorio-importer`.
 
 ## Status
 
@@ -113,21 +14,6 @@ This is still very much in the prototype phase. The output will be incomplete
 and have bugs. Please try it out anyway and report any issues that you run into!
 
 See the [change log](CHANGELOG.md) for progress.
-
-## Design
-
-The goal of the importer is to be as close as possible to the authoritative
-definition of the prototypes. It tries to achieve that goal by two design decisions:
-
-* The prototypes are exported from a running Factorio instance *in the runtime*
-  stage. This means that the prototypes are as close as possible to how they are
-  used in the game.
-
-* The list of exported properties is taken from the [official
-  definition](https://lua-api.factorio.com/latest/json-docs.html).
-
-Another consequence of this design is that it allows to export the
-prototypes of loaded mods.
 
 ## Platform support
 
