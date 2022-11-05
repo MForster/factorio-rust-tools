@@ -45,14 +45,13 @@ jobs:
           command: run
           args: |
             -q
-            --features=clap,tracing-subscriber
             -- -i
             --factorio-binary downloads/factorio/bin/x64/factorio
             --factorio-api-spec downloads/runtime-api.json
             -d new-vanilla.json
 
       - name: Validate output
-        run: diff -u data/vanilla.json new-vanilla.json
+        run: diff -u crates/factorio-exporter/data/vanilla.json new-vanilla.json
 
   test:
     name: Test Suite

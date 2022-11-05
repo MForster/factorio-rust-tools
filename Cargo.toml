@@ -1,45 +1,14 @@
-[package]
-name = "factorio-exporter"
-version = "0.5.1"
-authors = ["Michael Forster <email@michael-forster.de>"]
-edition = "2021"
-description = "A library to export prototype definitions from Factorio (http://www.factorio.com)"
-homepage = "http://github.com/MForster/factorio-exporter"
-repository = "http://github.com/MForster/factorio-exporter"
-license = "MIT OR Apache-2.0"
-keywords = ["gaming", "factorio"]
-rust-version = "1.60.0"
-default-run = "factorio_exporter"
+[workspace]
+members = ["crates/*"]
 
-[[bin]]
-name = "factorio_exporter"
-required-features = ["clap", "tracing-subscriber"]
-
-[dependencies]
-clap = { version = "4.0.18", optional = true, features = ["derive"] }
-convert_case = "0.6.0"
-derive_builder = "0.11.2"
-indoc = "1.0.7"
-itertools = "0.10.5"
-regex = "1.6.0"
-semver = { version = "1.0.14", features = ["serde"] }
-serde = "1.0.147"
-serde_derive = "1.0.147"
-serde_json = "1.0.87"
-serde_yaml = "0.9.14"
-tempfile = "3.3.0"
-thiserror = "1.0.37"
-tracing = "0.1.37"
-tracing-subscriber = { version = "0.3.16", optional = true }
-
-[package.metadata.release]
+[workspace.metadata.release]
 allow-branch = ["main"]
-pre-release-commit-message = "Release {{crate_name}} version {{version}}"
-tag-message = "Release {{crate_name}} version {{version}}"
+pre-release-commit-message = "Release version {{version}}"
+tag-message = "Release version {{version}}"
 pre-release-replacements = [
   { file = "CHANGELOG.md", search = "Unreleased", replace = "{{version}}", min = 1 },
   { file = "CHANGELOG.md", search = "\\.\\.\\.HEAD", replace = "...{{tag_name}}", exactly = 1 },
   { file = "CHANGELOG.md", search = "ReleaseDate", replace = "{{date}}", min = 1 },
   { file = "CHANGELOG.md", search = "<!-- next-header -->", replace = "<!-- next-header -->\n## [Unreleased] - ReleaseDate\n", exactly = 1 },
-  { file = "CHANGELOG.md", search = "<!-- next-url -->", replace = "<!-- next-url -->\n[Unreleased]: https://github.com/MForster/factorio-export/compare/{{tag_name}}...HEAD", exactly = 1 },
+  { file = "CHANGELOG.md", search = "<!-- next-url -->", replace = "<!-- next-url -->\n[Unreleased]: https://github.com/MForster/factorio-exporter/compare/{{tag_name}}...HEAD", exactly = 1 },
 ]
