@@ -31,11 +31,7 @@ impl<'a> ScriptGenerator<'a> {
             .collect();
 
         let script = ScriptBuilder::new();
-        ScriptGenerator {
-            api,
-            script,
-            toplevel_classes,
-        }
+        ScriptGenerator { api, script, toplevel_classes }
     }
 
     pub fn generate(mut self, object: &str, attributes: Vec<&Attribute>) -> String {
@@ -100,10 +96,7 @@ impl<'a> ScriptGenerator<'a> {
                 self.script.end_block();
             }
 
-            Type::Table {
-                parameters,
-                variant_parameter_groups,
-            } => {
+            Type::Table { parameters, variant_parameter_groups } => {
                 self.export_attrs(
                     variant_parameter_groups
                         .iter()
