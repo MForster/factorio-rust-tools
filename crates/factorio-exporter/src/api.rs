@@ -33,25 +33,16 @@ use crate::{FactorioExporterError, Result};
 /// # Ok::<(), FactorioExporterError>(())
 /// ```
 pub fn load_api(api_file_path: &Path) -> Result<Api> {
-    debug!(
-        "Loading API definition file from {}",
-        &api_file_path.display()
-    );
+    debug!("Loading API definition file from {}", &api_file_path.display());
 
     if !api_file_path.is_file() {
-        return Err(FactorioExporterError::FileNotFoundError {
-            file: api_file_path.into(),
-        });
+        return Err(FactorioExporterError::FileNotFoundError { file: api_file_path.into() });
     }
 
     let s = fs::read_to_string(api_file_path)?;
     let api: Api = serde_json::from_str(&s)?;
 
-    debug!(
-        "parsed API, got {} classes and {} concepts",
-        &api.classes.len(),
-        &api.concepts.len()
-    );
+    debug!("parsed API, got {} classes and {} concepts", &api.classes.len(), &api.concepts.len());
     Ok(api)
 }
 
@@ -87,11 +78,7 @@ impl From<RawApi> for Api {
 
         Api {
             application_version: raw.application_version,
-            classes: raw
-                .classes
-                .into_iter()
-                .map(|class| (class.name.clone(), class))
-                .collect(),
+            classes: raw.classes.into_iter().map(|class| (class.name.clone(), class)).collect(),
             concepts: raw
                 .concepts
                 .into_iter()
@@ -143,11 +130,7 @@ impl From<RawClass> for Class {
     fn from(raw: RawClass) -> Self {
         Class {
             name: raw.name,
-            attributes: raw
-                .attributes
-                .into_iter()
-                .map(|attr| (attr.name.clone(), attr))
-                .collect(),
+            attributes: raw.attributes.into_iter().map(|attr| (attr.name.clone(), attr)).collect(),
             description: raw.description,
             notes: raw.notes,
             examples: raw.examples,
@@ -194,11 +177,7 @@ pub struct Concept {
 
 impl HasAttributes for Concept {
     fn attributes(&self) -> Vec<&Attribute> {
-        if let Type::Table {
-            parameters,
-            variant_parameter_groups,
-        } = &self.r#type
-        {
+        if let Type::Table { parameters, variant_parameter_groups } = &self.r#type {
             variant_parameter_groups
                 .iter()
                 .flatten()
@@ -307,13 +286,9 @@ impl<'a> From<RawType<'a>> for Type {
             Complex(Literal { value, description }) => Self::Literal { value, description },
             Complex(LuaCustomTable { key, value }) => Self::LuaCustomTable { key, value },
             Complex(Struct { attributes }) => Self::Struct { attributes },
-            Complex(Table {
-                parameters,
-                variant_parameter_groups,
-            }) => Self::Table {
-                parameters,
-                variant_parameter_groups,
-            },
+            Complex(Table { parameters, variant_parameter_groups }) => {
+                Self::Table { parameters, variant_parameter_groups }
+            }
             Complex(Tuple { parameters }) => Self::Tuple { parameters },
             Complex(Type { value }) => Self::Type { value },
             Complex(Union { options }) => Self::Union { options },

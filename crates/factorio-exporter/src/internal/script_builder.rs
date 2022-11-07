@@ -36,11 +36,8 @@ impl ScriptBuilder {
     }
 
     pub fn export_string_attr(&mut self, attr: &str) {
-        writeln!(
-            self,
-            r#"export.ExportStringAttr("{attr}", export.SaveRead(context, "{attr}"))"#,
-        )
-        .unwrap();
+        writeln!(self, r#"export.ExportStringAttr("{attr}", export.SaveRead(context, "{attr}"))"#,)
+            .unwrap();
     }
 
     pub fn export_number_attr(&mut self, attr: &str) {

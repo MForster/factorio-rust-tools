@@ -171,14 +171,8 @@ impl FactorioExporter<'_> {
                 "instrument-after-data.lua",
                 include_str!("../lua/instrument-after-data.lua"),
             )?
-            .add_file(
-                "instrument-control.lua",
-                include_str!("../lua/instrument-control.lua"),
-            )?
-            .add_file(
-                "prototypes.lua",
-                &ScriptGenerator::new(self.api).generate("game", attrs),
-            )?;
+            .add_file("instrument-control.lua", include_str!("../lua/instrument-control.lua"))?
+            .add_file("prototypes.lua", &ScriptGenerator::new(self.api).generate("game", attrs))?;
 
         Ok(())
     }
@@ -257,10 +251,8 @@ impl FactorioExporter<'_> {
             debug!("parse icons output");
 
             let icons: Vec<Icon> = serde_yaml::from_str(Self::find_section(s, "ICONS")?)?;
-            let icons: HashMap<(&str, &str), &str> = icons
-                .iter()
-                .map(|icon| ((icon.name, icon.section), icon.path))
-                .collect();
+            let icons: HashMap<(&str, &str), &str> =
+                icons.iter().map(|icon| ((icon.name, icon.section), icon.path)).collect();
 
             debug!("patch icons into prototypes");
 

@@ -72,11 +72,7 @@ fn main() -> Result<()> {
 
     let api_spec = std::fs::canonicalize(
         args.factorio_api_spec
-            .or_else(|| {
-                args.factorio_dir
-                    .as_ref()
-                    .map(|d| d.join(RUNTIME_API_DEFINITION))
-            })
+            .or_else(|| args.factorio_dir.as_ref().map(|d| d.join(RUNTIME_API_DEFINITION)))
             .ok_or_else(|| {
                 FactorioExporterError::InvocationError(
                     "One of --factorio-api-spec or --factorio-dir must be specified".into(),
