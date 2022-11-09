@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 <!-- next-header -->
 ## [Unreleased] - ReleaseDate
 
+## [0.7.0] - 2022-11-09
+
 ## [0.6.0] - 2022-11-05
 
 ### Incompatible changes
@@ -138,7 +140,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Added the full feature as a library that can be embedded into other apps.
 
 <!-- next-url -->
-[Unreleased]: https://github.com/MForster/factorio-rust-tools/compare/factorio-exporter-v0.6.0...HEAD
+[Unreleased]: https://github.com/MForster/factorio-rust-tools/compare/factorio-exporter-v0.7.0...HEAD
+[0.7.0]: https://github.com/MForster/factorio-rust-tools/compare/factorio-exporter-v0.6.0...factorio-exporter-v0.7.0
 [0.6.0]: https://github.com/MForster/factorio-rust-tools/compare/v0.5.1...factorio-exporter-v0.6.0
 [0.5.1]: https://github.com/MForster/factorio-rust-tools/compare/v0.5.0...v0.5.1
 [0.5.0]: https://github.com/MForster/factorio-rust-tools/compare/v0.4.0...v0.5.0

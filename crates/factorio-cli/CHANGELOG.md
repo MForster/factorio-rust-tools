@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 <!-- next-header -->
 ## [Unreleased] - ReleaseDate
 
+## [0.2.0] - 2022-11-09
+
 ### Incompatible changes
 
 - There is a new subcommand `fct resolve-mods` that lists all dependencies of a
@@ -27,5 +29,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 Earlier changes are documented in [`factorio-explorer`'s change log](../factorio-exporter/CHANGELOG.md)
 
 <!-- next-url -->
-[Unreleased]: https://github.com/MForster/factorio-rust-tools/compare/factorio-cli-v0.1.0...HEAD
+[Unreleased]: https://github.com/MForster/factorio-rust-tools/compare/factorio-cli-v0.2.0...HEAD
+[0.2.0]: https://github.com/MForster/factorio-rust-tools/compare/factorio-cli-v0.1.0...factorio-cli-v0.2.0
 [0.1.0]: https://github.com/MForster/factorio-rust-tools/compare/v0.5.1...factorio-cli-v0.1.0
