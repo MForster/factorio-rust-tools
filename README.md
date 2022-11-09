@@ -6,7 +6,7 @@ This is a small collection of utilities for [Factorio](http://www.factorio.com):
   prototype definitions from Factorio.
 * [`factorio-cli`](crates/factorio-cli): A small utility to manipulate data
   related to Factorio, currently mostly a command-line front-end for
-  `factorio-importer`.
+  `factorio-exporter`.
 * [`factorio-mod-api`](crates/factorio-mod-api): A caching client library for
   the [Factorio Mod Portal API](https://wiki.factorio.com/Mod_portal_API).
 
