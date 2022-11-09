@@ -8,6 +8,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 <!-- next-header -->
 ## [Unreleased] - ReleaseDate
 
+### Incompatible changes
+
+- `fct` now reads a config file from `~/.config/fct/config.<EXT>`. Various formats are
+  accepted, e.g. TOML, YAML, JSON,...
+- The CLI feature to export prototypes has been moved to the `fct export`
+  subcommand to make room for more features.
+
 ## [0.1.0] - 2022-11-05
 
 ### New features
