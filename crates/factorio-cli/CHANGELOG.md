@@ -10,6 +10,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Incompatible changes
 
+- There is a new subcommand `fct resolve-mods` that lists all dependencies of a
+  set of mods.
 - `fct` now reads a config file from `~/.config/fct/config.<EXT>`. Various formats are
   accepted, e.g. TOML, YAML, JSON,...
 - The CLI feature to export prototypes has been moved to the `fct export`

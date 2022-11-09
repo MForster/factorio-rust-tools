@@ -20,8 +20,11 @@
             (rust-bin.stable.latest.default.override {
               extensions = [ "rust-src" ];
             })
+            cargo-audit
             cargo-release
             cargo-watch
+            openssl
+            pkg-config
           ];
         };
       });

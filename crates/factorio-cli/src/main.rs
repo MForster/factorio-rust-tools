@@ -1,3 +1,5 @@
+mod resolver;
+
 use std::{fs, path::PathBuf};
 
 use clap::{error::ErrorKind, CommandFactory, Parser, Subcommand, ValueEnum};
@@ -5,10 +7,14 @@ use config::Config;
 use directories::ProjectDirs;
 use eyre::Result;
 use factorio_exporter::{load_api, FactorioExporter, FactorioExporterError};
+use factorio_mod_api::api::ModDependency;
 use indoc::printdoc;
+use itertools::Itertools;
 use serde::Deserialize;
 use serde_json::Value;
 use tracing::{debug, info};
+
+use crate::resolver::ModVersionResolver;
 
 /// A collection of tools for Factorio (http://www.factorio.com)
 #[derive(Parser, Debug)]
@@ -59,6 +65,12 @@ enum Commands {
         /// Mods to install before exporting the prototypes
         mods: Vec<PathBuf>,
     },
+    /// Lists all dependencies of a set of mods, trying to find compatible
+    /// versions
+    ResolveMods {
+        /// A list of mods, optionally with version requirements
+        mods: Vec<String>,
+    },
 }
 
 #[derive(Clone, Debug, ValueEnum)]
@@ -92,7 +104,8 @@ pub struct PathSettings {
     pub factorio_binary: Option<PathBuf>,
 }
 
-fn main() -> Result<()> {
+#[tokio::main]
+async fn main() -> Result<()> {
     tracing_subscriber::fmt::init();
     color_eyre::install()?;
 
@@ -192,6 +205,16 @@ fn main() -> Result<()> {
                     ", stdout, stderr};
                 }
                 Err(e) => return Err(e.into()),
+            }
+        }
+        Commands::ResolveMods { mods } => {
+            let mods: factorio_mod_api::Result<Vec<ModDependency>> =
+                mods.iter().map(|a| ModDependency::try_from(a.as_str())).collect();
+
+            let resolutions = ModVersionResolver::new().unwrap().resolve(mods?).await?;
+
+            for (mod_name, version) in resolutions.iter().sorted_by_key(|&(name, _)| name) {
+                println!("{mod_name} {version}");
             }
         }
     }
