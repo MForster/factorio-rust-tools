@@ -1,0 +1,30 @@
+[package]
+name = "factorio-mod-api"
+description = "A library to access the [Factorio](http://www.factorio.com) [mod portal API](https://wiki.factorio.com/Mod_portal_API)."
+version = "0.0.0"
+
+authors = ["Michael Forster <email@michael-forster.de>"]
+edition = "2021"
+homepage = "http://github.com/MForster/factorio-rust-tools"
+repository = "http://github.com/MForster/factorio-rust-tools"
+license = "MIT OR Apache-2.0"
+keywords = ["gaming", "factorio"]
+rust-version = "1.60.0"
+
+publish = false
+
+[dependencies]
+chrono = { version = "0.4.22", default-features = false, features = ["serde"] }
+elsa = "1.7.0"
+futures = "0.3.25"
+regex-macro = "0.2.0"
+reqwest = { version = "0.11.12", features = ["json"] }
+semver = { version = "1.0.14", features = ["serde"] }
+serde = { version = "1.0.147", features = ["derive"] }
+serde_derive = "1.0.147"
+serde_json = "1.0.87"
+strum = "0.24.1"
+strum_macros = "0.24.3"
+thiserror = "1.0.37"
+tracing = "0.1.37"
+url = { version = "2.3.1", features = ["serde"] }

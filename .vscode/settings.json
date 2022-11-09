@@ -7,8 +7,10 @@
   },
   "cSpell.enabled": true,
   "cSpell.words": [
+    "alnum",
     "BINPATH",
     "canonicalize",
+    "chrono",
     "Clippy",
     "factorio",
     "indoc",
@@ -17,6 +19,11 @@
     "MSRV",
     "pastable",
     "printdoc",
+    "println",
+    "pycoalprocessing",
+    "pyfusionenergy",
+    "pyindustry",
+    "reqwest",
     "rustfmt",
     "rustup",
     "serde",
@@ -24,6 +31,7 @@
     "tempdir",
     "tempfile",
     "thiserror",
+    "unversioned",
     "writedoc"
   ]
 }

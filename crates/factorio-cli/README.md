@@ -69,6 +69,8 @@ Usage: fct [OPTIONS] <COMMAND>
 Commands:
   export
           Exports prototypes from Factorio in JSON or YAML format
+  resolve-mods
+          Lists all dependencies of a set of mods, trying to find compatible version
   help
           Print this message or the help of the given subcommand(s)
 
@@ -103,6 +105,17 @@ Options:
   -f, --format <FORMAT>            Format of the output [default: json] [possible values: json, yaml]
   -i, --icons                      Export icon paths
   -h, --help                       Print help information
+
+$ fct help resolve-mods
+Lists all dependencies of a set of mods, trying to find compatible version
+
+Usage: fct resolve-mods [MODS]...
+
+Arguments:
+  [MODS]...  A list of mods, optionally with version requirements
+
+Options:
+  -h, --help  Print help information
 ```
 
 ## Status
