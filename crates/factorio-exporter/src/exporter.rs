@@ -9,7 +9,8 @@ use std::{
 use convert_case::{Case, Casing};
 use indoc::writedoc;
 use itertools::Itertools;
-use regex::{Captures, Regex};
+use regex::Captures;
+use regex_macro::regex;
 use serde_derive::Deserialize;
 use serde_yaml::Value;
 use tempfile::TempDir;
@@ -232,8 +233,7 @@ impl FactorioExporter<'_> {
         // the hacky way: post-processing.
 
         debug!("parse prototype output");
-
-        let re = Regex::new(r"(?s)<STRING>(.*?)</STRING>").unwrap();
+        let re = regex!(r"(?s)<STRING>(.*?)</STRING>");
         let sanitized = re.replace_all(Self::find_section(s, "EXPORT")?, |caps: &Captures| {
             format!("'{}'", &caps[1].replace('\n', "\\n").replace('\'', "''"))
         });
@@ -256,7 +256,7 @@ impl FactorioExporter<'_> {
 
             debug!("patch icons into prototypes");
 
-            let object_name_pattern = regex::Regex::new("Lua(.*)Prototype").unwrap();
+            let object_name_pattern = regex!("Lua(.*)Prototype");
             for (_, section) in data.as_mapping_mut().expect("root should be a mapping") {
                 if let Value::Mapping(section) = section {
                     for (name, el) in section {
