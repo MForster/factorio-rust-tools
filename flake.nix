@@ -1,6 +1,7 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    rust-overlay.url = "github:oxalica/rust-overlay";
     flake-utils.url = "github:numtide/flake-utils";
     flake-compat = {
       url = "github:edolstra/flake-compat";
@@ -8,13 +9,20 @@
     };
   };
 
-  outputs = { self, nixpkgs, flake-utils, ... }:
+  outputs = { self, nixpkgs, rust-overlay, flake-utils, ... }:
     flake-utils.lib.eachDefaultSystem (system:
-      let pkgs = import nixpkgs { inherit system; };
+      let
+        overlays = [ (import rust-overlay) ];
+        pkgs = import nixpkgs { inherit system overlays; };
       in with pkgs; {
         devShells.default = mkShell {
-          buildInputs =
-            [ cargo cargo-release cargo-watch clang clippy rustfmt glib ];
+          buildInputs = [
+            (rust-bin.stable.latest.default.override {
+              extensions = [ "rust-src" ];
+            })
+            cargo-release
+            cargo-watch
+          ];
         };
       });
 }

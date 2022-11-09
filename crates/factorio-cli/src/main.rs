@@ -1,15 +1,22 @@
 use std::{fs, path::PathBuf};
 
-use clap::{Parser, ValueEnum};
-use factorio_exporter::{load_api, FactorioExporter, FactorioExporterError, Result};
+use clap::{error::ErrorKind, CommandFactory, Parser, Subcommand, ValueEnum};
+use config::Config;
+use directories::ProjectDirs;
+use eyre::Result;
+use factorio_exporter::{load_api, FactorioExporter, FactorioExporterError};
 use indoc::printdoc;
+use serde::Deserialize;
 use serde_json::Value;
 use tracing::{debug, info};
 
-/// Exports prototypes from Factorio in JSON or YAML format
+/// A collection of tools for Factorio (http://www.factorio.com)
 #[derive(Parser, Debug)]
 #[command(version)]
 struct Args {
+    #[command(subcommand)]
+    command: Commands,
+
     /// Directory where Factorio is installed. This needs to be the full
     /// version. Neither the demo nor the headless version are sufficient. This
     /// argument is optional if both of `--factorio-api-spec` and
@@ -31,21 +38,27 @@ struct Args {
     /// (full, headless, demo).
     #[arg(long)]
     factorio_binary: Option<PathBuf>,
+}
 
-    /// Path where the result should be written. Uses STDOUT if not specified.
-    #[arg(long, short)]
-    destination: Option<PathBuf>,
+#[derive(Debug, Subcommand)]
+enum Commands {
+    /// Exports prototypes from Factorio in JSON or YAML format
+    Export {
+        /// Path where the result should be written. Uses STDOUT if not specified.
+        #[arg(long, short)]
+        destination: Option<PathBuf>,
 
-    /// Format of the output
-    #[arg(long, short, default_value = "json")]
-    format: OutputFormat,
+        /// Format of the output
+        #[arg(long, short, default_value = "json")]
+        format: OutputFormat,
 
-    /// Export icon paths
-    #[arg(long, short)]
-    icons: bool,
+        /// Export icon paths
+        #[arg(long, short)]
+        icons: bool,
 
-    /// Mods to install before exporting the prototypes
-    mods: Vec<PathBuf>,
+        /// Mods to install before exporting the prototypes
+        mods: Vec<PathBuf>,
+    },
 }
 
 #[derive(Clone, Debug, ValueEnum)]
@@ -66,61 +79,121 @@ const FACTORIO_BINPATH: &str = "bin/x64/factorio.exe";
 #[cfg(not(windows))]
 const FACTORIO_BINPATH: &str = "bin/x64/factorio";
 
+#[derive(Debug, Deserialize)]
+pub struct Settings {
+    #[serde(default)]
+    pub paths: PathSettings,
+}
+
+#[derive(Debug, Default, Deserialize)]
+pub struct PathSettings {
+    pub factorio_dir: Option<PathBuf>,
+    pub factorio_api_spec: Option<PathBuf>,
+    pub factorio_binary: Option<PathBuf>,
+}
+
 fn main() -> Result<()> {
+    tracing_subscriber::fmt::init();
+    color_eyre::install()?;
+
     let args = Args::parse();
+    let mut cmd = Args::command();
+
     debug!("Parsed arguments: {:?}", args);
 
-    let api_spec = std::fs::canonicalize(
-        args.factorio_api_spec
-            .or_else(|| args.factorio_dir.as_ref().map(|d| d.join(RUNTIME_API_DEFINITION)))
-            .ok_or_else(|| {
-                FactorioExporterError::InvocationError(
-                    "One of --factorio-api-spec or --factorio-dir must be specified".into(),
+    let dirs = ProjectDirs::from("", "", "fct").unwrap();
+
+    let settings: Settings = Config::builder()
+        .add_source(config::File::from(dirs.config_dir().join("config")).required(false))
+        .add_source(config::Environment::with_prefix("FCT"))
+        .build()?
+        .try_deserialize()?;
+
+    debug!("Config file contents: {:?}", settings);
+
+    let factorio_dir = args.factorio_dir.or(settings.paths.factorio_dir);
+
+    let api_spec = args
+        .factorio_api_spec
+        .or(settings.paths.factorio_api_spec)
+        .or_else(|| factorio_dir.as_ref().map(|d| d.join(RUNTIME_API_DEFINITION)))
+        .map(|path| {
+            if !path.exists() {
+                cmd.error(
+                    ErrorKind::ValueValidation,
+                    format!("File not found: '{}'", path.display()),
                 )
-            })?,
-    )?;
-
-    let binary = std::fs::canonicalize(
-        args.factorio_binary
-            .or_else(|| args.factorio_dir.as_ref().map(|d| d.join(FACTORIO_BINPATH)))
-            .ok_or_else(|| {
-                FactorioExporterError::InvocationError(
-                    "One of --factorio-binary or --factorio-dir must be specified".into(),
-                )
-            })?,
-    )?;
-
-    let api = load_api(&api_spec)?;
-    let exporter = FactorioExporter::new(&binary, &api, "en", args.icons)?;
-
-    exporter.install_mods(&args.mods)?;
-
-    match exporter.export() {
-        Ok(prototypes) => {
-            let parsed: Value = serde_yaml::from_value(prototypes)?;
-
-            let output = match args.format {
-                OutputFormat::Json => serde_json::to_string_pretty(&parsed)?,
-                OutputFormat::Yaml => serde_yaml::to_string(&parsed)?,
+                .exit()
             };
+            path
+        })
+        .map(std::fs::canonicalize)
+        .unwrap_or_else(|| {
+            cmd.error(
+                ErrorKind::MissingRequiredArgument,
+                "One of --factorio-api-spec or --factorio-dir must be specified",
+            )
+            .exit()
+        })?;
 
-            info!("write output");
-            match args.destination {
-                Some(path) => fs::write(path, output)?,
-                None => println!("{}", output),
+    let binary = args
+        .factorio_binary
+        .or(settings.paths.factorio_binary)
+        .or_else(|| factorio_dir.as_ref().map(|d| d.join(FACTORIO_BINPATH)))
+        .map(|path| {
+            if !path.exists() {
+                cmd.error(
+                    ErrorKind::ValueValidation,
+                    format!("File not found: '{}'", path.display()),
+                )
+                .exit()
+            };
+            path
+        })
+        .map(std::fs::canonicalize)
+        .unwrap_or_else(|| {
+            cmd.error(
+                ErrorKind::MissingRequiredArgument,
+                "One of --factorio-binary or --factorio-dir must be specified",
+            )
+            .exit()
+        })?;
+
+    match args.command {
+        Commands::Export { destination, format, icons, mods } => {
+            let api = load_api(&api_spec)?;
+            let exporter = FactorioExporter::new(&binary, &api, "en", icons)?;
+
+            exporter.install_mods(&mods)?;
+
+            match exporter.export() {
+                Ok(prototypes) => {
+                    let parsed: Value = serde_yaml::from_value(prototypes)?;
+
+                    let output = match format {
+                        OutputFormat::Json => serde_json::to_string_pretty(&parsed)?,
+                        OutputFormat::Yaml => serde_yaml::to_string(&parsed)?,
+                    };
+
+                    info!("write output");
+                    match destination {
+                        Some(path) => fs::write(path, output)?,
+                        None => println!("{}", output),
+                    }
+                }
+
+                Err(FactorioExporterError::FactorioExecutionError { stdout, stderr }) => {
+                    printdoc! {r"
+                        Failed to execute Factorio:
+                        === STDOUT
+                        {}
+                        === STDERR
+                        {}
+                    ", stdout, stderr};
+                }
+                Err(e) => return Err(e.into()),
             }
         }
-
-        Err(FactorioExporterError::FactorioExecutionError { stdout, stderr }) => {
-            printdoc! {r"
-                Failed to execute Factorio:
-                === STDOUT
-                {}
-                === STDERR
-                {}
-            ", stdout, stderr};
-        }
-        Err(e) => return Err(e),
     }
 
     info!("done");

@@ -45,9 +45,10 @@ jobs:
           command: run
           args: |
             -q
-            -- -i
+            --
             --factorio-binary downloads/factorio/bin/x64/factorio
             --factorio-api-spec downloads/runtime-api.json
+            export -i
             -d new-vanilla.json
 
       - name: Validate output
