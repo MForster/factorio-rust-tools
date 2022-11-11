@@ -1,10 +1,37 @@
 use std::collections::HashMap;
 
+use clap::Parser;
 use eyre::{bail, eyre, Result};
 use factorio_mod_api::api::{ModDependency, ModRelease};
 use factorio_mod_api::ModPortalClient;
+use itertools::Itertools;
 use semver::Version;
 use tracing::{debug, trace};
+
+use crate::App;
+
+/// Lists all dependencies of a set of mods, trying to find compatible
+/// versions
+#[derive(Debug, Parser)]
+pub struct ResolveModsCommand {
+    /// A list of mods, optionally with version requirements
+    mods: Vec<String>,
+}
+
+impl ResolveModsCommand {
+    pub async fn execute(&self, _app: &App) -> Result<()> {
+        let mods: factorio_mod_api::Result<Vec<ModDependency>> =
+            self.mods.iter().map(|a| ModDependency::try_from(a.as_str())).collect();
+
+        let resolutions = ModVersionResolver::new().unwrap().resolve(mods?).await?;
+
+        for (mod_name, version) in resolutions.iter().sorted_by_key(|&(name, _)| name) {
+            println!("{mod_name} {version}");
+        }
+
+        Ok(())
+    }
+}
 
 /// A component that tries to find a set of compatible mod versions for a set of
 /// given mods and their transitive dependencies. The algorithm uses a greedy

@@ -239,6 +239,13 @@ impl FactorioExporter<'_> {
         });
         let mut data: Value = serde_yaml::from_str::<Value>(&sanitized)?;
 
+        debug!(
+            "found {} items, {} recipes, {} technologies",
+            data["item_prototypes"].as_mapping().unwrap().len(),
+            data["recipe_prototypes"].as_mapping().unwrap().len(),
+            data["technology_prototypes"].as_mapping().unwrap().len()
+        );
+
         // Icon paths are not available in Factorio's runtime stage, so we must
         // resort to getting them in the data stage. Unfortunately data
         // structures in the data stage are a bit messy, so we need to apply
@@ -254,7 +261,7 @@ impl FactorioExporter<'_> {
             let icons: HashMap<(&str, &str), &str> =
                 icons.iter().map(|icon| ((icon.name, icon.section), icon.path)).collect();
 
-            debug!("patch icons into prototypes");
+            debug!("patch {} icons into prototypes", icons.len());
 
             let object_name_pattern = regex!("Lua(.*)Prototype");
             for (_, section) in data.as_mapping_mut().expect("root should be a mapping") {
