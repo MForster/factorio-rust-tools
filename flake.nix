@@ -23,6 +23,8 @@
             cargo-audit
             cargo-release
             cargo-watch
+            jq
+            moreutils
             openssl
             pkg-config
           ];

@@ -8,14 +8,9 @@ using [`factorio-exporter`](http://crates.io/crates/factorio-exporter).
 See crate page on [crates.io](https://crates.io/crates/factorio-cli)
 
 ## Example invocation
-
+<!-- EMBED: fct --factorio-dir ~/factorio export -f json | jq '.recipe_prototypes["iron-plate"]' -->
 ```sh
-$ fct --factorio-dir ~/tmp/factorio-full -f json | jq '.recipe_prototypes["iron-plate"]'
-```
-
-Output:
-
-```json
+$ fct --factorio-dir ~/factorio export -f json | jq '.recipe_prototypes["iron-plate"]'
 {
   "allow_as_intermediate": true,
   "allow_decomposition": true,
@@ -27,6 +22,9 @@ Output:
   "emissions_multiplier": 1,
   "enabled": true,
   "energy": 3.2,
+  "group": {
+    "name": "intermediate-products"
+  },
   "hidden": false,
   "hidden_from_flow_stats": false,
   "hidden_from_player_crafting": false,
@@ -39,6 +37,12 @@ Output:
   ],
   "localised_description": "Unknown key: \"recipe-description.iron-plate\"",
   "localised_name": "Iron plate",
+  "main_product": {
+    "amount": 1,
+    "name": "iron-plate",
+    "probability": 1,
+    "type": "item"
+  },
   "name": "iron-plate",
   "object_name": "LuaRecipePrototype",
   "order": "b[iron-plate]",
@@ -53,13 +57,18 @@ Output:
   ],
   "request_paste_multiplier": 30,
   "show_amount_in_title": true,
+  "subgroup": {
+    "name": "raw-material"
+  },
   "unlock_results": true,
   "valid": true
 }
 ```
+<!-- END EMBED -->
 
 ## Command line
 
+<!-- EMBED: fct help -->
 ```sh
 $ fct help
 A collection of tools for Factorio (http://www.factorio.com)
@@ -70,7 +79,7 @@ Commands:
   export
           Exports prototypes from Factorio in JSON or YAML format
   resolve-mods
-          Lists all dependencies of a set of mods, trying to find compatible version
+          Lists all dependencies of a set of mods, trying to find compatible versions
   help
           Print this message or the help of the given subcommand(s)
 
@@ -80,7 +89,7 @@ Options:
 
       --factorio-api-spec <FACTORIO_API_SPEC>
           Location of the `runtime-api.json` file. Defaults to `<FACTORIO_DIR>/doc-html/runtime-api.json`.
-
+          
           The spec can be found in the `doc-html` directory of a full Factorio installation, or [online](https://lua-api.factorio.com/latest/runtime-api.json).
 
       --factorio-binary <FACTORIO_BINARY>
@@ -91,7 +100,11 @@ Options:
 
   -V, --version
           Print version information
+```
+<!-- END EMBED -->
 
+<!-- EMBED: fct help export -->
+```sh
 $ fct help export
 Exports prototypes from Factorio in JSON or YAML format
 
@@ -105,9 +118,13 @@ Options:
   -f, --format <FORMAT>            Format of the output [default: json] [possible values: json, yaml]
   -i, --icons                      Export icon paths
   -h, --help                       Print help information
+```
+<!-- END EMBED -->
 
+<!-- EMBED: fct help resolve-mods -->
+```sh
 $ fct help resolve-mods
-Lists all dependencies of a set of mods, trying to find compatible version
+Lists all dependencies of a set of mods, trying to find compatible versions
 
 Usage: fct resolve-mods [MODS]...
 
@@ -117,6 +134,7 @@ Arguments:
 Options:
   -h, --help  Print help information
 ```
+<!-- END EMBED -->
 
 ## Status
 
