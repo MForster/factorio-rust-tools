@@ -12,56 +12,56 @@ See crate page on [crates.io](https://crates.io/crates/factorio-cli)
 ```sh
 $ fct --factorio-dir ~/factorio export -f json | jq '.recipe_prototypes["iron-plate"]'
 {
-  "allow_as_intermediate": true,
-  "allow_decomposition": true,
-  "allow_inserter_overload": true,
-  "allow_intermediates": true,
-  "always_show_made_in": false,
-  "always_show_products": false,
-  "category": "smelting",
-  "emissions_multiplier": 1,
   "enabled": true,
-  "energy": 3.2,
-  "group": {
-    "name": "intermediate-products"
+  "name": "iron-plate",
+  "localised_name": "Iron plate",
+  "localised_description": "Unknown key: \"recipe-description.iron-plate\"",
+  "category": "smelting",
+  "ingredients": [
+    {
+      "type": "item",
+      "name": "iron-ore",
+      "amount": 1
+    }
+  ],
+  "products": [
+    {
+      "type": "item",
+      "name": "iron-plate",
+      "amount": 1,
+      "probability": 1
+    }
+  ],
+  "main_product": {
+    "type": "item",
+    "name": "iron-plate",
+    "amount": 1,
+    "probability": 1
   },
   "hidden": false,
   "hidden_from_flow_stats": false,
   "hidden_from_player_crafting": false,
-  "ingredients": [
-    {
-      "amount": 1,
-      "name": "iron-ore",
-      "type": "item"
-    }
-  ],
-  "localised_description": "Unknown key: \"recipe-description.iron-plate\"",
-  "localised_name": "Iron plate",
-  "main_product": {
-    "amount": 1,
-    "name": "iron-plate",
-    "probability": 1,
-    "type": "item"
-  },
-  "name": "iron-plate",
-  "object_name": "LuaRecipePrototype",
+  "always_show_made_in": false,
+  "energy": 3.2,
   "order": "b[iron-plate]",
-  "overload_multiplier": 0,
-  "products": [
-    {
-      "amount": 1,
-      "name": "iron-plate",
-      "probability": 1,
-      "type": "item"
-    }
-  ],
-  "request_paste_multiplier": 30,
-  "show_amount_in_title": true,
+  "group": {
+    "name": "intermediate-products"
+  },
   "subgroup": {
     "name": "raw-material"
   },
+  "request_paste_multiplier": 30,
+  "overload_multiplier": 0,
+  "allow_inserter_overload": true,
+  "allow_as_intermediate": true,
+  "allow_intermediates": true,
+  "show_amount_in_title": true,
+  "always_show_products": false,
+  "emissions_multiplier": 1,
+  "allow_decomposition": true,
   "unlock_results": true,
-  "valid": true
+  "valid": true,
+  "object_name": "LuaRecipePrototype"
 }
 ```
 <!-- END EMBED -->
@@ -71,7 +71,7 @@ $ fct --factorio-dir ~/factorio export -f json | jq '.recipe_prototypes["iron-pl
 <!-- EMBED: fct help -->
 ```sh
 $ fct help
-A collection of tools for Factorio (http://www.factorio.com)
+A collection of tools for Factorio (<http://www.factorio.com>)
 
 Usage: fct [OPTIONS] <COMMAND>
 
@@ -80,6 +80,10 @@ Commands:
           Exports prototypes from Factorio in JSON or YAML format
   resolve-mods
           Lists all dependencies of a set of mods, trying to find compatible versions
+  download-mod
+          Download a mod from the mod portal
+  login
+          Log in to the mod portal API and store the obtained login token
   help
           Print this message or the help of the given subcommand(s)
 

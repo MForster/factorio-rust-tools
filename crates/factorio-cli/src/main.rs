@@ -4,13 +4,16 @@ mod settings;
 use std::path::PathBuf;
 
 use clap::{error::ErrorKind, CommandFactory, Parser, Subcommand};
-use commands::{export::ExportCommand, resolve_mods::ResolveModsCommand};
+use commands::{
+    download_mod::DownloadModCommand, export::ExportCommand, login::LoginCommand,
+    resolve_mods::ResolveModsCommand,
+};
 use directories::ProjectDirs;
 use eyre::Result;
 use settings::Settings;
 use tracing::info;
 
-/// A collection of tools for Factorio (http://www.factorio.com)
+/// A collection of tools for Factorio (<http://www.factorio.com>)
 #[derive(Parser, Debug)]
 #[command(version)]
 struct Args {
@@ -44,9 +47,12 @@ struct Args {
 enum Commands {
     Export(ExportCommand),
     ResolveMods(ResolveModsCommand),
+    DownloadMod(DownloadModCommand),
+    Login(LoginCommand),
 }
 
 pub struct App {
+    dirs: ProjectDirs,
     settings: Settings,
     args: Args,
 }
@@ -69,13 +75,15 @@ impl App {
     fn new() -> Result<App> {
         let dirs = ProjectDirs::from("", "", TOOL_NAME).unwrap();
         let settings = Settings::init(&dirs.config_dir().join(CONFIG_NAME))?;
-        Ok(App { settings, args: Args::parse() })
+        Ok(App { dirs, settings, args: Args::parse() })
     }
 
     async fn run(self) -> Result<()> {
         match &self.args.command {
             Commands::Export(cmd) => cmd.execute(&self).await?,
             Commands::ResolveMods(cmd) => cmd.execute(&self).await?,
+            Commands::DownloadMod(cmd) => cmd.execute(&self).await?,
+            Commands::Login(cmd) => cmd.execute(&self).await?,
         }
         Ok(())
     }
@@ -140,6 +148,10 @@ impl App {
                     )
                     .exit()
             })?)
+    }
+
+    fn api_token_path(&self) -> PathBuf {
+        self.dirs.config_dir().join("api_token.json")
     }
 }
 

@@ -9,7 +9,7 @@ homepage = "http://github.com/MForster/factorio-rust-tools"
 repository = "http://github.com/MForster/factorio-rust-tools"
 license = "MIT OR Apache-2.0"
 keywords = ["gaming", "factorio"]
-rust-version = "1.60.0"
+rust-version = "1.65.0"
 
 [[bin]]
 name = "fct"
@@ -25,8 +25,10 @@ factorio-exporter = { version = "0.8.0", path = "../factorio-exporter" }
 factorio-mod-api = { version = "0.2.0", path = "../factorio-mod-api" }
 indoc = "1.0.7"
 itertools = "0.10.5"
-serde = "1.0.147"
+rpassword = "7.1.0"
 semver = "1.0.14"
+serde = "1.0.147"
+serde_derive = "1.0.147"
 serde_json = { version = "1.0.87", features = ["preserve_order"] }
 serde_yaml = "0.9.14"
 tokio = { version = "1.21.2", features = ["macros", "rt-multi-thread"] }
