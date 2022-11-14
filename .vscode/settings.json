@@ -24,6 +24,7 @@
     "pyfusionenergy",
     "pyindustry",
     "reqwest",
+    "rpassword",
     "rustfmt",
     "rustup",
     "serde",

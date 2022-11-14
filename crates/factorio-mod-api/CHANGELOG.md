@@ -8,6 +8,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 <!-- next-header -->
 ## [Unreleased] - ReleaseDate
 
+### New features
+
+- Add features to login to the mod portal and download mods.
+
+### Incompatible changes
+
+- The minimum supported Rust version is now 1.65.0
+
 ## [0.2.0] - 2022-11-09
 
 ### New features

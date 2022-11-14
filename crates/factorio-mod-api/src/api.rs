@@ -1,9 +1,11 @@
+//! Data types used in the Mod Portal API.
+
 use std::{fmt::Display, str::FromStr};
 
 use chrono::{DateTime, Utc};
 use regex_macro::regex;
 use semver::Version;
-use serde::{de::Visitor, Deserialize, Deserializer};
+use serde::{de::Visitor, Deserialize, Deserializer, Serialize};
 use strum_macros::{Display, EnumString};
 use url::Url;
 
@@ -165,7 +167,7 @@ where
 }
 
 /// Partial contents of the `info.json` file that describes a mod.
-/// https://wiki.factorio.com/Tutorial:Mod_structure#info.json
+/// <https://wiki.factorio.com/Tutorial:Mod_structure#info.json>
 #[derive(Clone, Debug, Deserialize)]
 pub struct ModManifest {
     pub factorio_version: String, // Doesn't parse as semver::Version (no patch level).
@@ -273,6 +275,30 @@ impl ModDependency {
         use ModDependencyFlavor::*;
         [Normal, NoEffectOnLoadOrder].contains(&self.flavor)
     }
+}
+
+/// A token that identifies a logged in user that needs to be passed to API
+/// calls that require login.
+///
+/// Use [`ModPortalClient::login`] to obtain.
+#[derive(Debug, Deserialize, Serialize)]
+pub struct ApiToken {
+    pub token: String,
+    pub username: String,
+}
+
+/// Response from the `login` endpoint.
+#[derive(Debug, Deserialize)]
+#[serde(untagged)]
+pub enum LoginResponse {
+    Success {
+        #[serde(flatten)]
+        token: ApiToken,
+    },
+    Error {
+        error: String,
+        message: String,
+    },
 }
 
 #[cfg(test)]
