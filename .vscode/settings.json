@@ -1,5 +1,4 @@
 {
-  "nixEnvSelector.nixFile": "${workspaceRoot}/shell.nix",
   "rust-analyzer.cargo.features": "all",
   "markdownlint.config": {
     "commands-show-output": false,
@@ -17,6 +16,8 @@
     "itertools",
     "Localised",
     "MSRV",
+    "nixpkgs",
+    "numtide",
     "pastable",
     "printdoc",
     "println",
@@ -34,5 +35,9 @@
     "thiserror",
     "unversioned",
     "writedoc"
-  ]
+  ],
+  "files.exclude": {
+    ".direnv": true,
+    "target": true
+  }
 }
