@@ -22,6 +22,9 @@ impl ModController {
 
     #[cfg(unix)]
     fn copy_or_link<P: AsRef<Path>, Q: AsRef<Path>>(from: P, to: Q) -> Result<()> {
+        let from = std::fs::canonicalize(from)?;
+        debug!("create symbolic link: {} -> {} ", from.display(), to.as_ref().display());
+
         std::os::unix::fs::symlink(from, to)?;
         Ok(())
     }

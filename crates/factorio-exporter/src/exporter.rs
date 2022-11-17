@@ -73,7 +73,7 @@ impl FactorioExporter<'_> {
     }
 }
 
-const ARGS: &[&str] = &["--config", CONFIG, "--mod-directory", MODS_DIR];
+const ARGS: &[&str] = &["--config", CONFIG];
 
 impl FactorioExporter<'_> {
     /// Export the prototype definitions from Factorio and partially deserialize
@@ -90,7 +90,7 @@ impl FactorioExporter<'_> {
         self.create_exporter_mod()?;
 
         info!("create an empty save file");
-        self.run_factorio(&["--create", SAVE])?;
+        self.run_factorio(&["--create", SAVE, "--mod-directory", "none"])?;
 
         info!("execute Factorio to export prototypes");
         #[rustfmt::skip]
