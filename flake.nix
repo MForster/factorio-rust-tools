@@ -7,5 +7,7 @@
   outputs = { nixpkgs, flake-utils, ... }:
     flake-utils.lib.eachDefaultSystem (system:
       let pkgs = import nixpkgs { inherit system; };
-      in with pkgs; { devShell = mkShell { buildInputs = [ moreutils ]; }; });
+      in with pkgs; {
+        devShell = mkShell { buildInputs = [ moreutils openssl pkg-config ]; };
+      });
 }

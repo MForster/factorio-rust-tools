@@ -1,7 +1,7 @@
 [package]
 name = "factorio-mod-api"
 description = "A library to access the [Factorio](http://www.factorio.com) [mod portal API](https://wiki.factorio.com/Mod_portal_API)."
-version = "0.2.0"
+version = "0.3.0"
 
 authors = ["Michael Forster <email@michael-forster.de>"]
 edition = "2021"

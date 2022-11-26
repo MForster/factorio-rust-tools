@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 <!-- next-header -->
 ## [Unreleased] - ReleaseDate
 
+## [0.3.0] - 2022-11-26
+
 ### New features
 
 - Add features to login to the mod portal and download mods.
@@ -23,5 +25,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Add an initial implementation of a mod portal client.
 
 <!-- next-url -->
-[Unreleased]: https://github.com/MForster/factorio-rust-tools/compare/factorio-mod-api-v0.2.0...HEAD
+[Unreleased]: https://github.com/MForster/factorio-rust-tools/compare/factorio-mod-api-v0.3.0...HEAD
+[0.3.0]: https://github.com/MForster/factorio-rust-tools/compare/factorio-mod-api-v0.2.0...factorio-mod-api-v0.3.0
 [0.2.0]: https://github.com/MForster/factorio-rust-tools/compare/factorio-mod-api-base...factorio-mod-api-v0.2.0
