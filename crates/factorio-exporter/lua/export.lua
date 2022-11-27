@@ -22,7 +22,7 @@ end
 -- https://lua-api.factorio.com/latest/LuaGroup.html#LuaGroup.order_in_recipe
 --
 -- This function is used to wrap any access to properties with `pcall`.
-function export.SaveRead(context, attr)
+function export.SafeRead(context, attr)
     local value = nil
     pcall(function()
         value = context[attr]
