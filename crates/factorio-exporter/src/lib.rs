@@ -32,6 +32,7 @@ pub use api::load_api;
 pub use exporter::FactorioExporter;
 
 mod api;
+mod api_generator;
 mod exporter;
 mod internal;
 
