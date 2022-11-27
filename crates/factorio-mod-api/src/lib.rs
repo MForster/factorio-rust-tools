@@ -3,9 +3,11 @@
 
 pub mod api;
 
+use std::{fs::File, io::Write, path::PathBuf};
+
 use api::{ApiToken, FullModSpec};
-use bytes::Bytes;
 use elsa::FrozenMap;
+use futures::StreamExt;
 use semver::Version;
 use thiserror::Error;
 use tracing::info;
@@ -112,7 +114,8 @@ impl ModPortalClient {
         mod_name: &str,
         version: &Version,
         api_token: &ApiToken,
-    ) -> Result<Bytes> {
+        path: PathBuf,
+    ) -> Result<PathBuf> {
         info!("downloading version {version} of '{mod_name}' mod");
 
         let releases = &self.get_mod_spec(mod_name).await?.short_spec.releases;
@@ -123,7 +126,21 @@ impl ModPortalClient {
         let url = format!("https://mods.factorio.com/{}", release.download_url);
         let query = [("username", &api_token.username), ("token", &api_token.token)];
 
-        Ok(self.client.get(url).query(&query).send().await?.bytes().await?)
+        let response = match self.client.get(url).query(&query).send().await {
+            Ok(response) => response,
+            Err(error) => return Err(FactorioModApiError::RequestError(error)),
+        };
+
+        let filepath = path.join(release.file_name.clone());
+        let mut file = File::create(&filepath)?;
+        let mut stream = response.bytes_stream();
+
+        while let Some(item) = stream.next().await {
+            let chunk = item?;
+            file.write(&chunk)?;
+        }
+
+        Ok(filepath)
     }
 }
 
@@ -155,4 +172,7 @@ pub enum FactorioModApiError {
 
     #[error("failed to log in: {error}, {message}")]
     LoginError { error: String, message: String },
+
+    #[error("Error while doing an IO operation")]
+    IOError(#[from] std::io::Error),
 }

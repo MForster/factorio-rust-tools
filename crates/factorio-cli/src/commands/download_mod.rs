@@ -1,7 +1,4 @@
-use std::{
-    fs::{self, File},
-    io::BufReader,
-};
+use std::{env, fs::File, io::BufReader};
 
 use clap::Parser;
 use eyre::bail;
@@ -30,8 +27,7 @@ impl DownloadModCommand {
         let token: ApiToken = serde_json::from_reader(BufReader::new(File::open(token_file)?))?;
 
         let client = ModPortalClient::new()?;
-        let res = client.download_mod(&self.mod_name, &self.mod_version, &token).await?;
-        fs::write(format!("{}_{}.zip", self.mod_name, self.mod_version), res)?;
+        client.download_mod(&self.mod_name, &self.mod_version, &token, env::current_dir()?).await?;
 
         Ok(())
     }
