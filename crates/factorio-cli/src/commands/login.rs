@@ -20,8 +20,13 @@ impl LoginCommand {
 
         let password = rpassword::prompt_password("Password: ")?;
 
+        let token_path = app.api_token_path();
+        std::fs::create_dir_all(
+            token_path.parent().expect("token path should have a valid parent directory"),
+        )?;
+
         let api_token = ModPortalClient::new()?.login(user_name, &password).await?;
-        std::fs::write(app.api_token_path(), serde_json::to_string(&api_token)?)?;
+        std::fs::write(token_path, serde_json::to_string(&api_token)?)?;
 
         Ok(())
     }
