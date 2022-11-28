@@ -27,7 +27,9 @@ impl DownloadModCommand {
         let token: ApiToken = serde_json::from_reader(BufReader::new(File::open(token_file)?))?;
 
         let client = ModPortalClient::new()?;
-        client.download_mod(&self.mod_name, &self.mod_version, &token, env::current_dir()?).await?;
+        client
+            .download_mod(&self.mod_name, &self.mod_version, &token, &env::current_dir()?)
+            .await?;
 
         Ok(())
     }

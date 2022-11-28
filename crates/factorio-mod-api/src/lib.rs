@@ -3,7 +3,11 @@
 
 pub mod api;
 
-use std::{fs::File, io::Write, path::PathBuf};
+use std::{
+    fs::File,
+    io::Write,
+    path::{Path, PathBuf},
+};
 
 use api::{ApiToken, FullModSpec};
 use elsa::FrozenMap;
@@ -66,10 +70,11 @@ impl ModPortalClient {
     /// # async fn run() -> Result<(), Box<dyn std::error::Error>> {
     /// use factorio_mod_api::ModPortalClient;
     /// use semver::Version;
+    /// use std::env;
     ///
     /// let client = ModPortalClient::new()?;
     /// let token = client.login("my_user", "my_password").await?;
-    /// client.download_mod("my_mod", &Version::parse("1.0.0")?, &token);
+    /// client.download_mod("my_mod", &Version::parse("1.0.0")?, &token, &env::current_dir()?);
     /// # Ok(())
     /// # }
     //
@@ -101,11 +106,11 @@ impl ModPortalClient {
     /// # async fn run() -> Result<(), Box<dyn std::error::Error>> {
     /// use factorio_mod_api::ModPortalClient;
     /// use semver::Version;
+    /// use std::env;
     ///
     /// let client = ModPortalClient::new()?;
     /// let token = client.login("my_user", "my_password").await?;
-    /// let bytes = client.download_mod("my_mod", &Version::parse("1.0.0")?, &token).await?;
-    /// std::fs::write("my_mod_1.0.0.zip", bytes)?;
+    /// let bytes = client.download_mod("my_mod", &Version::parse("1.0.0")?, &token, &env::current_dir()?).await?;
     /// # Ok(())
     /// # }
     /// ```
@@ -114,7 +119,7 @@ impl ModPortalClient {
         mod_name: &str,
         version: &Version,
         api_token: &ApiToken,
-        path: PathBuf,
+        directory: &Path,
     ) -> Result<PathBuf> {
         info!("downloading version {version} of '{mod_name}' mod");
 
@@ -126,12 +131,9 @@ impl ModPortalClient {
         let url = format!("https://mods.factorio.com/{}", release.download_url);
         let query = [("username", &api_token.username), ("token", &api_token.token)];
 
-        let response = match self.client.get(url).query(&query).send().await {
-            Ok(response) => response,
-            Err(error) => return Err(FactorioModApiError::RequestError(error)),
-        };
+        let response = self.client.get(url).query(&query).send().await?;
 
-        let filepath = path.join(release.file_name.clone());
+        let filepath = directory.join(&release.file_name);
         let mut file = File::create(&filepath)?;
         let mut stream = response.bytes_stream();
 
