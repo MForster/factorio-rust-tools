@@ -6,7 +6,7 @@ use proc_macro2::TokenStream;
 use quote::{format_ident, quote};
 use syn::Ident;
 
-use crate::api::{Api, Type};
+use crate::api::{Api, Concept, Type};
 
 pub struct ApiGenerator<'a> {
     api: &'a Api,
@@ -83,7 +83,11 @@ impl<'a> ApiGenerator<'a> {
 
                     Some(quote! { #table_name })
                 }
-                Type::Array { value } => Some(quote! { Vec<()> }),
+                Type::Array { .. } => Some(quote! { Vec<()> }),
+                Type::NamedType { name } => {
+                    let name = id(name);
+                    Some(quote! {#name})
+                }
                 _ => None,
             };
             if let Some(attr_type) = attr_type {
