@@ -8,7 +8,7 @@ use std::{
 
 use convert_case::{Case, Casing};
 use indoc::writedoc;
-use itertools::Itertools;
+
 use regex::Captures;
 use regex_macro::regex;
 use serde_derive::Deserialize;
@@ -17,7 +17,7 @@ use tempfile::TempDir;
 use tracing::{debug, error, info};
 
 use crate::{
-    api::{Api, HasAttributes},
+    api::Api,
     internal::{
         mod_controller::{ModController, ModManifestBuilder},
         script_generator::ScriptGenerator,
@@ -150,13 +150,6 @@ impl FactorioExporter<'_> {
     }
 
     fn create_exporter_mod(&self) -> Result<()> {
-        let attrs = self.api.classes["LuaGameScript"]
-            .attributes()
-            .iter()
-            .copied()
-            .filter(|attr| attr.name.ends_with("prototypes"))
-            .collect_vec();
-
         self.mod_controller
             .create_mod(
                 ModManifestBuilder::default()
@@ -173,7 +166,7 @@ impl FactorioExporter<'_> {
                 include_str!("../lua/instrument-after-data.lua"),
             )?
             .add_file("instrument-control.lua", include_str!("../lua/instrument-control.lua"))?
-            .add_file("prototypes.lua", &ScriptGenerator::new(self.api).generate("game", attrs))?;
+            .add_file("prototypes.lua", &ScriptGenerator::new(self.api).generate("game"))?;
 
         Ok(())
     }

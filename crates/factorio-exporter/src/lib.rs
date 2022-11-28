@@ -30,6 +30,7 @@ use thiserror::Error;
 
 pub use api::load_api;
 pub use exporter::FactorioExporter;
+pub use internal::api_generator::ApiGenerator;
 
 mod api;
 mod exporter;

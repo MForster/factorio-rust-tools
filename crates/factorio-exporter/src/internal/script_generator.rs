@@ -15,28 +15,25 @@ pub struct ScriptGenerator<'a> {
 
 impl<'a> ScriptGenerator<'a> {
     pub fn new(api: &'a Api) -> ScriptGenerator<'a> {
-        let toplevel_classes = api.classes["LuaGameScript"]
-            .attributes()
+        let toplevel_classes = api
+            .toplevel_attributes()
             .iter()
             .filter_map(|attr| {
-                if attr.name.ends_with("_prototypes") {
-                    if let Type::LuaCustomTable { value, .. } = &attr.r#type {
-                        if let Type::NamedType { name } = value.as_ref() {
-                            return Some(name.as_str());
-                        }
+                if let Type::LuaCustomTable { value, .. } = &attr.r#type {
+                    if let Type::NamedType { name } = value.as_ref() {
+                        return Some(name.as_str());
                     }
                 }
                 None
             })
             .collect();
 
-        let script = ScriptBuilder::new();
-        ScriptGenerator { api, script, toplevel_classes }
+        ScriptGenerator { api, script: ScriptBuilder::new(), toplevel_classes }
     }
 
-    pub fn generate(mut self, object: &str, attributes: Vec<&Attribute>) -> String {
+    pub fn generate(mut self, object: &str) -> String {
         self.script.begin_context(object);
-        self.export_attrs(attributes, 0);
+        self.export_attrs(self.api.toplevel_attributes(), 0);
         self.script.end_block();
         self.script.build()
     }

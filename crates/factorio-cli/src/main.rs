@@ -5,13 +5,15 @@ use std::path::PathBuf;
 
 use clap::{error::ErrorKind, CommandFactory, Parser, Subcommand};
 use commands::{
-    download_mod::DownloadModCommand, export::ExportCommand, login::LoginCommand,
-    resolve_mods::ResolveModsCommand,
+    download_mod::DownloadModCommand, export::ExportCommand, generate_api::GenerateApiCommand,
+    login::LoginCommand, resolve_mods::ResolveModsCommand,
 };
 use directories::ProjectDirs;
 use eyre::Result;
 use settings::Settings;
 use tracing::info;
+
+mod api;
 
 /// A collection of tools for Factorio (<http://www.factorio.com>)
 #[derive(Parser, Debug)]
@@ -49,6 +51,7 @@ enum Commands {
     ResolveMods(ResolveModsCommand),
     DownloadMod(DownloadModCommand),
     Login(LoginCommand),
+    GenerateApi(GenerateApiCommand),
 }
 
 pub struct App {
@@ -84,6 +87,7 @@ impl App {
             Commands::ResolveMods(cmd) => cmd.execute(&self).await?,
             Commands::DownloadMod(cmd) => cmd.execute(&self).await?,
             Commands::Login(cmd) => cmd.execute(&self).await?,
+            Commands::GenerateApi(cmd) => cmd.execute(&self).await?,
         }
         Ok(())
     }

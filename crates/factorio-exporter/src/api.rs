@@ -60,6 +60,18 @@ pub struct Api {
     pub concepts: HashMap<String, Concept>,
 }
 
+impl Api {
+    pub fn toplevel_attributes(&self) -> Vec<&Attribute> {
+        self.classes["LuaGameScript"]
+            .attributes()
+            .iter()
+            .copied()
+            .sorted_by_key(|attr| attr.order)
+            .filter(|attr| attr.name.ends_with("_prototypes"))
+            .collect_vec()
+    }
+}
+
 #[derive(Debug, Deserialize)]
 struct RawApi {
     application: String,
