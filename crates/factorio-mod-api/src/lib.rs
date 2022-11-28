@@ -137,7 +137,7 @@ impl ModPortalClient {
 
         while let Some(item) = stream.next().await {
             let chunk = item?;
-            file.write(&chunk)?;
+            file.write_all(&chunk)?;
         }
 
         Ok(filepath)
