@@ -3,9 +3,15 @@
 
 pub mod api;
 
+use std::{
+    fs::File,
+    io::Write,
+    path::{Path, PathBuf},
+};
+
 use api::{ApiToken, FullModSpec};
-use bytes::Bytes;
 use elsa::FrozenMap;
+use futures::StreamExt;
 use semver::Version;
 use thiserror::Error;
 use tracing::info;
@@ -64,10 +70,11 @@ impl ModPortalClient {
     /// # async fn run() -> Result<(), Box<dyn std::error::Error>> {
     /// use factorio_mod_api::ModPortalClient;
     /// use semver::Version;
+    /// use std::env;
     ///
     /// let client = ModPortalClient::new()?;
     /// let token = client.login("my_user", "my_password").await?;
-    /// client.download_mod("my_mod", &Version::parse("1.0.0")?, &token);
+    /// client.download_mod("my_mod", &Version::parse("1.0.0")?, &token, &env::current_dir()?);
     /// # Ok(())
     /// # }
     //
@@ -99,11 +106,11 @@ impl ModPortalClient {
     /// # async fn run() -> Result<(), Box<dyn std::error::Error>> {
     /// use factorio_mod_api::ModPortalClient;
     /// use semver::Version;
+    /// use std::env;
     ///
     /// let client = ModPortalClient::new()?;
     /// let token = client.login("my_user", "my_password").await?;
-    /// let bytes = client.download_mod("my_mod", &Version::parse("1.0.0")?, &token).await?;
-    /// std::fs::write("my_mod_1.0.0.zip", bytes)?;
+    /// let bytes = client.download_mod("my_mod", &Version::parse("1.0.0")?, &token, &env::current_dir()?).await?;
     /// # Ok(())
     /// # }
     /// ```
@@ -112,7 +119,8 @@ impl ModPortalClient {
         mod_name: &str,
         version: &Version,
         api_token: &ApiToken,
-    ) -> Result<Bytes> {
+        directory: &Path,
+    ) -> Result<PathBuf> {
         info!("downloading version {version} of '{mod_name}' mod");
 
         let releases = &self.get_mod_spec(mod_name).await?.short_spec.releases;
@@ -123,7 +131,18 @@ impl ModPortalClient {
         let url = format!("https://mods.factorio.com/{}", release.download_url);
         let query = [("username", &api_token.username), ("token", &api_token.token)];
 
-        Ok(self.client.get(url).query(&query).send().await?.bytes().await?)
+        let response = self.client.get(url).query(&query).send().await?;
+
+        let filepath = directory.join(&release.file_name);
+        let mut file = File::create(&filepath)?;
+        let mut stream = response.bytes_stream();
+
+        while let Some(item) = stream.next().await {
+            let chunk = item?;
+            file.write_all(&chunk)?;
+        }
+
+        Ok(filepath)
     }
 }
 
@@ -155,4 +174,7 @@ pub enum FactorioModApiError {
 
     #[error("failed to log in: {error}, {message}")]
     LoginError { error: String, message: String },
+
+    #[error("Error while doing an IO operation")]
+    IOError(#[from] std::io::Error),
 }
