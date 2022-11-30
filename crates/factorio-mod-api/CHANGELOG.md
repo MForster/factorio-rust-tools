@@ -8,6 +8,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 <!-- next-header -->
 ## [Unreleased] - ReleaseDate
 
+### Incompatible changes
+
+- ModPortalClient::download_mod now saves the mod in a file
+- Replaced the existing data models
+
 ## [0.3.0] - 2022-11-26
 
 ### New features
