@@ -1,0 +1,56 @@
+{
+  "name": "mymod",
+  "owner": "someone",
+  "created_at": "2022-04-18T12:11:17.23000Z",
+  "updated_at": "2022-09-24T08:53:02.970000Z",
+  "category": "general",
+  "title": "TITLE",
+  "summary": "SUMMARY",
+  "description": "DESCRIPTION",
+  "changelog": "CHANGELOG",
+  "homepage": "https://example.com/",
+  "github_path": "not/existing",
+  "source_url": "https://github.com/not/existing",
+  "images": [],
+  "downloads_count": 42,
+  "score": 88.15,
+  "thumbnail": "/assets/6eadeac2dade6347e87c0d24fd455feffa7069f0.thumb.png",
+  "tag": {
+    "name": "general"
+  },
+  "license": {
+    "description": "A permissive license that is short and to the point. It lets people do anything with your code with proper attribution and without warranty.",
+    "id": "default_mit",
+    "name": "mit",
+    "title": "MIT",
+    "url": "https://opensource.org/licenses/MIT"
+  },
+  "releases": [
+    {
+      "download_url": "/download/mymod/bde93f095d1b53ed019fca5e",
+      "file_name": "mymod_0.0.1.zip",
+      "info_json": {
+        "dependencies": [
+          "base >= 0.13.0"
+        ],
+        "factorio_version": "0.14"
+      },
+      "released_at": "2022-06-14T11:45:45.165000Z",
+      "sha1": "65b0435dbd4fb0ab0ceea61549641bf6f7dce9d2",
+      "version": "0.0.1"
+    },
+    {
+      "download_url": "/download/mymod/7303634ba9642c5a321a757e",
+      "file_name": "mymod_0.0.2.zip",
+      "info_json": {
+        "dependencies": [
+          "base >= 0.13.0"
+        ],
+        "factorio_version": "0.14"
+      },
+      "released_at": "2022-09-24T08:53:02.970000Z",
+      "sha1": "a3499805018d6acaa29c1fbeaae763e6d8ae4279",
+      "version": "0.0.2"
+    }
+  ]
+}

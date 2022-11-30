@@ -8,6 +8,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 <!-- next-header -->
 ## [Unreleased] - ReleaseDate
 
+### Incompatible changes
+
+- `ModSpec.score` is now an `ordered_float::NotNan<f64>` to enable derivation of `Eq`.
+  Also, we wouldn't want to handle `NaN` values anyway.
+
+### Other changes
+
+- The API data types now derive `Eq` and `PartialEq`.
+
 ## [0.3.0] - 2022-11-26
 
 ### New features

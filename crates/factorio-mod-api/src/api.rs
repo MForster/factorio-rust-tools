@@ -3,6 +3,7 @@
 use std::{fmt::Display, str::FromStr};
 
 use chrono::{DateTime, Utc};
+use ordered_float::NotNan;
 use regex_macro::regex;
 use semver::Version;
 use serde::{de::Visitor, Deserialize, Deserializer, Serialize};
@@ -49,7 +50,7 @@ pub struct FullModSpec {
 }
 
 /// Mod metadata shared between the three different API invocations.
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Deserialize, Eq, PartialEq)]
 pub struct ModMetadata {
     /// The mod's machine-readable ID string.
     pub name: String,
@@ -69,9 +70,10 @@ pub struct ModMetadata {
     /// Number of downloads.
     pub downloads_count: u64,
 }
+
 /// A mod as returned from the `https://mods.factorio.com/api/mods/{name}`
 /// endpoint (not yet implemented). Also returned as part of the full request.
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Deserialize, Eq, PartialEq)]
 pub struct ModSpec {
     /// Metadata shared between the three different API invocations.
     #[serde(flatten)]
@@ -91,12 +93,12 @@ pub struct ModSpec {
     pub tag: Option<ModTag>,
 
     // Undocumented
-    pub score: f64,
+    pub score: NotNan<f64>,
     pub thumbnail: Option<String>,
 }
 
 /// A tag object that categorizes a mod.
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Deserialize, Eq, PartialEq)]
 pub struct ModTag {
     /// An all lower-case string used to identify this tag internally.
     pub name: String,
@@ -118,7 +120,7 @@ pub struct ModLicense {
     pub url: Url,
 }
 
-#[derive(Clone, Debug, Deserialize)]
+#[derive(Clone, Debug, Deserialize, Eq, PartialEq)]
 pub struct ModRelease {
     /// Path to download for a mod. starts with "/download" and does not include
     /// a full url.
@@ -168,7 +170,7 @@ where
 
 /// Partial contents of the `info.json` file that describes a mod.
 /// <https://wiki.factorio.com/Tutorial:Mod_structure#info.json>
-#[derive(Clone, Debug, Deserialize)]
+#[derive(Clone, Debug, Deserialize, Eq, PartialEq)]
 pub struct ModManifest {
     pub factorio_version: String, // Doesn't parse as semver::Version (no patch level).
 
