@@ -12,8 +12,8 @@ keywords = ["gaming", "factorio"]
 rust-version = "1.65.0"
 
 [dependencies]
-bytes = "1.2.1"
-chrono = { version = "0.4.22", default-features = false, features = [
+bytes = "1.3.0"
+chrono = { version = "0.4.23", default-features = false, features = [
   "std",
   "serde",
 ] }
@@ -21,11 +21,11 @@ elsa = "1.7.0"
 futures = "0.3.25"
 ordered-float = { version = "3.4.0", features = ["serde"] }
 regex-macro = "0.2.0"
-reqwest = { version = "0.11.12", features = ["json", "stream"] }
+reqwest = { version = "0.11.13", features = ["json", "stream"] }
 semver = { version = "1.0.14", features = ["serde"] }
-serde = { version = "1.0.147", features = ["derive"] }
-serde_derive = "1.0.147"
-serde_json = "1.0.87"
+serde = { version = "1.0.148", features = ["derive"] }
+serde_derive = "1.0.148"
+serde_json = "1.0.89"
 strum = "0.24.1"
 strum_macros = "0.24.3"
 thiserror = "1.0.37"
