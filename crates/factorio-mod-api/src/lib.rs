@@ -12,10 +12,11 @@ use std::{
 use api::{ApiToken, FullModSpec};
 use elsa::FrozenMap;
 use futures::StreamExt;
+use reqwest::StatusCode;
 use reqwest::Url;
 use semver::Version;
 use thiserror::Error;
-use tracing::info;
+use tracing::{debug, info, trace, warn};
 
 use crate::api::LoginResponse;
 
@@ -76,7 +77,23 @@ impl ModPortalClient {
                 .mod_api_base
                 .join(&format!("api/mods/{name}/full"))
                 .map_err(|_| FactorioModApiError::InvalidModName { name: name.into() })?;
-            let response = self.client.get(url).send().await?.json().await?;
+            debug!("send request {url}");
+            let response = self.client.get(url).send().await?;
+
+            let status = response.status();
+            if !status.is_success() {
+                warn!("request failed ({status}): {:?}", response.bytes().await?);
+                if status == StatusCode::NOT_FOUND {
+                    return Err(FactorioModApiError::ModNotFound { mod_name: name.into() });
+                } else {
+                    return Err(FactorioModApiError::UnknownApiError { mod_name: name.into() });
+                }
+            }
+
+            let full = response.bytes().await?;
+            trace!("received response {status} {full:#?}");
+            let response = serde_json::from_slice(&full)?;
+
             self.specs.insert(name.into(), Box::new(response))
         })
     }
@@ -185,20 +202,29 @@ pub enum FactorioModApiError {
     #[error("Invalid mod version: '{version}'")]
     InvalidModVersion { version: Version },
 
-    /// Error that is raised if a request to the mod portal failed.
-    #[error("Error while talking to the API Server")]
-    RequestError(#[from] reqwest::Error),
-
-    /// Error that is raised if parsing of a SemVer version number failed.
-    #[error("Error while parsing a version number")]
-    VersionError(#[from] semver::Error),
-
     /// Error that is raised if deserialization from JSON failed.
     #[error("failed to parse JSON")]
     JsonParsingError(#[from] serde_json::Error),
 
+    /// Error that is raised if logging in failed
     #[error("failed to log in: {error}, {message}")]
     LoginError { error: String, message: String },
+
+    /// Error that is raised a mod isn't found
+    #[error("mod does not exit: {mod_name}")]
+    ModNotFound { mod_name: String },
+
+    /// Error that is raised if a request to the mod portal failed.
+    #[error("Error while talking to the API Server")]
+    RequestError(#[from] reqwest::Error),
+
+    /// Error that is raised a mod isn't found
+    #[error("API requests failed for an unknown reason: {mod_name}")]
+    UnknownApiError { mod_name: String },
+
+    /// Error that is raised if parsing of a SemVer version number failed.
+    #[error("Error while parsing a version number")]
+    VersionError(#[from] semver::Error),
 
     #[error("Error while doing an IO operation")]
     IOError(#[from] std::io::Error),
