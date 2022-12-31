@@ -1,0 +1,14 @@
+[package]
+name = "factorio-graph"
+description = "A library to manipulate the Factorio (http://www.factorio.com) prototype definitions as a graph"
+version = "0.0.0"
+
+authors = ["Michael Forster <email@michael-forster.de>"]
+edition = "2021"
+homepage = "http://github.com/MForster/factorio-rust-tools"
+repository = "http://github.com/MForster/factorio-rust-tools"
+license = "MIT OR Apache-2.0"
+keywords = ["gaming", "factorio"]
+rust-version = "1.65.0"
+
+[dependencies]

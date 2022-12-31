@@ -22,6 +22,7 @@ config = "0.13.2"
 directories = "4.0.1"
 eyre = "0.6.8"
 factorio-exporter = { version = "0.9.0", path = "../factorio-exporter" }
+factorio-graph = { version = "0.0.0", path = "../factorio-graph" }
 factorio-mod-api = { version = "0.3.0", path = "../factorio-mod-api" }
 indoc = "1.0.7"
 itertools = "0.10.5"

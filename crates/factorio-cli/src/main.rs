@@ -5,8 +5,8 @@ use std::path::PathBuf;
 
 use clap::{error::ErrorKind, CommandFactory, Parser, Subcommand};
 use commands::{
-    download_mod::DownloadModCommand, export::ExportCommand, login::LoginCommand,
-    resolve_mods::ResolveModsCommand,
+    analyze::AnalyzeCommand, download_mod::DownloadModCommand, export::ExportCommand,
+    login::LoginCommand, resolve_mods::ResolveModsCommand,
 };
 use directories::ProjectDirs;
 use eyre::Result;
@@ -49,6 +49,7 @@ enum Commands {
     ResolveMods(ResolveModsCommand),
     DownloadMod(DownloadModCommand),
     Login(LoginCommand),
+    Analyze(AnalyzeCommand),
 }
 
 pub struct App {
@@ -84,6 +85,7 @@ impl App {
             Commands::ResolveMods(cmd) => cmd.execute(&self).await?,
             Commands::DownloadMod(cmd) => cmd.execute(&self).await?,
             Commands::Login(cmd) => cmd.execute(&self).await?,
+            Commands::Analyze(cmd) => cmd.execute(&self).await?,
         }
         Ok(())
     }
