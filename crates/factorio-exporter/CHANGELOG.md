@@ -8,6 +8,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 <!-- next-header -->
 ## [Unreleased] - ReleaseDate
 
+### Internal cleanup
+
+- The `factorio-exporter` now uses the `--dump-data` option of the Factorio
+  binary to export the prototype definitions. This is much simpler, more
+  reliable and faster than the previous method of using a generated mod.
+
 ## [0.9.0] - 2022-11-26
 
 ### Incompatible changes
