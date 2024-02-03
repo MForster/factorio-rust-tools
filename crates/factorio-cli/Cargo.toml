@@ -16,21 +16,21 @@ name = "fct"
 path = "src/main.rs"
 
 [dependencies]
-clap = { version = "4.0.29", features = ["derive"] }
+clap = { version = "4.3.24", features = ["derive"] }
 color-eyre = "0.6.2"
-config = "0.13.2"
-directories = "4.0.1"
-eyre = "0.6.8"
+config = "0.14.0"
+directories = "5.0.1"
+eyre = "0.6.12"
 factorio-exporter = { version = "0.9.0", path = "../factorio-exporter" }
 factorio-mod-api = { version = "0.3.0", path = "../factorio-mod-api" }
-indoc = "1.0.7"
-itertools = "0.10.5"
-rpassword = "7.2.0"
-semver = "1.0.14"
-serde = "1.0.148"
-serde_derive = "1.0.148"
-serde_json = { version = "1.0.89", features = ["preserve_order"] }
-serde_yaml = "0.9.14"
-tokio = { version = "1.22.0", features = ["macros", "rt-multi-thread"] }
-tracing = "0.1.37"
-tracing-subscriber = { version = "0.3.16", features = ["env-filter"] }
+indoc = "2.0.4"
+itertools = "0.12.1"
+rpassword = "7.3.1"
+semver = "1.0.21"
+serde = "1.0.196"
+serde_derive = "1.0.196"
+serde_json = { version = "1.0.113", features = ["preserve_order"] }
+serde_yaml = "0.9.31"
+tokio = { version = "1.36.0", features = ["macros", "rt-multi-thread"] }
+tracing = "0.1.40"
+tracing-subscriber = { version = "0.3.18", features = ["env-filter"] }

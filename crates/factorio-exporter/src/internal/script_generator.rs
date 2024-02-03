@@ -21,7 +21,7 @@ impl<'a> ScriptGenerator<'a> {
             .filter_map(|attr| {
                 if attr.name.ends_with("_prototypes") {
                     if let Type::LuaCustomTable { value, .. } = &attr.r#type {
-                        if let Type::NamedType { name } = value.as_ref() {
+                        if let Type::Named { name } = value.as_ref() {
                             return Some(name.as_str());
                         }
                     }
@@ -61,7 +61,7 @@ impl<'a> ScriptGenerator<'a> {
         let depth = depth + 1;
 
         match ty {
-            Type::NamedType { name } => {
+            Type::Named { name } => {
                 if let Some(class) = self.api.classes.get(name) {
                     let mut attrs = class.attributes();
 

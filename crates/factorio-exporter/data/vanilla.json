@@ -19,7 +19,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "wooden-chest",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -81,6 +84,7 @@
       "is_building": true,
       "radius": 0.49166018379377,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -110,7 +114,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "iron-chest",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -172,6 +179,7 @@
       "is_building": true,
       "radius": 0.49166018379377,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -201,7 +209,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "steel-chest",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -263,6 +274,7 @@
       "is_building": true,
       "radius": 0.49166018379377,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -292,7 +304,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "storage-tank",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -412,6 +427,7 @@
       "is_building": true,
       "radius": 1.8340582137026,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -441,7 +457,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "transport-belt",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -506,6 +525,7 @@
       "is_building": true,
       "radius": 0.56347571625803,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -535,7 +555,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "fast-transport-belt",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -600,6 +623,7 @@
       "is_building": true,
       "radius": 0.56347571625803,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -629,7 +653,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "express-transport-belt",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -691,6 +718,7 @@
       "is_building": true,
       "radius": 0.56347571625803,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -720,7 +748,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "underground-belt",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -785,6 +816,7 @@
       "is_building": true,
       "radius": 0.56347571625803,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -814,7 +846,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "fast-underground-belt",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -879,6 +914,7 @@
       "is_building": true,
       "radius": 0.56347571625803,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -908,7 +944,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "express-underground-belt",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -970,6 +1009,7 @@
       "is_building": true,
       "radius": 0.56347571625803,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -999,7 +1039,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "splitter",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -1064,6 +1107,7 @@
       "is_building": true,
       "radius": 0.9828236783943,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -1093,7 +1137,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "fast-splitter",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -1158,6 +1205,7 @@
       "is_building": true,
       "radius": 0.9828236783943,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -1187,7 +1235,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "express-splitter",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -1249,6 +1300,7 @@
       "is_building": true,
       "radius": 0.9828236783943,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -1278,7 +1330,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "loader",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -1329,6 +1384,13 @@
       "max_circuit_wire_distance": 0,
       "max_energy_usage": 0,
       "max_energy_production": 0,
+      "void_energy_source_prototype": {
+        "emissions": 0,
+        "render_no_network_icon": true,
+        "render_no_power_icon": true,
+        "valid": true,
+        "object_name": "LuaVoidEnergySourcePrototype"
+      },
       "building_grid_bit_shift": 1,
       "fluid_capacity": 0,
       "time_to_live": 0,
@@ -1340,6 +1402,7 @@
       "is_building": true,
       "radius": 0.9828236783943,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -1369,7 +1432,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "fast-loader",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -1420,6 +1486,13 @@
       "max_circuit_wire_distance": 0,
       "max_energy_usage": 0,
       "max_energy_production": 0,
+      "void_energy_source_prototype": {
+        "emissions": 0,
+        "render_no_network_icon": true,
+        "render_no_power_icon": true,
+        "valid": true,
+        "object_name": "LuaVoidEnergySourcePrototype"
+      },
       "building_grid_bit_shift": 1,
       "fluid_capacity": 0,
       "time_to_live": 0,
@@ -1431,6 +1504,7 @@
       "is_building": true,
       "radius": 0.9828236783943,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -1460,7 +1534,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "express-loader",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -1511,6 +1588,13 @@
       "max_circuit_wire_distance": 0,
       "max_energy_usage": 0,
       "max_energy_production": 0,
+      "void_energy_source_prototype": {
+        "emissions": 0,
+        "render_no_network_icon": true,
+        "render_no_power_icon": true,
+        "valid": true,
+        "object_name": "LuaVoidEnergySourcePrototype"
+      },
       "building_grid_bit_shift": 1,
       "fluid_capacity": 0,
       "time_to_live": 0,
@@ -1522,6 +1606,7 @@
       "is_building": true,
       "radius": 0.9828236783943,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -1551,7 +1636,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "burner-inserter",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -1654,6 +1742,7 @@
       "is_building": true,
       "radius": 0.20992232566476,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -1683,7 +1772,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "inserter",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -1760,6 +1852,7 @@
       "is_building": true,
       "radius": 0.20992232566476,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -1789,7 +1882,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "long-handed-inserter",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -1863,6 +1959,7 @@
       "is_building": true,
       "radius": 0.20992232566476,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -1892,7 +1989,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "fast-inserter",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -1969,6 +2069,7 @@
       "is_building": true,
       "radius": 0.20992232566476,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -1998,7 +2099,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "filter-inserter",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -2072,6 +2176,7 @@
       "is_building": true,
       "radius": 0.20992232566476,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -2101,7 +2206,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "stack-inserter",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -2175,6 +2283,7 @@
       "is_building": true,
       "radius": 0.20992232566476,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -2204,7 +2313,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "stack-filter-inserter",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -2278,6 +2390,7 @@
       "is_building": true,
       "radius": 0.20992232566476,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -2307,7 +2420,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "small-electric-pole",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -2369,6 +2485,7 @@
       "is_building": true,
       "radius": 0.20992232566476,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -2398,7 +2515,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "medium-electric-pole",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -2460,6 +2580,7 @@
       "is_building": true,
       "radius": 0.20992232566476,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -2489,7 +2610,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "big-electric-pole",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -2550,6 +2674,7 @@
       "is_building": true,
       "radius": 0.9170291068513,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -2579,7 +2704,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "substation",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -2640,6 +2768,7 @@
       "is_building": true,
       "radius": 0.98884463931556,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -2669,7 +2798,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "pipe",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -2790,6 +2922,7 @@
       "is_building": true,
       "radius": 0.40879610787347,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -2819,7 +2952,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "pipe-to-ground",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -2923,6 +3059,7 @@
       "is_building": true,
       "radius": 0.37836724710477,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -2952,7 +3089,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "pump",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -3068,6 +3208,7 @@
       "is_building": true,
       "radius": 0.9437939766244,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -3097,7 +3238,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "rail",
+          "count": 4
+        }
       ],
       "collision_box": null,
       "secondary_collision_box": null,
@@ -3159,6 +3303,7 @@
       "is_building": true,
       "radius": 1.3085310735923,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -3188,7 +3333,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "rail",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -3249,6 +3397,7 @@
       "is_building": true,
       "radius": 1.2106224388525,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -3278,7 +3427,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "train-stop",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -3340,6 +3492,7 @@
       "is_building": true,
       "radius": 0.70710678118655,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -3369,7 +3522,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "rail-signal",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -3431,6 +3587,7 @@
       "is_building": true,
       "radius": 0.28173785812902,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -3460,7 +3617,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "rail-chain-signal",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -3522,6 +3682,7 @@
       "is_building": true,
       "radius": 0.28173785812902,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -3551,7 +3712,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "locomotive",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -3654,6 +3818,7 @@
       "is_building": false,
       "radius": 2.6655226478738,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -3683,7 +3848,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "cargo-wagon",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -3745,6 +3913,7 @@
       "is_building": false,
       "radius": 2.4717798111018,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -3774,7 +3943,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "fluid-wagon",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -3836,6 +4008,7 @@
       "is_building": false,
       "radius": 2.4717798111018,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -3865,7 +4038,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "artillery-wagon",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -3932,6 +4108,7 @@
       "is_building": false,
       "radius": 2.4717798111018,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -3962,7 +4139,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "car",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -4070,6 +4250,7 @@
       "is_building": false,
       "radius": 1.2202077119702,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -4099,7 +4280,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "tank",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -4213,6 +4397,7 @@
       "is_building": false,
       "radius": 1.5776801662667,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -4242,7 +4427,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "spidertron",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -4324,6 +4512,7 @@
       "is_building": false,
       "radius": 1.4142135623731,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "grid_prototype": {
         "name": "spidertron-equipment-grid"
@@ -4356,7 +4545,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "logistic-robot",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -4400,6 +4592,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -4429,7 +4622,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "construction-robot",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -4473,6 +4669,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -4502,7 +4699,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "logistic-chest-active-provider",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -4564,6 +4764,7 @@
       "is_building": true,
       "radius": 0.49166018379377,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -4593,7 +4794,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "logistic-chest-passive-provider",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -4655,6 +4859,7 @@
       "is_building": true,
       "radius": 0.49166018379377,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -4684,7 +4889,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "logistic-chest-storage",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -4746,6 +4954,7 @@
       "is_building": true,
       "radius": 0.49166018379377,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -4775,7 +4984,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "logistic-chest-buffer",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -4837,6 +5049,7 @@
       "is_building": true,
       "radius": 0.49166018379377,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -4866,7 +5079,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "logistic-chest-requester",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -4928,6 +5144,7 @@
       "is_building": true,
       "radius": 0.49166018379377,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -4957,7 +5174,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "roboport",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -5031,6 +5251,7 @@
       "is_building": true,
       "radius": 2.4030582016887,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -5060,7 +5281,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "small-lamp",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -5134,6 +5358,7 @@
       "is_building": true,
       "radius": 0.20992232566476,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -5163,7 +5388,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "arithmetic-combinator",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -5237,6 +5465,7 @@
       "is_building": true,
       "radius": 0.73575543461827,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -5266,7 +5495,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "decider-combinator",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -5340,6 +5572,7 @@
       "is_building": true,
       "radius": 0.73575543461827,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -5369,7 +5602,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "constant-combinator",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -5431,6 +5667,7 @@
       "is_building": true,
       "radius": 0.49166018379377,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -5460,7 +5697,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "power-switch",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -5521,6 +5761,7 @@
       "is_building": true,
       "radius": 0.98884463931556,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -5550,7 +5791,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "programmable-speaker",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -5624,6 +5868,7 @@
       "is_building": true,
       "radius": 0.41984465132951,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -5653,7 +5898,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "boiler",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -5836,6 +6084,7 @@
       "is_building": true,
       "radius": 1.5113906701487,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -5865,7 +6114,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "steam-engine",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -5984,6 +6236,7 @@
       "is_building": true,
       "radius": 2.6596973264197,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -6013,7 +6266,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "solar-panel",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -6086,6 +6342,7 @@
       "is_building": true,
       "radius": 1.9776892786311,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -6115,7 +6372,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "accumulator",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -6188,6 +6448,7 @@
       "is_building": true,
       "radius": 1.2705824974446,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -6217,7 +6478,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "nuclear-reactor",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -6362,6 +6626,7 @@
       "is_building": true,
       "radius": 3.1101649828752,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -6391,7 +6656,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "heat-pipe",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -6481,6 +6749,7 @@
       "is_building": true,
       "radius": 0.41984465132951,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -6510,7 +6779,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "heat-exchanger",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -6703,6 +6975,7 @@
       "is_building": true,
       "radius": 1.5113906701487,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -6732,7 +7005,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "steam-turbine",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -6851,6 +7127,7 @@
       "is_building": true,
       "radius": 2.6596973264197,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -6880,7 +7157,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "burner-mining-drill",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -6991,6 +7271,7 @@
       "is_building": true,
       "radius": 0.98884463931556,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -7020,7 +7301,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "electric-mining-drill",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -7152,6 +7436,7 @@
       "is_building": true,
       "radius": 1.9776892786311,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -7181,7 +7466,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "offshore-pump",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -7277,6 +7565,7 @@
       "is_building": true,
       "radius": 0.89922689505434,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -7306,7 +7595,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "pumpjack",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -7420,6 +7712,7 @@
       "is_building": true,
       "radius": 1.6959514205021,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -7449,7 +7742,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "stone-furnace",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -7564,6 +7860,7 @@
       "is_building": true,
       "radius": 0.98884463931556,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -7593,7 +7890,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "steel-furnace",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -7704,6 +8004,7 @@
       "is_building": true,
       "radius": 0.98884463931556,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -7733,7 +8034,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "electric-furnace",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -7815,6 +8119,7 @@
       "is_building": true,
       "radius": 1.6959514205021,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -7844,7 +8149,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "assembling-machine-1",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -7929,6 +8237,7 @@
       "is_building": true,
       "radius": 1.6959514205021,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -7958,7 +8267,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "assembling-machine-2",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -8106,6 +8418,7 @@
       "is_building": true,
       "radius": 1.6959514205021,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -8135,7 +8448,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "assembling-machine-3",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -8280,6 +8596,7 @@
       "is_building": true,
       "radius": 1.6959514205021,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -8309,7 +8626,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "oil-refinery",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -8546,6 +8866,7 @@
       "is_building": true,
       "radius": 3.3919028410042,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -8575,7 +8896,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "chemical-plant",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -8781,6 +9105,7 @@
       "is_building": true,
       "radius": 1.6959514205021,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -8810,7 +9135,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "centrifuge",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -8891,6 +9219,7 @@
       "is_building": true,
       "radius": 1.6959514205021,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -8920,7 +9249,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "lab",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -9001,6 +9333,7 @@
       "is_building": true,
       "radius": 1.6959514205021,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -9030,7 +9363,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "beacon",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -9111,6 +9447,7 @@
       "is_building": true,
       "radius": 1.6959514205021,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -9140,7 +9477,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "rocket-silo",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -9221,6 +9561,7 @@
       "is_building": true,
       "radius": 6.2203299657504,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -9250,7 +9591,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "land-mine",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -9342,6 +9686,7 @@
       "is_building": false,
       "radius": 0.56347571625803,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -9371,7 +9716,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "stone-wall",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -9433,6 +9781,7 @@
       "is_building": true,
       "radius": 0.40879610787347,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -9462,7 +9811,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "gate",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -9524,6 +9876,7 @@
       "is_building": true,
       "radius": 0.40879610787347,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -9553,7 +9906,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "gun-turret",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -9654,6 +10010,7 @@
       "is_building": true,
       "radius": 0.98884463931556,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -9683,7 +10040,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "laser-turret",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -9798,6 +10158,7 @@
       "is_building": true,
       "radius": 0.98884463931556,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -9827,7 +10188,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "flamethrower-turret",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -9993,6 +10357,7 @@
       "is_building": true,
       "radius": 1.3881759509166,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -10022,7 +10387,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "artillery-turret",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -10088,6 +10456,7 @@
       "is_building": true,
       "radius": 1.6959514205021,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -10118,7 +10487,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "radar",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -10192,6 +10564,7 @@
       "is_building": true,
       "radius": 1.6959514205021,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -10221,7 +10594,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "simple-entity-with-force",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -10282,6 +10658,7 @@
       "is_building": true,
       "radius": 0.49166018379377,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -10311,7 +10688,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "simple-entity-with-owner",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -10372,6 +10752,7 @@
       "is_building": true,
       "radius": 0.49166018379377,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -10401,7 +10782,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "electric-energy-interface",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -10474,6 +10858,7 @@
       "is_building": true,
       "radius": 1.2705824974446,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -10503,7 +10888,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "linked-chest",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -10565,6 +10953,7 @@
       "is_building": true,
       "radius": 0.49166018379377,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -10594,7 +10983,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "heat-interface",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -10684,6 +11076,7 @@
       "is_building": true,
       "radius": 0.56347571625803,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -10713,7 +11106,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "linked-belt",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -10775,6 +11171,7 @@
       "is_building": true,
       "radius": 0.56347571625803,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -10804,7 +11201,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "infinity-chest",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -10866,6 +11266,7 @@
       "is_building": true,
       "radius": 0.49166018379377,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -10895,7 +11296,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "infinity-pipe",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -11016,6 +11420,7 @@
       "is_building": true,
       "radius": 0.40879610787347,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -11045,7 +11450,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "burner-generator",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -11161,6 +11569,7 @@
       "is_building": true,
       "radius": 2.7069664268934,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -11190,7 +11599,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "player-port",
+          "count": 1
+        }
       ],
       "collision_box": null,
       "map_generator_bounding_box": null,
@@ -11251,6 +11663,7 @@
       "is_building": true,
       "radius": 1.2705824974446,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -11334,6 +11747,7 @@
       "is_building": false,
       "radius": 1.9776892786311,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -11463,6 +11877,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -11567,6 +11982,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -11671,6 +12087,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -11786,6 +12203,7 @@
       "is_building": false,
       "radius": 0.28173785812902,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -11901,6 +12319,7 @@
       "is_building": false,
       "radius": 0.41984465132951,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -12016,6 +12435,7 @@
       "is_building": false,
       "radius": 0.56347571625803,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -12131,6 +12551,7 @@
       "is_building": false,
       "radius": 0.56347571625803,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -12261,6 +12682,7 @@
       "is_building": false,
       "radius": 0.41984465132951,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -12391,6 +12813,7 @@
       "is_building": false,
       "radius": 0.56347571625803,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -12521,6 +12944,7 @@
       "is_building": false,
       "radius": 0.56347571625803,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -12651,6 +13075,7 @@
       "is_building": false,
       "radius": 0.56347571625803,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -12794,6 +13219,7 @@
       "is_building": true,
       "radius": 1.2009161948409,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -12937,6 +13363,7 @@
       "is_building": true,
       "radius": 1.4848734771569,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -13080,6 +13507,7 @@
       "is_building": true,
       "radius": 1.8422141709795,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -13223,6 +13651,7 @@
       "is_building": true,
       "radius": 1.8422141709795,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -13298,6 +13727,7 @@
       "is_building": true,
       "radius": 3.4817158084346,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -13373,6 +13803,7 @@
       "is_building": true,
       "radius": 3.4817158084346,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -13489,6 +13920,7 @@
       "is_building": false,
       "radius": 0.28173785812902,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -13551,6 +13983,7 @@
       "is_building": false,
       "radius": 1.1180339887499,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -13613,6 +14046,7 @@
       "is_building": false,
       "radius": 0.28173785812902,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -13707,6 +14141,7 @@
       "is_building": false,
       "radius": 1.0606601717798,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": false,
@@ -13886,6 +14321,7 @@
       "is_building": false,
       "radius": 0.56347571625803,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -14065,6 +14501,7 @@
       "is_building": false,
       "radius": 0.56347571625803,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -14244,6 +14681,7 @@
       "is_building": false,
       "radius": 0.56347571625803,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -14423,6 +14861,7 @@
       "is_building": false,
       "radius": 0.56347571625803,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -14602,6 +15041,7 @@
       "is_building": false,
       "radius": 0.56347571625803,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -14781,6 +15221,7 @@
       "is_building": false,
       "radius": 0.56347571625803,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -14960,6 +15401,7 @@
       "is_building": false,
       "radius": 0.56347571625803,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -15139,6 +15581,7 @@
       "is_building": false,
       "radius": 0.56347571625803,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -15318,6 +15761,7 @@
       "is_building": false,
       "radius": 0.56347571625803,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -15497,6 +15941,7 @@
       "is_building": false,
       "radius": 0.56347571625803,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -15676,6 +16121,7 @@
       "is_building": false,
       "radius": 0.56347571625803,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -15855,6 +16301,7 @@
       "is_building": false,
       "radius": 0.56347571625803,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -16034,6 +16481,7 @@
       "is_building": false,
       "radius": 0.56347571625803,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -16213,6 +16661,7 @@
       "is_building": false,
       "radius": 0.56347571625803,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -16392,6 +16841,7 @@
       "is_building": false,
       "radius": 0.56347571625803,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -16526,6 +16976,7 @@
       "is_building": false,
       "radius": 0.84521357438705,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -16660,6 +17111,7 @@
       "is_building": false,
       "radius": 0.84521357438705,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -16794,6 +17246,7 @@
       "is_building": false,
       "radius": 0.84521357438705,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -16928,6 +17381,7 @@
       "is_building": false,
       "radius": 0.84521357438705,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -17062,6 +17516,7 @@
       "is_building": false,
       "radius": 0.63781120333804,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -17168,6 +17623,7 @@
       "is_building": true,
       "radius": 1.0606601717798,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -17281,6 +17737,7 @@
       "is_building": true,
       "radius": 1.8587224761013,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -17386,6 +17843,7 @@
       "is_building": true,
       "radius": 1.3787734532372,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -17447,6 +17905,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -17508,6 +17967,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -17569,6 +18029,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -17630,6 +18091,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -17691,6 +18153,7 @@
       "is_building": false,
       "radius": 2.8284271247462,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -17752,6 +18215,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -17813,6 +18277,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -17874,6 +18339,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -17935,6 +18401,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -17996,6 +18463,7 @@
       "is_building": false,
       "radius": 2.8284271247462,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -18057,6 +18525,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -18118,6 +18587,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -18179,6 +18649,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -18240,6 +18711,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -18301,6 +18773,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -18362,6 +18835,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -18423,6 +18897,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -18484,6 +18959,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -18545,6 +19021,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -18606,6 +19083,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -18667,6 +19145,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -18728,6 +19207,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -18789,6 +19269,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -18850,6 +19331,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -18911,6 +19393,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -18972,6 +19455,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -19033,6 +19517,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -19094,6 +19579,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -19155,6 +19641,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -19216,6 +19703,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -19277,6 +19765,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -19338,6 +19827,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -19399,6 +19889,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -19460,6 +19951,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -19521,6 +20013,7 @@
       "is_building": false,
       "radius": 0.56347571625803,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -19582,6 +20075,7 @@
       "is_building": false,
       "radius": 0.56347571625803,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -19643,6 +20137,7 @@
       "is_building": false,
       "radius": 0.56347571625803,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -19704,6 +20199,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -19765,6 +20261,7 @@
       "is_building": false,
       "radius": 0.56347571625803,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -19826,6 +20323,7 @@
       "is_building": false,
       "radius": 0.56347571625803,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -19887,6 +20385,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -19948,6 +20447,7 @@
       "is_building": false,
       "radius": 0.56347571625803,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -20009,6 +20509,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -20070,6 +20571,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -20131,6 +20633,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -20192,6 +20695,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -20253,6 +20757,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -20314,6 +20819,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -20375,6 +20881,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -20436,6 +20943,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -20497,6 +21005,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -20558,6 +21067,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -20619,6 +21129,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -20680,6 +21191,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -20741,6 +21253,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -20802,6 +21315,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -20863,6 +21377,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -20924,6 +21439,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -20985,6 +21501,7 @@
       "is_building": false,
       "radius": 0.56347571625803,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -21046,6 +21563,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -21107,6 +21625,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -21168,6 +21687,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -21229,6 +21749,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -21290,6 +21811,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -21351,6 +21873,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -21412,6 +21935,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -21473,6 +21997,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -21534,6 +22059,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -21595,6 +22121,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -21656,6 +22183,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -21717,6 +22245,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -21778,6 +22307,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -21839,6 +22369,7 @@
       "is_building": false,
       "radius": 0.56347571625803,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -21900,6 +22431,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -21961,6 +22493,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -22022,6 +22555,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -22083,6 +22617,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -22144,6 +22679,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -22205,6 +22741,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -22266,6 +22803,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -22327,6 +22865,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -22388,6 +22927,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -22449,6 +22989,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -22510,6 +23051,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -22571,6 +23113,7 @@
       "is_building": false,
       "radius": 0.56347571625803,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -22632,6 +23175,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -22693,6 +23237,7 @@
       "is_building": false,
       "radius": 0.56347571625803,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -22754,6 +23299,7 @@
       "is_building": false,
       "radius": 0.56347571625803,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -22815,6 +23361,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -22876,6 +23423,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -22937,6 +23485,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -22998,6 +23547,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -23059,6 +23609,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -23120,6 +23671,7 @@
       "is_building": false,
       "radius": 6.2203299657504,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -23181,6 +23733,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -23242,6 +23795,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -23303,6 +23857,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -23364,6 +23919,7 @@
       "is_building": false,
       "radius": 2.1213203435596,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -23425,6 +23981,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -23486,6 +24043,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -23547,6 +24105,7 @@
       "is_building": false,
       "radius": 2.1213203435596,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -23608,6 +24167,7 @@
       "is_building": false,
       "radius": 2.1213203435596,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -23669,6 +24229,7 @@
       "is_building": false,
       "radius": 3.5355339059327,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -23730,6 +24291,7 @@
       "is_building": false,
       "radius": 3.5355339059327,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -23791,6 +24353,7 @@
       "is_building": false,
       "radius": 6.3639610306789,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -23852,6 +24415,7 @@
       "is_building": false,
       "radius": 6.3639610306789,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -23913,6 +24477,7 @@
       "is_building": false,
       "radius": 6.3639610306789,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -23974,6 +24539,7 @@
       "is_building": false,
       "radius": 6.3639610306789,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -24035,6 +24601,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -24096,6 +24663,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -24157,6 +24725,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -24218,6 +24787,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -24279,6 +24849,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -24340,6 +24911,7 @@
       "is_building": false,
       "radius": 1.0601493413555,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -24402,6 +24974,7 @@
       "is_building": false,
       "radius": 1.3085310735923,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -24463,6 +25036,7 @@
       "is_building": false,
       "radius": 1.3085310735923,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -24524,6 +25098,7 @@
       "is_building": false,
       "radius": 0.56347571625803,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -24585,6 +25160,7 @@
       "is_building": false,
       "radius": 0.56347571625803,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -24646,6 +25222,7 @@
       "is_building": false,
       "radius": 0.56347571625803,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -24707,6 +25284,7 @@
       "is_building": false,
       "radius": 0.56347571625803,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -24768,6 +25346,7 @@
       "is_building": false,
       "radius": 0.56347571625803,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -24829,6 +25408,7 @@
       "is_building": false,
       "radius": 0.56347571625803,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -24890,6 +25470,7 @@
       "is_building": false,
       "radius": 0.56347571625803,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -24951,6 +25532,7 @@
       "is_building": false,
       "radius": 0.56347571625803,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -25012,6 +25594,7 @@
       "is_building": false,
       "radius": 0.56347571625803,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -25075,6 +25658,7 @@
       "is_building": true,
       "radius": 2.6620599374078,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -25138,6 +25722,7 @@
       "is_building": true,
       "radius": 1.8422141709795,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -25201,6 +25786,7 @@
       "is_building": true,
       "radius": 1.2705824974446,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -25263,6 +25849,7 @@
       "is_building": true,
       "radius": 1.4984377036627,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -25325,6 +25912,7 @@
       "is_building": true,
       "radius": 0.98884463931556,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -25416,6 +26004,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -25507,6 +26096,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -25598,6 +26188,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -25689,6 +26280,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -25792,6 +26384,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -25895,6 +26488,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -25998,6 +26592,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -26095,6 +26690,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -26192,6 +26788,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -26289,6 +26886,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -26398,6 +26996,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -26507,6 +27106,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -26616,6 +27216,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -26713,6 +27314,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -26810,6 +27412,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -26907,6 +27510,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -27004,6 +27608,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -27101,6 +27706,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -27198,6 +27804,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -27295,6 +27902,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -27392,6 +28000,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -27489,6 +28098,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -27586,6 +28196,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -27695,6 +28306,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -27792,6 +28404,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -27883,6 +28496,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -27986,6 +28600,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -28083,6 +28698,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -28192,6 +28808,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -28301,6 +28918,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -28398,6 +29016,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -28501,6 +29120,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -28604,6 +29224,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -28701,6 +29322,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -28810,6 +29432,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -28913,6 +29536,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -29016,6 +29640,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -29137,6 +29762,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -29234,6 +29860,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -29331,6 +29958,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -29422,6 +30050,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -29513,6 +30142,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -29604,6 +30234,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -29695,6 +30326,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -29786,6 +30418,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -29889,6 +30522,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -29992,6 +30626,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -30095,6 +30730,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -30198,6 +30834,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -30295,6 +30932,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -30398,6 +31036,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -30495,6 +31134,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -30598,6 +31238,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -30695,6 +31336,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -30810,6 +31452,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -30901,6 +31544,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -30998,6 +31642,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -31101,6 +31746,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -31198,6 +31844,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -31289,6 +31936,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -31392,6 +32040,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -31501,6 +32150,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -31610,6 +32260,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -31713,6 +32364,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -31810,6 +32462,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -31907,6 +32560,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -32004,6 +32658,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -32113,6 +32768,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -32222,6 +32878,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -32331,6 +32988,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -32440,6 +33098,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -32549,6 +33208,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -32658,6 +33318,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -32767,6 +33428,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -32876,6 +33538,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -32937,6 +33600,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -33046,6 +33710,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -33143,6 +33808,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -33246,6 +33912,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -33343,6 +34010,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -33446,6 +34114,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -33549,6 +34218,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -33658,6 +34328,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -33767,6 +34438,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -33876,6 +34548,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -33973,6 +34646,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -34070,6 +34744,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -34167,6 +34842,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -34228,6 +34904,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -34288,6 +34965,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -34403,6 +35081,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -34517,6 +35196,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -34613,6 +35293,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -34709,6 +35390,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -34824,6 +35506,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -34884,6 +35567,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -34999,6 +35683,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -35095,6 +35780,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -35215,6 +35901,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -35305,6 +35992,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -35395,6 +36083,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -35479,6 +36168,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -35539,6 +36229,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -35600,6 +36291,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -35661,6 +36353,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -35721,6 +36414,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -35781,6 +36475,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -35841,6 +36536,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -35938,6 +36634,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -35999,6 +36696,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -36095,6 +36793,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -36204,6 +36903,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -36300,6 +37000,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -36409,6 +37110,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -36505,6 +37207,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -36565,6 +37268,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -36667,6 +37371,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -36769,6 +37474,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -36865,6 +37571,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -36985,6 +37692,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -37045,6 +37753,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -37106,6 +37815,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -37191,6 +37901,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -37276,6 +37987,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -37367,6 +38079,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -37463,6 +38176,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -37554,6 +38268,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -37644,6 +38359,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -37728,6 +38444,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -37788,6 +38505,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -37847,6 +38565,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -37906,6 +38625,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -37965,6 +38685,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -38025,6 +38746,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -38085,6 +38807,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -38145,6 +38868,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -38205,6 +38929,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -38265,6 +38990,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -38325,6 +39051,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -38385,6 +39112,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -38445,6 +39173,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -38505,6 +39234,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -38565,6 +39295,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -38625,6 +39356,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -38685,6 +39417,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -38745,6 +39478,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -38805,6 +39539,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -38865,6 +39600,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -38925,6 +39661,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -38985,6 +39722,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -39045,6 +39783,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -39105,6 +39844,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -39165,6 +39905,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -39226,6 +39967,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -39325,6 +40067,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -39409,6 +40152,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -39493,6 +40237,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -39577,6 +40322,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -39661,6 +40407,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -39745,6 +40492,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -39829,6 +40577,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -39888,6 +40637,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -40039,6 +40789,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -40129,6 +40880,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -40225,6 +40977,7 @@
       "is_building": false,
       "radius": 1.1370945469877,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -40285,6 +41038,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -40394,6 +41148,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -40498,6 +41253,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -40558,6 +41314,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -40637,6 +41394,7 @@
       "is_building": true,
       "radius": 0.49166018379377,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -40717,6 +41475,7 @@
       "is_building": true,
       "radius": 0.49166018379377,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -40814,6 +41573,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -40874,6 +41634,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -40958,6 +41719,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -41037,6 +41799,7 @@
       "is_building": true,
       "radius": 8.7189182278937,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -41117,6 +41880,7 @@
       "is_building": true,
       "radius": 1.3188555200675,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -41197,6 +41961,7 @@
       "is_building": true,
       "radius": 2.0467426752314,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -41277,6 +42042,7 @@
       "is_building": true,
       "radius": 1.469680815837,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -41357,6 +42123,7 @@
       "is_building": true,
       "radius": 1.3183955434854,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -41437,6 +42204,7 @@
       "is_building": true,
       "radius": 1.5859387026627,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -41517,6 +42285,7 @@
       "is_building": true,
       "radius": 1.2705824974446,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -41597,6 +42366,7 @@
       "is_building": true,
       "radius": 0.80477282618004,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -41677,6 +42447,7 @@
       "is_building": true,
       "radius": 1.1777926757958,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -41757,6 +42528,7 @@
       "is_building": true,
       "radius": 1.2174879533301,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -41837,6 +42609,7 @@
       "is_building": true,
       "radius": 0.93662882700156,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -41917,6 +42690,7 @@
       "is_building": true,
       "radius": 1.0719453927551,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -41978,6 +42752,7 @@
       "is_building": false,
       "radius": 0.56347571625803,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -42062,6 +42837,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -42146,6 +42922,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -42230,6 +43007,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -42290,6 +43068,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -42374,6 +43153,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -42458,6 +43238,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -42517,6 +43298,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -42578,6 +43360,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -42669,6 +43452,7 @@
       "is_building": false,
       "radius": 1.1370945469877,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -42778,6 +43562,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -42868,6 +43653,7 @@
       "is_building": false,
       "radius": 1.1370945469877,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -42946,6 +43732,7 @@
       "is_building": true,
       "radius": 5.4144204201676,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -43025,6 +43812,7 @@
       "is_building": true,
       "radius": 7.893302840784,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -43104,6 +43892,7 @@
       "is_building": true,
       "radius": 10.931048599578,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -43165,6 +43954,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -43225,6 +44015,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -43285,6 +44076,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -43345,6 +44137,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -43457,6 +44250,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -43517,6 +44311,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -43647,6 +44442,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -43759,6 +44555,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -43818,6 +44615,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -43878,6 +44676,7 @@
       "is_building": false,
       "radius": 0.1933495104807,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -43939,6 +44738,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -44030,6 +44830,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -44114,6 +44915,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -44173,6 +44975,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -44223,6 +45026,13 @@
       "max_circuit_wire_distance": 0,
       "max_energy_usage": 0,
       "max_energy_production": 0,
+      "void_energy_source_prototype": {
+        "emissions": 0,
+        "render_no_network_icon": true,
+        "render_no_power_icon": true,
+        "valid": true,
+        "object_name": "LuaVoidEnergySourcePrototype"
+      },
       "building_grid_bit_shift": 1,
       "fluid_capacity": 0,
       "time_to_live": 0,
@@ -44234,6 +45044,7 @@
       "is_building": true,
       "radius": 0.56347571625803,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -44295,6 +45106,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -44354,6 +45166,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -44438,6 +45251,7 @@
       "is_building": false,
       "radius": 0.25435657181406,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -44528,6 +45342,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -44659,6 +45474,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -44719,6 +45535,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -44827,6 +45644,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -44887,6 +45705,7 @@
       "is_building": false,
       "radius": 5.8523499553598,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -44947,6 +45766,7 @@
       "is_building": false,
       "radius": 5.2974050251043,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -45031,6 +45851,7 @@
       "is_building": false,
       "radius": 0.25435657181406,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -45137,6 +45958,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -45196,6 +46018,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -45256,6 +46079,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -45317,6 +46141,7 @@
       "is_building": false,
       "radius": 0.066291260736239,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -45379,6 +46204,7 @@
       "is_building": false,
       "radius": 0.066291260736239,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -45441,6 +46267,7 @@
       "is_building": false,
       "radius": 0.066291260736239,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -45503,6 +46330,7 @@
       "is_building": false,
       "radius": 0.066291260736239,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -45565,6 +46393,7 @@
       "is_building": false,
       "radius": 0.066291260736239,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -45627,6 +46456,7 @@
       "is_building": false,
       "radius": 0.066291260736239,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -45689,6 +46519,7 @@
       "is_building": false,
       "radius": 0.066291260736239,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -45751,6 +46582,7 @@
       "is_building": false,
       "radius": 0.066291260736239,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -45812,6 +46644,7 @@
       "is_building": true,
       "radius": 1.4142135623731,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -45873,6 +46706,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -45957,6 +46791,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -46017,6 +46852,7 @@
       "is_building": false,
       "radius": 0.70710678118655,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -46078,6 +46914,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -46139,6 +46976,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -46200,6 +47038,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -46261,6 +47100,7 @@
       "is_building": false,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -46357,6 +47197,7 @@
       "is_building": false,
       "radius": 1.1370945469877,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -46440,6 +47281,7 @@
       "is_building": false,
       "radius": 0.1381067932005,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -46524,6 +47366,7 @@
       "is_building": false,
       "radius": 0.1381067932005,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -46608,6 +47451,7 @@
       "is_building": false,
       "radius": 0.1381067932005,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -46692,6 +47536,7 @@
       "is_building": false,
       "radius": 0.1381067932005,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -46778,6 +47623,7 @@
       "is_building": false,
       "radius": 0.1381067932005,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -46858,6 +47704,7 @@
       "is_building": true,
       "radius": 0.49166018379377,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -46937,6 +47784,7 @@
       "is_building": true,
       "radius": 1.9776892786311,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -47011,6 +47859,7 @@
       "is_building": true,
       "radius": 0,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": true,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -47091,6 +47940,7 @@
       "is_building": true,
       "radius": 0.49166018379377,
       "alert_icon_shift": null,
+      "alert_icon_scale": 0.5,
       "supports_direction": false,
       "remove_decoratives": "automatic",
       "protected_from_tile_building": true,
@@ -54045,7 +54895,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "stone-brick",
+          "count": 1
+        }
       ],
       "can_be_part_of_blueprint": true,
       "emissions_per_second": 0,
@@ -54229,7 +55082,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "concrete",
+          "count": 1
+        }
       ],
       "can_be_part_of_blueprint": true,
       "emissions_per_second": 0,
@@ -54416,7 +55272,10 @@
         "name": "hazard-concrete-right"
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "hazard-concrete",
+          "count": 1
+        }
       ],
       "can_be_part_of_blueprint": true,
       "emissions_per_second": 0,
@@ -54603,7 +55462,10 @@
         "name": "hazard-concrete-left"
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "hazard-concrete",
+          "count": 1
+        }
       ],
       "can_be_part_of_blueprint": true,
       "emissions_per_second": 0,
@@ -54787,7 +55649,10 @@
         ]
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "refined-concrete",
+          "count": 1
+        }
       ],
       "can_be_part_of_blueprint": true,
       "emissions_per_second": 0,
@@ -54974,7 +55839,10 @@
         "name": "refined-hazard-concrete-right"
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "refined-hazard-concrete",
+          "count": 1
+        }
       ],
       "can_be_part_of_blueprint": true,
       "emissions_per_second": 0,
@@ -55161,7 +56029,10 @@
         "name": "refined-hazard-concrete-left"
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "refined-hazard-concrete",
+          "count": 1
+        }
       ],
       "can_be_part_of_blueprint": true,
       "emissions_per_second": 0,
@@ -55337,7 +56208,10 @@
         "mining_time": 0
       },
       "items_to_place_this": [
-        null
+        {
+          "name": "landfill",
+          "count": 1
+        }
       ],
       "can_be_part_of_blueprint": true,
       "emissions_per_second": 0,

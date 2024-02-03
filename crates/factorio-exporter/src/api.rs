@@ -217,7 +217,7 @@ pub enum Type {
     String,
     Boolean,
 
-    NamedType {
+    Named {
         name: String,
     },
 
@@ -253,7 +253,7 @@ pub enum Type {
         parameters: Vec<Attribute>,
     },
 
-    Type {
+    Boxed {
         value: Box<Type>,
     },
 
@@ -279,7 +279,7 @@ impl<'a> From<RawType<'a>> for Type {
             String("string" | "LocalisedString") => Self::String,
             String("boolean") => Self::Boolean,
 
-            String(name) => Self::NamedType { name: name.into() },
+            String(name) => Self::Named { name: name.into() },
 
             Complex(Array { value }) => Self::Array { value },
             Complex(Dictionary { key, value }) => Self::Dictionary { key, value },
@@ -290,7 +290,7 @@ impl<'a> From<RawType<'a>> for Type {
                 Self::Table { parameters, variant_parameter_groups }
             }
             Complex(Tuple { parameters }) => Self::Tuple { parameters },
-            Complex(Type { value }) => Self::Type { value },
+            Complex(Type { value }) => Self::Boxed { value },
             Complex(Union { options }) => Self::Union { options },
         }
     }
