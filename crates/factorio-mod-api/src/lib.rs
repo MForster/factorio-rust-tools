@@ -143,7 +143,7 @@ impl ModPortalClient {
 
         let releases = &self.get_mod_spec(mod_name).await?.short_spec.releases;
         let Some(release) = releases.iter().find(|r| r.version == *version) else {
-            return Err(FactorioModApiError::InvalidModVersion { version: version.clone() })
+            return Err(FactorioModApiError::InvalidModVersion { version: version.clone() });
         };
 
         let url = self
@@ -266,7 +266,7 @@ mod tests {
                             factorio_version: "0.14".into(),
                             dependencies: Some(vec!["base >= 0.13.0".try_into()?]),
                         },
-                        released_at: DateTime::from_utc(
+                        released_at: DateTime::from_naive_utc_and_offset(
                             DateTime::parse_from_rfc3339("2022-06-14T11:45:45.165000Z")?
                                 .naive_utc(),
                             Utc
@@ -281,7 +281,7 @@ mod tests {
                             factorio_version: "0.14".into(),
                             dependencies: Some(vec!["base >= 0.13.0".try_into()?]),
                         },
-                        released_at: DateTime::from_utc(
+                        released_at: DateTime::from_naive_utc_and_offset(
                             DateTime::parse_from_rfc3339("2022-09-24T08:53:02.970000Z")?
                                 .naive_utc(),
                             Utc
