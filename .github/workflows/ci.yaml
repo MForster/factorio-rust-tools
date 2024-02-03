@@ -17,7 +17,7 @@ jobs:
       matrix:
         rust:
           - stable
-          - 1.65.0
+          - 1.75.0
     steps:
       - uses: actions/checkout@v3
       - uses: actions-rs/toolchain@v1
@@ -37,10 +37,10 @@ jobs:
         run: |
           mkdir -p downloads
           test -e downloads/factorio \
-          || wget --no-verbose -O - https://www.factorio.com/get-download/latest/headless/linux64 \
+          || wget --no-verbose -O - https://www.factorio.com/get-download/1.1.88/headless/linux64 \
           | tar --extract --xz --directory=downloads
           test -e downloads/runtime-api.json \
-          || wget --no-verbose -O downloads/runtime-api.json https://lua-api.factorio.com/latest/runtime-api.json
+          || wget --no-verbose -O downloads/runtime-api.json https://lua-api.factorio.com/1.1.88/runtime-api.json
 
       - name: Run factorio-exporter
         uses: actions-rs/cargo@v1
@@ -64,7 +64,7 @@ jobs:
       matrix:
         rust:
           - stable
-          - 1.65.0
+          - 1.75.0
     steps:
       - uses: actions/checkout@v3
       - uses: actions-rs/toolchain@v1
