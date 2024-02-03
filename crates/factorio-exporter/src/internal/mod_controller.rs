@@ -41,7 +41,7 @@ impl ModController {
         }
 
         fs::create_dir_all(&self.mods_dir)?;
-        Self::copy_or_link(path, &self.mods_dir.join(path.file_name().unwrap()))?;
+        Self::copy_or_link(path, self.mods_dir.join(path.file_name().unwrap()))?;
         Ok(())
     }
 
@@ -64,7 +64,7 @@ pub struct Mod {
 
 impl Mod {
     pub fn add_file(self, file_name: &str, contents: &str) -> Result<Self> {
-        fs::write(&self.dir.join(file_name), contents.as_bytes())?;
+        fs::write(self.dir.join(file_name), contents.as_bytes())?;
         Ok(self)
     }
 }
