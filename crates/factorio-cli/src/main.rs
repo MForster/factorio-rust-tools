@@ -22,19 +22,9 @@ struct Args {
 
     /// Directory where Factorio is installed. This needs to be the full
     /// version. Neither the demo nor the headless version are sufficient. This
-    /// argument is optional if both of `--factorio-api-spec` and
-    /// `--factorio-binary` are specified.
+    /// argument is optional if `--factorio-binary` is specified.
     #[arg(long)]
     factorio_dir: Option<PathBuf>,
-
-    /// Location of the `runtime-api.json` file. Defaults to
-    /// `<FACTORIO_DIR>/doc-html/runtime-api.json`.
-    ///
-    /// The spec can be found in the `doc-html` directory of a full Factorio
-    /// installation, or
-    /// [online](https://lua-api.factorio.com/latest/runtime-api.json).
-    #[arg(long)]
-    factorio_api_spec: Option<PathBuf>,
 
     /// Location of the factorio binary. Defaults to
     /// `<FACTORIO_DIR>/bin/x64/factorio(.exe)`. This can be any Factorio binary
@@ -56,10 +46,6 @@ pub struct App {
     settings: Settings,
     args: Args,
 }
-
-/// The JSON spec of the Factorio mod API, relative to the root directory of a
-/// full Factorio installation.
-const RUNTIME_API_DEFINITION: &str = "doc-html/runtime-api.json";
 
 /// The path of the Factorio binary, relative to the root directory of a
 /// Factorio installation (either full, headless or demo).
@@ -116,35 +102,6 @@ impl App {
                     .error(
                         ErrorKind::MissingRequiredArgument,
                         "One of --factorio-binary or --factorio-dir must be specified",
-                    )
-                    .exit()
-            })?)
-    }
-
-    fn api_spec(&self) -> Result<PathBuf> {
-        Ok(self
-            .args
-            .factorio_api_spec
-            .clone()
-            .or_else(|| self.settings.paths.factorio_api_spec.clone())
-            .or_else(|| self.factorio_dir().map(|d| d.join(RUNTIME_API_DEFINITION)))
-            .map(|path| {
-                if !path.exists() {
-                    Args::command()
-                        .error(
-                            ErrorKind::ValueValidation,
-                            format!("File not found: '{}'", path.display()),
-                        )
-                        .exit()
-                };
-                path
-            })
-            .map(std::fs::canonicalize)
-            .unwrap_or_else(|| {
-                Args::command()
-                    .error(
-                        ErrorKind::MissingRequiredArgument,
-                        "One of --factorio-api-spec or --factorio-dir must be specified",
                     )
                     .exit()
             })?)

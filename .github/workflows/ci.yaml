@@ -31,16 +31,13 @@ jobs:
           key: downloads
           path: |
             downloads/factorio
-            downloads/runtime-api.json
 
       - name: Download Factorio
         run: |
           mkdir -p downloads
           test -e downloads/factorio \
-          || wget --no-verbose -O - https://www.factorio.com/get-download/1.1.88/headless/linux64 \
+          || wget --no-verbose -O - https://www.factorio.com/get-download/1.1.101/headless/linux64 \
           | tar --extract --xz --directory=downloads
-          test -e downloads/runtime-api.json \
-          || wget --no-verbose -O downloads/runtime-api.json https://lua-api.factorio.com/1.1.88/runtime-api.json
 
       - name: Run factorio-exporter
         uses: actions-rs/cargo@v1
@@ -50,8 +47,7 @@ jobs:
             -q
             --
             --factorio-binary downloads/factorio/bin/x64/factorio
-            --factorio-api-spec downloads/runtime-api.json
-            export -i
+            export
             -d new-vanilla.json
 
       - name: Validate output

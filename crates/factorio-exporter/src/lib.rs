@@ -3,16 +3,14 @@
 //!
 //! Usage:
 //! ```no_run
-//! use factorio_exporter::{ load_api, FactorioExporter, FactorioExporterError, Result };
+//! use factorio_exporter::{ FactorioExporter, FactorioExporterError, Result };
 //! use std::path::PathBuf;
 //!
-//! let api_spec = PathBuf::from("/home/user/factorio/doc-html/runtime-api.json");
 //! let factorio_binary = PathBuf::from("/home/user/factorio/bin/x64/factorio");
 //!
-//! let api = load_api(&api_spec)?;
-//! let exporter = FactorioExporter::new(&factorio_binary, &api, "en", true)?;
+//! let exporter = FactorioExporter::new(&factorio_binary, "en")?;
 //!
-//! let result: serde_yaml::Value = exporter.export()?;
+//! let result: serde_json::Value = exporter.export()?;
 //!
 //! # Ok::<(), FactorioExporterError>(())
 //! ```
@@ -28,10 +26,8 @@ use std::path::PathBuf;
 
 use thiserror::Error;
 
-pub use api::load_api;
 pub use exporter::FactorioExporter;
 
-mod api;
 mod exporter;
 mod internal;
 

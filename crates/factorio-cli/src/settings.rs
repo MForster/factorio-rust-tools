@@ -14,7 +14,6 @@ pub struct Settings {
 #[derive(Debug, Default, Deserialize)]
 pub struct PathSettings {
     pub factorio_dir: Option<PathBuf>,
-    pub factorio_api_spec: Option<PathBuf>,
     pub factorio_binary: Option<PathBuf>,
 }
 

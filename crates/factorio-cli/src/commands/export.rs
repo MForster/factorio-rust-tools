@@ -2,7 +2,7 @@ use std::{fs, path::PathBuf};
 
 use clap::{Parser, ValueEnum};
 use eyre::Result;
-use factorio_exporter::{load_api, FactorioExporter, FactorioExporterError};
+use factorio_exporter::{FactorioExporter, FactorioExporterError};
 use indoc::printdoc;
 use serde_yaml::Value;
 use tracing::{debug, info};
@@ -27,10 +27,6 @@ pub struct ExportCommand {
     #[arg(long, short, default_value = "json")]
     format: OutputFormat,
 
-    /// Export icon paths
-    #[arg(long, short)]
-    icons: bool,
-
     /// Mods to install before exporting the prototypes
     mods: Vec<PathBuf>,
 }
@@ -39,15 +35,14 @@ impl ExportCommand {
     pub async fn execute(&self, app: &App) -> Result<()> {
         debug!("Parsed arguments: {:?}", self);
 
-        let api = load_api(&app.api_spec()?)?;
         let binary = app.factorio_binary()?;
-        let exporter = FactorioExporter::new(&binary, &api, "en", self.icons)?;
+        let exporter = FactorioExporter::new(&binary, "en")?;
 
         exporter.install_mods(&self.mods)?;
 
         match exporter.export() {
             Ok(prototypes) => {
-                let parsed: Value = serde_yaml::from_value(prototypes)?;
+                let parsed: Value = serde_json::from_value(prototypes)?;
 
                 let output = match self.format {
                     OutputFormat::Json => serde_json::to_string_pretty(&parsed)?,

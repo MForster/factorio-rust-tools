@@ -2,7 +2,7 @@
   "rust-analyzer.cargo.features": "all",
   "markdownlint.config": {
     "commands-show-output": false,
-    "no-duplicate-header": false
+    "no-duplicate-heading": false
   },
   "cSpell.enabled": true,
   "cSpell.words": [

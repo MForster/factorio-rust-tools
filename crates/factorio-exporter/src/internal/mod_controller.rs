@@ -9,8 +9,6 @@ use tracing::debug;
 
 use crate::{FactorioExporterError, Result};
 
-const MOD_MANIFEST_NAME: &str = "info.json";
-
 pub struct ModController {
     mods_dir: PathBuf,
 }
@@ -44,29 +42,6 @@ impl ModController {
         Self::copy_or_link(path, self.mods_dir.join(path.file_name().unwrap()))?;
         Ok(())
     }
-
-    pub fn create_mod(&self, manifest: ModManifest) -> Result<Mod> {
-        let dir = self.mods_dir.join(manifest.dir_name());
-        debug!("creating mod: {:?}", &dir);
-        fs::create_dir_all(&dir)?;
-
-        let json = serde_json::to_string_pretty(&manifest)?;
-        debug!("Writing mod manifest: {}", &json);
-        fs::write(dir.join(MOD_MANIFEST_NAME), &json)?;
-
-        Ok(Mod { dir })
-    }
-}
-
-pub struct Mod {
-    dir: PathBuf,
-}
-
-impl Mod {
-    pub fn add_file(self, file_name: &str, contents: &str) -> Result<Self> {
-        fs::write(self.dir.join(file_name), contents.as_bytes())?;
-        Ok(self)
-    }
 }
 
 /// The contents of an `info.json` file in a mod. Described [on the
@@ -97,10 +72,4 @@ pub struct ModManifest {
 
     #[builder(default)]
     pub dependencies: Vec<String>,
-}
-
-impl ModManifest {
-    pub fn dir_name(&self) -> String {
-        format!("{}_{}", self.name, self.version)
-    }
 }

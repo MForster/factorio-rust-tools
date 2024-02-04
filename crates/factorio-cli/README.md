@@ -8,60 +8,21 @@ using [`factorio-exporter`](http://crates.io/crates/factorio-exporter).
 See crate page on [crates.io](https://crates.io/crates/factorio-cli)
 
 ## Example invocation
-<!-- EMBED: fct --factorio-dir ~/factorio export -f json | jq '.recipe_prototypes["iron-plate"]' -->
+<!-- EMBED: fct --factorio-dir ~/factorio export -f json | jq '.recipe["iron-plate"]' -->
 ```sh
-$ fct --factorio-dir ~/factorio export -f json | jq '.recipe_prototypes["iron-plate"]'
+$ fct --factorio-dir ~/factorio export -f json | jq '.recipe["iron-plate"]'
 {
-  "enabled": true,
+  "type": "recipe",
   "name": "iron-plate",
-  "localised_name": "Iron plate",
-  "localised_description": "Unknown key: \"recipe-description.iron-plate\"",
   "category": "smelting",
+  "energy_required": 3.2,
   "ingredients": [
-    {
-      "type": "item",
-      "name": "iron-ore",
-      "amount": 1
-    }
+    [
+      "iron-ore",
+      1
+    ]
   ],
-  "products": [
-    {
-      "type": "item",
-      "name": "iron-plate",
-      "amount": 1,
-      "probability": 1
-    }
-  ],
-  "main_product": {
-    "type": "item",
-    "name": "iron-plate",
-    "amount": 1,
-    "probability": 1
-  },
-  "hidden": false,
-  "hidden_from_flow_stats": false,
-  "hidden_from_player_crafting": false,
-  "always_show_made_in": false,
-  "energy": 3.2,
-  "order": "b[iron-plate]",
-  "group": {
-    "name": "intermediate-products"
-  },
-  "subgroup": {
-    "name": "raw-material"
-  },
-  "request_paste_multiplier": 30,
-  "overload_multiplier": 0,
-  "allow_inserter_overload": true,
-  "allow_as_intermediate": true,
-  "allow_intermediates": true,
-  "show_amount_in_title": true,
-  "always_show_products": false,
-  "emissions_multiplier": 1,
-  "allow_decomposition": true,
-  "unlock_results": true,
-  "valid": true,
-  "object_name": "LuaRecipePrototype"
+  "result": "iron-plate"
 }
 ```
 <!-- END EMBED -->
@@ -76,34 +37,21 @@ A collection of tools for Factorio (<http://www.factorio.com>)
 Usage: fct [OPTIONS] <COMMAND>
 
 Commands:
-  export
-          Exports prototypes from Factorio in JSON or YAML format
-  resolve-mods
-          Lists all dependencies of a set of mods, trying to find compatible versions
-  download-mod
-          Download a mod from the mod portal
-  login
-          Log in to the mod portal API and store the obtained login token
-  help
-          Print this message or the help of the given subcommand(s)
+  export        Exports prototypes from Factorio in JSON or YAML format
+  resolve-mods  Lists all dependencies of a set of mods, trying to find compatible versions
+  download-mod  Download a mod from the mod portal
+  login         Log in to the mod portal API and store the obtained login token
+  help          Print this message or the help of the given subcommand(s)
 
 Options:
       --factorio-dir <FACTORIO_DIR>
-          Directory where Factorio is installed. This needs to be the full version. Neither the demo nor the headless version are sufficient. This argument is optional if both of `--factorio-api-spec` and `--factorio-binary` are specified
-
-      --factorio-api-spec <FACTORIO_API_SPEC>
-          Location of the `runtime-api.json` file. Defaults to `<FACTORIO_DIR>/doc-html/runtime-api.json`.
-          
-          The spec can be found in the `doc-html` directory of a full Factorio installation, or [online](https://lua-api.factorio.com/latest/runtime-api.json).
-
+          Directory where Factorio is installed. This needs to be the full version. Neither the demo nor the headless version are sufficient. This argument is optional if `--factorio-binary` is specified
       --factorio-binary <FACTORIO_BINARY>
           Location of the factorio binary. Defaults to `<FACTORIO_DIR>/bin/x64/factorio(.exe)`. This can be any Factorio binary (full, headless, demo)
-
   -h, --help
-          Print help information (use `-h` for a summary)
-
+          Print help
   -V, --version
-          Print version information
+          Print version
 ```
 <!-- END EMBED -->
 
@@ -120,8 +68,7 @@ Arguments:
 Options:
   -d, --destination <DESTINATION>  Path where the result should be written. Uses STDOUT if not specified
   -f, --format <FORMAT>            Format of the output [default: json] [possible values: json, yaml]
-  -i, --icons                      Export icon paths
-  -h, --help                       Print help information
+  -h, --help                       Print help
 ```
 <!-- END EMBED -->
 
@@ -136,7 +83,7 @@ Arguments:
   [MODS]...  A list of mods, optionally with version requirements
 
 Options:
-  -h, --help  Print help information
+  -h, --help  Print help
 ```
 <!-- END EMBED -->
 
