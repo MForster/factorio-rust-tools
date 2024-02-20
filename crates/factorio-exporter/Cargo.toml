@@ -13,7 +13,7 @@ rust-version = "1.65.0"
 
 [dependencies]
 convert_case = "0.6.0"
-derive_builder = "0.13.0"
+derive_builder = "0.20.0"
 indoc = "2.0.4"
 itertools = "0.12.1"
 regex = "1.10.3"
