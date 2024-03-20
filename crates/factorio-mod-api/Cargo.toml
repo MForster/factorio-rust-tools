@@ -21,7 +21,7 @@ elsa = "1.10.0"
 futures = "0.3.30"
 ordered-float = { version = "4.2.0", features = ["serde"] }
 regex-macro = "0.2.0"
-reqwest = { version = "0.11.24", features = ["json", "stream"] }
+reqwest = { version = "0.12.0", features = ["json", "stream"] }
 semver = { version = "1.0.21", features = ["serde"] }
 serde = { version = "1.0.196", features = ["derive"] }
 serde_derive = "1.0.196"
