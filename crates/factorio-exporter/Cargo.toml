@@ -5,8 +5,8 @@ version = "0.9.0"
 
 authors = ["Michael Forster <email@michael-forster.de>"]
 edition = "2021"
-homepage = "http://github.com/MForster/factorio-rust-tools"
-repository = "http://github.com/MForster/factorio-rust-tools"
+homepage = "https://github.com/MForster/factorio-rust-tools"
+repository = "https://github.com/MForster/factorio-rust-tools"
 license = "MIT OR Apache-2.0"
 keywords = ["gaming", "factorio"]
 rust-version = "1.65.0"
