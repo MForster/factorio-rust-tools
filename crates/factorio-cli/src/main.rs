@@ -94,7 +94,6 @@ impl App {
                         )
                         .exit()
                 };
-                path
             })
             .map(std::fs::canonicalize)
             .unwrap_or_else(|| {
