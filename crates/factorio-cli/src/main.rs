@@ -85,7 +85,7 @@ impl App {
             .clone()
             .or_else(|| self.settings.paths.factorio_binary.clone())
             .or_else(|| self.factorio_dir().map(|d| d.join(FACTORIO_BINPATH)))
-            .map(|path| {
+            .inspect(|path| {
                 if !path.exists() {
                     Args::command()
                         .error(
@@ -94,7 +94,6 @@ impl App {
                         )
                         .exit()
                 };
-                path
             })
             .map(std::fs::canonicalize)
             .unwrap_or_else(|| {

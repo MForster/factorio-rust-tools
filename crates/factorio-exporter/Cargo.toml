@@ -9,7 +9,7 @@ homepage = "https://github.com/MForster/factorio-rust-tools"
 repository = "https://github.com/MForster/factorio-rust-tools"
 license = "MIT OR Apache-2.0"
 keywords = ["gaming", "factorio"]
-rust-version = "1.65.0"
+rust-version = "1.82.0"
 
 [dependencies]
 convert_case = "0.6.0"

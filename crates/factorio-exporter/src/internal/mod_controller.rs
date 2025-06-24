@@ -48,7 +48,6 @@ impl ModController {
 /// Wiki](https://wiki.factorio.com/Tutorial:Mod_structure#info.json).
 #[derive(Builder, Serialize)]
 #[builder(setter(into, strip_option))]
-
 pub struct ModManifest {
     pub name: String,
     pub version: String,
